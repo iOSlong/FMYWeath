@@ -12,14 +12,14 @@
 		01CE750C1E0839A700B76D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CE750A1E0839A700B76D1C /* Main.storyboard */; };
 		01CE750E1E0839A700B76D1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CE750D1E0839A700B76D1C /* Assets.xcassets */; };
 		01CE75111E0839A700B76D1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CE750F1E0839A700B76D1C /* LaunchScreen.storyboard */; };
-		01CE751C1E083A2200B76D1C /* FMYWTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE751B1E083A2200B76D1C /* FMYWTabBarViewController.swift */; };
-		01CE751E1E083A6900B76D1C /* FMYWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE751D1E083A6900B76D1C /* FMYWViewController.swift */; };
-		01CE75201E083A8200B76D1C /* FMYWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE751F1E083A8200B76D1C /* FMYWNavigationController.swift */; };
-		01CE75221E083B4000B76D1C /* FMYWHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75211E083B4000B76D1C /* FMYWHomeViewController.swift */; };
-		01CE75241E083B7000B76D1C /* FMYWExponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75231E083B7000B76D1C /* FMYWExponentViewController.swift */; };
-		01CE75261E083BC500B76D1C /* FMYWCityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75251E083BC500B76D1C /* FMYWCityInfoViewController.swift */; };
-		01CE75281E083BEF00B76D1C /* FMYWFavorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75271E083BEF00B76D1C /* FMYWFavorViewController.swift */; };
-		01CE752A1E083BFF00B76D1C /* FMYWCityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75291E083BFF00B76D1C /* FMYWCityListViewController.swift */; };
+		01CE75341E0842A600B76D1C /* FMYWCityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE752C1E0842A600B76D1C /* FMYWCityInfoViewController.swift */; };
+		01CE75351E0842A600B76D1C /* FMYWCityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */; };
+		01CE75361E0842A600B76D1C /* FMYWExponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE752E1E0842A600B76D1C /* FMYWExponentViewController.swift */; };
+		01CE75371E0842A600B76D1C /* FMYWFavorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE752F1E0842A600B76D1C /* FMYWFavorViewController.swift */; };
+		01CE75381E0842A600B76D1C /* FMYWHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75301E0842A600B76D1C /* FMYWHomeViewController.swift */; };
+		01CE75391E0842A600B76D1C /* FMYWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */; };
+		01CE753A1E0842A600B76D1C /* FMYWTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */; };
+		01CE753B1E0842A600B76D1C /* FMYWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75331E0842A600B76D1C /* FMYWViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +30,14 @@
 		01CE750D1E0839A700B76D1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01CE75101E0839A700B76D1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01CE75121E0839A700B76D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01CE751B1E083A2200B76D1C /* FMYWTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTabBarViewController.swift; sourceTree = "<group>"; };
-		01CE751D1E083A6900B76D1C /* FMYWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWViewController.swift; sourceTree = "<group>"; };
-		01CE751F1E083A8200B76D1C /* FMYWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWNavigationController.swift; sourceTree = "<group>"; };
-		01CE75211E083B4000B76D1C /* FMYWHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWHomeViewController.swift; sourceTree = "<group>"; };
-		01CE75231E083B7000B76D1C /* FMYWExponentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWExponentViewController.swift; sourceTree = "<group>"; };
-		01CE75251E083BC500B76D1C /* FMYWCityInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWCityInfoViewController.swift; sourceTree = "<group>"; };
-		01CE75271E083BEF00B76D1C /* FMYWFavorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWFavorViewController.swift; sourceTree = "<group>"; };
-		01CE75291E083BFF00B76D1C /* FMYWCityListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWCityListViewController.swift; sourceTree = "<group>"; };
+		01CE752C1E0842A600B76D1C /* FMYWCityInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWCityInfoViewController.swift; sourceTree = "<group>"; };
+		01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWCityListViewController.swift; sourceTree = "<group>"; };
+		01CE752E1E0842A600B76D1C /* FMYWExponentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWExponentViewController.swift; sourceTree = "<group>"; };
+		01CE752F1E0842A600B76D1C /* FMYWFavorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWFavorViewController.swift; sourceTree = "<group>"; };
+		01CE75301E0842A600B76D1C /* FMYWHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWHomeViewController.swift; sourceTree = "<group>"; };
+		01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWNavigationController.swift; sourceTree = "<group>"; };
+		01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTabBarViewController.swift; sourceTree = "<group>"; };
+		01CE75331E0842A600B76D1C /* FMYWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,6 @@
 		01CE74FA1E0839A700B76D1C = {
 			isa = PBXGroup;
 			children = (
-				01CE75181E0839B000B76D1C /* ViewControllers */,
 				01CE75051E0839A700B76D1C /* FMYWeath */,
 				01CE75041E0839A700B76D1C /* Products */,
 			);
@@ -71,6 +70,7 @@
 		01CE75051E0839A700B76D1C /* FMYWeath */ = {
 			isa = PBXGroup;
 			children = (
+				01CE752B1E0842A600B76D1C /* ViewControllers */,
 				01CE75061E0839A700B76D1C /* AppDelegate.swift */,
 				01CE75081E0839A700B76D1C /* ViewController.swift */,
 				01CE750A1E0839A700B76D1C /* Main.storyboard */,
@@ -81,17 +81,17 @@
 			path = FMYWeath;
 			sourceTree = "<group>";
 		};
-		01CE75181E0839B000B76D1C /* ViewControllers */ = {
+		01CE752B1E0842A600B76D1C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				01CE751B1E083A2200B76D1C /* FMYWTabBarViewController.swift */,
-				01CE751D1E083A6900B76D1C /* FMYWViewController.swift */,
-				01CE751F1E083A8200B76D1C /* FMYWNavigationController.swift */,
-				01CE75211E083B4000B76D1C /* FMYWHomeViewController.swift */,
-				01CE75231E083B7000B76D1C /* FMYWExponentViewController.swift */,
-				01CE75251E083BC500B76D1C /* FMYWCityInfoViewController.swift */,
-				01CE75271E083BEF00B76D1C /* FMYWFavorViewController.swift */,
-				01CE75291E083BFF00B76D1C /* FMYWCityListViewController.swift */,
+				01CE752C1E0842A600B76D1C /* FMYWCityInfoViewController.swift */,
+				01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */,
+				01CE752E1E0842A600B76D1C /* FMYWExponentViewController.swift */,
+				01CE752F1E0842A600B76D1C /* FMYWFavorViewController.swift */,
+				01CE75301E0842A600B76D1C /* FMYWHomeViewController.swift */,
+				01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */,
+				01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */,
+				01CE75331E0842A600B76D1C /* FMYWViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,16 +169,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01CE75221E083B4000B76D1C /* FMYWHomeViewController.swift in Sources */,
+				01CE75391E0842A600B76D1C /* FMYWNavigationController.swift in Sources */,
+				01CE75361E0842A600B76D1C /* FMYWExponentViewController.swift in Sources */,
+				01CE75351E0842A600B76D1C /* FMYWCityListViewController.swift in Sources */,
+				01CE753B1E0842A600B76D1C /* FMYWViewController.swift in Sources */,
+				01CE75381E0842A600B76D1C /* FMYWHomeViewController.swift in Sources */,
+				01CE75371E0842A600B76D1C /* FMYWFavorViewController.swift in Sources */,
+				01CE753A1E0842A600B76D1C /* FMYWTabBarViewController.swift in Sources */,
 				01CE75091E0839A700B76D1C /* ViewController.swift in Sources */,
-				01CE75281E083BEF00B76D1C /* FMYWFavorViewController.swift in Sources */,
-				01CE75241E083B7000B76D1C /* FMYWExponentViewController.swift in Sources */,
-				01CE752A1E083BFF00B76D1C /* FMYWCityListViewController.swift in Sources */,
-				01CE75201E083A8200B76D1C /* FMYWNavigationController.swift in Sources */,
-				01CE75261E083BC500B76D1C /* FMYWCityInfoViewController.swift in Sources */,
-				01CE751E1E083A6900B76D1C /* FMYWViewController.swift in Sources */,
+				01CE75341E0842A600B76D1C /* FMYWCityInfoViewController.swift in Sources */,
 				01CE75071E0839A700B76D1C /* AppDelegate.swift in Sources */,
-				01CE751C1E083A2200B76D1C /* FMYWTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
