@@ -9,27 +9,60 @@
 import UIKit
 
 class FMYWTabBarViewController: UITabBarController {
+    var imgvBar:UIImageView? = nil
+    var tabItems:NSMutableArray? = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.configureImgvBar()
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+        super.setViewControllers(viewControllers, animated: true)
+
+        self.configureTabItems()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func configureImgvBar() {
+        self.imgvBar = UIImageView(frame:self.tabBar.bounds)
+        self.imgvBar?.backgroundColor = UIColor.yellow
+        self.imgvBar?.isUserInteractionEnabled = true
+        self.imgvBar?.bottom    = self.view.height
+        self.imgvBar?.image     = UIImage(named: "tabbar_bg")
+        self.view.addSubview(self.imgvBar!)
     }
-    */
 
+    func configureTabItems() {
+        let spanH   = mySpanH
+        let tabW    = (self.view.width - CGFloat(((viewControllers?.count)! + 1))*spanH)/CGFloat((viewControllers?.count)!)
+        let tabH    = self.tabBar.height
+
+        var lastX:CGFloat   = 0.0
+
+        for index in 0...(viewControllers?.count)!-1 {
+            let barItem:UITabBarItem =  self.tabBar.items![index]
+
+            lastX = CGFloat(CGFloat(index) * (tabW + spanH) + spanH)
+            let btnTab = FMYWBtnTab(frame:CGRect.init(x: lastX, y: 0, width: tabW, height: tabH))
+            btnTab.addTarget(self, action: #selector(tabItemClick(_:)), for: .touchUpInside)
+            btnTab.labelTitle?.text = barItem.title
+            self.tabItems?.add(btnTab)
+            self.imgvBar?.addSubview(btnTab)
+        }
+        (self.tabItems?.object(at:0) as! FMYWBtnTab).isSelected = true
+    }
+
+
+    func tabItemClick(_ tabItem:FMYWBtnTab) {
+        let index = self.tabItems?.index(of: tabItem)
+        if index == self.selectedIndex {
+            print("do nothing!")
+        }else {
+            (self.tabItems?.object(at: self.selectedIndex) as! FMYWBtnTab).isSelected = false
+            self.selectedIndex = index!
+            (self.tabItems?.object(at: index!) as! FMYWBtnTab).isSelected = true
+        }
+    }
 }

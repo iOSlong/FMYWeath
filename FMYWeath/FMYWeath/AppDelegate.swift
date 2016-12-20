@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navFavor        = FMYWNavigationController(rootViewController:favorVC)
         let navCityList     = FMYWNavigationController(rootViewController:cityListVC)
 
+        homeVC.title       = "城市天气"
+        exponentVC.title   = "指数详情"
+        cityIntroVC.title  = "城市介绍"
+        favorVC.title      = "收藏管理"
+        cityListVC.title   = "更多城市"
 
         navHome.title       = "城市天气"
         navExponent.title   = "指数详情"

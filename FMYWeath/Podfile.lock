@@ -1,0 +1,12 @@
+PODS:
+  - UIView+Positioning (1.1)
+
+DEPENDENCIES:
+  - UIView+Positioning (~> 1.1)
+
+SPEC CHECKSUMS:
+  UIView+Positioning: e93fe9e3186d1ed7d60e344aa12787911e902056
+
+PODFILE CHECKSUM: 05cb2ba24290063d201396fcf255cd812dbab56a
+
+COCOAPODS: 1.0.1

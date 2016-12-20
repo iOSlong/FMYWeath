@@ -20,6 +20,13 @@
 		01CE75391E0842A600B76D1C /* FMYWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */; };
 		01CE753A1E0842A600B76D1C /* FMYWTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */; };
 		01CE753B1E0842A600B76D1C /* FMYWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75331E0842A600B76D1C /* FMYWViewController.swift */; };
+		01CE75421E096F9B00B76D1C /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75411E096F9B00B76D1C /* UIView+Positioning.m */; };
+		01CE75451E09710700B76D1C /* FMYWBtnTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75441E09710700B76D1C /* FMYWBtnTab.swift */; };
+		01CE75471E09758700B76D1C /* constantUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75461E09758700B76D1C /* constantUI.swift */; };
+		01CE754D1E09831100B76D1C /* moon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CE754A1E09831100B76D1C /* moon@3x.png */; };
+		01CE754E1E09831100B76D1C /* sun@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CE754B1E09831100B76D1C /* sun@3x.png */; };
+		01CE754F1E09831100B76D1C /* tabbar_bg@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01CE754C1E09831100B76D1C /* tabbar_bg@1x.png */; };
+		50AE2C717F150A3C08015D88 /* Pods_FMYWeath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122121E0E98CE14AB6EAFB7F /* Pods_FMYWeath.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,18 @@
 		01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWNavigationController.swift; sourceTree = "<group>"; };
 		01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTabBarViewController.swift; sourceTree = "<group>"; };
 		01CE75331E0842A600B76D1C /* FMYWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWViewController.swift; sourceTree = "<group>"; };
+		01CE753D1E096CC600B76D1C /* constantUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constantUI.h; sourceTree = "<group>"; };
+		01CE753F1E096E4A00B76D1C /* FMYWeath-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMYWeath-Bridging-Header.h"; sourceTree = "<group>"; };
+		01CE75401E096F9B00B76D1C /* UIView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Positioning.h"; sourceTree = "<group>"; };
+		01CE75411E096F9B00B76D1C /* UIView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Positioning.m"; sourceTree = "<group>"; };
+		01CE75441E09710700B76D1C /* FMYWBtnTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWBtnTab.swift; sourceTree = "<group>"; };
+		01CE75461E09758700B76D1C /* constantUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constantUI.swift; sourceTree = "<group>"; };
+		01CE754A1E09831100B76D1C /* moon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moon@3x.png"; sourceTree = "<group>"; };
+		01CE754B1E09831100B76D1C /* sun@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sun@3x.png"; sourceTree = "<group>"; };
+		01CE754C1E09831100B76D1C /* tabbar_bg@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_bg@1x.png"; sourceTree = "<group>"; };
+		118E2E455C1820DDCED88F4B /* Pods-FMYWeath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMYWeath.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMYWeath/Pods-FMYWeath.debug.xcconfig"; sourceTree = "<group>"; };
+		122121E0E98CE14AB6EAFB7F /* Pods_FMYWeath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMYWeath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C614AC1BAAD325DB652A9985 /* Pods-FMYWeath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMYWeath.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMYWeath/Pods-FMYWeath.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AE2C717F150A3C08015D88 /* Pods_FMYWeath.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +76,8 @@
 			children = (
 				01CE75051E0839A700B76D1C /* FMYWeath */,
 				01CE75041E0839A700B76D1C /* Products */,
+				1E3F6A24680CDE08263B1FFC /* Pods */,
+				0EC687A9522267CFBB83C10C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,9 +92,14 @@
 		01CE75051E0839A700B76D1C /* FMYWeath */ = {
 			isa = PBXGroup;
 			children = (
+				01CE75481E0982CF00B76D1C /* Sources */,
+				01CE75431E09702B00B76D1C /* CustomViews */,
+				01CE753E1E096CEB00B76D1C /* Categories */,
+				01CE753C1E096C7300B76D1C /* Constants */,
 				01CE752B1E0842A600B76D1C /* ViewControllers */,
 				01CE75061E0839A700B76D1C /* AppDelegate.swift */,
 				01CE75081E0839A700B76D1C /* ViewController.swift */,
+				01CE753F1E096E4A00B76D1C /* FMYWeath-Bridging-Header.h */,
 				01CE750A1E0839A700B76D1C /* Main.storyboard */,
 				01CE750D1E0839A700B76D1C /* Assets.xcassets */,
 				01CE750F1E0839A700B76D1C /* LaunchScreen.storyboard */,
@@ -96,6 +123,67 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		01CE753C1E096C7300B76D1C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				01CE753D1E096CC600B76D1C /* constantUI.h */,
+				01CE75461E09758700B76D1C /* constantUI.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		01CE753E1E096CEB00B76D1C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				01CE75401E096F9B00B76D1C /* UIView+Positioning.h */,
+				01CE75411E096F9B00B76D1C /* UIView+Positioning.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		01CE75431E09702B00B76D1C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				01CE75441E09710700B76D1C /* FMYWBtnTab.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		01CE75481E0982CF00B76D1C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				01CE75491E0982E700B76D1C /* images */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		01CE75491E0982E700B76D1C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				01CE754A1E09831100B76D1C /* moon@3x.png */,
+				01CE754B1E09831100B76D1C /* sun@3x.png */,
+				01CE754C1E09831100B76D1C /* tabbar_bg@1x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		0EC687A9522267CFBB83C10C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				122121E0E98CE14AB6EAFB7F /* Pods_FMYWeath.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E3F6A24680CDE08263B1FFC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				118E2E455C1820DDCED88F4B /* Pods-FMYWeath.debug.xcconfig */,
+				C614AC1BAAD325DB652A9985 /* Pods-FMYWeath.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01CE75151E0839A700B76D1C /* Build configuration list for PBXNativeTarget "FMYWeath" */;
 			buildPhases = (
+				AD3E54195B0272FCF443B8EB /* [CP] Check Pods Manifest.lock */,
 				01CE74FF1E0839A700B76D1C /* Sources */,
 				01CE75001E0839A700B76D1C /* Frameworks */,
 				01CE75011E0839A700B76D1C /* Resources */,
+				E1147FD4C36CE8B37166C9DB /* [CP] Embed Pods Frameworks */,
+				92E214EEC67A97ED2A7E0217 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,23 +247,77 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CE754F1E09831100B76D1C /* tabbar_bg@1x.png in Resources */,
 				01CE75111E0839A700B76D1C /* LaunchScreen.storyboard in Resources */,
 				01CE750E1E0839A700B76D1C /* Assets.xcassets in Resources */,
+				01CE754D1E09831100B76D1C /* moon@3x.png in Resources */,
 				01CE750C1E0839A700B76D1C /* Main.storyboard in Resources */,
+				01CE754E1E09831100B76D1C /* sun@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		92E214EEC67A97ED2A7E0217 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMYWeath/Pods-FMYWeath-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD3E54195B0272FCF443B8EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1147FD4C36CE8B37166C9DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMYWeath/Pods-FMYWeath-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01CE74FF1E0839A700B76D1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CE75471E09758700B76D1C /* constantUI.swift in Sources */,
+				01CE75421E096F9B00B76D1C /* UIView+Positioning.m in Sources */,
 				01CE75391E0842A600B76D1C /* FMYWNavigationController.swift in Sources */,
 				01CE75361E0842A600B76D1C /* FMYWExponentViewController.swift in Sources */,
 				01CE75351E0842A600B76D1C /* FMYWCityListViewController.swift in Sources */,
 				01CE753B1E0842A600B76D1C /* FMYWViewController.swift in Sources */,
+				01CE75451E09710700B76D1C /* FMYWBtnTab.swift in Sources */,
 				01CE75381E0842A600B76D1C /* FMYWHomeViewController.swift in Sources */,
 				01CE75371E0842A600B76D1C /* FMYWFavorViewController.swift in Sources */,
 				01CE753A1E0842A600B76D1C /* FMYWTabBarViewController.swift in Sources */,
@@ -297,24 +442,28 @@
 		};
 		01CE75161E0839A700B76D1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 118E2E455C1820DDCED88F4B /* Pods-FMYWeath.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FMYWeath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = linxi.FMYWeath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FMYWeath/FMYWeath-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		01CE75171E0839A700B76D1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C614AC1BAAD325DB652A9985 /* Pods-FMYWeath.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FMYWeath/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = linxi.FMYWeath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FMYWeath/FMYWeath-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -338,6 +487,7 @@
 				01CE75171E0839A700B76D1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
