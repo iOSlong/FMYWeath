@@ -30,7 +30,7 @@ class FMYWBtnTab: UIButton {
         self.imgvIcon?.backgroundColor = UIColor.red
 
 
-        self.labelTitle         = UILabel(frame: CGRect(x: 0, y:self.height * 0.7, width: self.width, height: self.height * 0.3))
+        self.labelTitle         = UILabel(frame: CGRect(x: 0, y:self.height * 0.65, width: self.width, height: self.height * 0.35))
         self.labelTitle?.textColor      = UIColor.gray
         self.labelTitle?.font           = UIFont.systemFont(ofSize: 10)
         self.labelTitle?.textAlignment  = .center
@@ -40,7 +40,7 @@ class FMYWBtnTab: UIButton {
     }
 
     // TODO   重写set方法
-    private var _isSelected:Bool? = false
+    fileprivate var _isSelected:Bool? = false
     override var isSelected: Bool {
         get {
             return _isSelected!
