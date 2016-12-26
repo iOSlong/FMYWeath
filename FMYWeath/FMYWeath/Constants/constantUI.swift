@@ -11,10 +11,11 @@ import Foundation
 // MARK: CONSTANT VALUE
 
 let myStatusBarH    = UIApplication.shared.statusBarFrame.size.height
+let myTabBarH       = CGFloat(49.0)
 let myNavBarH       = myStatusBarH + 44.0
-let myScreenH       = UIScreen.main.bounds.width
-let myScreenW       = UIScreen.main.bounds.height
-let mySpanLeft      = myScreenW * 0.018
+let myScreenH       = UIScreen.main.bounds.height
+let myScreenW       = UIScreen.main.bounds.width
+let mySpanLeft      = CGFloat(12.5)
 let mySpanUp        = mySpanLeft
 let mySpanV         = mySpanLeft/2.0
 let mySpanH         = mySpanLeft/2.0
@@ -28,9 +29,9 @@ let mySpanH         = mySpanLeft/2.0
  2. 不带参数的使用let 变量
  */
 
-func RGBCOLOR (r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) ->(UIColor) {
+func RGBCOLOR (_ r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) ->(UIColor) {
     return UIColor (red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
 }
-func RGBACOLOR(r:CGFloat,g:CGFloat,b:CGFloat) -> UIColor {
+func RGBACOLOR(_ r:CGFloat,g:CGFloat,b:CGFloat) -> UIColor {
     return UIColor (red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
 }
