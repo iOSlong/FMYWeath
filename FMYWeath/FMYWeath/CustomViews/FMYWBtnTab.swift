@@ -34,6 +34,7 @@ class FMYWBtnTab: UIButton {
         self.labelTitle?.textColor      = UIColor.gray
         self.labelTitle?.font           = UIFont.systemFont(ofSize: 10)
         self.labelTitle?.textAlignment  = .center
+        
 
 //        self.addSubview(imgvIcon!)
         self.addSubview(labelTitle!)
