@@ -61,10 +61,11 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
         if cell == nil {
             cell = FMYWJokeTableCell(style: .default, reuseIdentifier: identifier)
         }
-        
+
+        cell?.accessoryType = .disclosureIndicator
+
         if (self.dataSource?.count)! > indexPath.row {
             let modelItem:FMYWTodayHistoryModel = self.dataSource![indexPath.row] as! FMYWTodayHistoryModel
-//            cell?.setJokeModel(jokeModel: jokeItem)
             cell?.textLabel?.text = modelItem.title as? String;
         }
         
@@ -73,10 +74,10 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let jokeItem:FMYWJokeModel = self.dataSource![indexPath.row] as! FMYWJokeModel
-        let jokeDetailVC:FMYWJokeDetailViewController = FMYWJokeDetailViewController()
-        jokeDetailVC.jokeItem = jokeItem
-        self.navigationController?.pushViewController(jokeDetailVC, animated: true)
+        let cellItem:FMYWTodayHistoryModel = self.dataSource![indexPath.row] as! FMYWTodayHistoryModel
+        let detailVC = FMYWTodayHistoryDetailViewController()
+        detailVC.todayHistoryModel = cellItem
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,25 +94,25 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     func loadNewData() {
         
 //        TODO：处理时间 格式，
-        let date    = Date(timeIntervalSinceNow: 0)
+        let date    = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFM_d)
         self.pageCurrent += 0
         let params:NSDictionary  =    ["key"  :apiKey_today,
-                                       "date" :"12/26"]
+                                       "date" :date]
         
-        self.netGetJokeList(params: params, loadMore: false)
+        self.netTodayHistoryList(params: params, loadMore: false)
     }
     
     func loadMoreData()  {
-        let date    = Date(timeIntervalSinceNow: 0)
+        let date    = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFM_d)
         let params:NSDictionary  =    ["key"  :apiKey_today,
-                                       "date" :"12/26"]
+                                       "date" :date]
         
-        self.netGetJokeList(params: params, loadMore: true)
+        self.netTodayHistoryList(params: params, loadMore: false)
     }
     
     
     
-    func netGetJokeList(params:NSDictionary, loadMore:Bool) {
+    func netTodayHistoryList(params:NSDictionary, loadMore:Bool) {
         
         let httpSession = FMYHTTPSessionManager(url: URL(string: url_todayOnHistory), configuration: nil)
         
@@ -156,7 +157,5 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
             print(dataTask ?? "empty    ")
             
         })
-        
     }
-
 }

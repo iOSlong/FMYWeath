@@ -26,6 +26,9 @@ let url_randjoke        = "http://v.juhe.cn/joke/randJoke.php"
 // 历史上的今天
 //http://v.juhe.cn/todayOnhistory/queryEvent.php?key=72dc0d05547cc2c8380162ecaf186bf0&date=1/1
 let url_todayOnHistory  = "http://v.juhe.cn/todayOnhistory/queryEvent.php"
+// 历史今天详情
+//http://v.juhe.cn/todayOnhistory/queryDetail.php?key=72dc0d05547cc2c8380162ecaf186bf0&e_id=1
+let url_todayOnHistoryDetail = "http://v.juhe.cn/todayOnhistory/queryDetail.php"
 
 
 let pageSize    = "15"

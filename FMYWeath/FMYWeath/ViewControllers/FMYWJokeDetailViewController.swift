@@ -35,7 +35,5 @@ class FMYWJokeDetailViewController: FMYWViewController {
 
         self.textViewJoke?.height = (self.textViewJoke?.height)! >= self.view.height - myTabBarH ? self.view.height - myTabBarH : (self.textViewJoke?.height)!
         
-    
-
     }
 }

@@ -13,4 +13,8 @@ class FMYWTodayHistoryModel: NSObject {
     var day      :Any? = nil
     var e_id     :Any? = nil
     var title    :Any? = nil
+
+    var content     :Any? = nil
+    var picNo       :Any? = nil
+    var picUrl      :Any? = nil  //[["pic_title":"儒略历","id":1,"url":"http://images.juheapi.com/history/1_2.jpg"],……]
 }

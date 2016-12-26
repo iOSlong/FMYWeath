@@ -65,7 +65,8 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
         if cell == nil {
             cell = FMYWJokeTableCell(style: .default, reuseIdentifier: identifier)
         }
-        
+        cell?.accessoryType = .disclosureIndicator
+
         if (self.dataSource?.count)! > indexPath.row {
             let jokeItem:FMYWJokeModel = self.dataSource![indexPath.row] as! FMYWJokeModel
             cell?.setJokeModel(jokeModel: jokeItem)

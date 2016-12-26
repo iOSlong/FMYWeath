@@ -14,7 +14,7 @@ enum netMethod {
 
 class FMYHTTPSessionManager: FMYURLSessionManager {
     var baseUrl:URL? = nil
-
+    private var requestUrl:URL? = nil
 
     init(url:URL?, configuration:URLSessionConfiguration?) {
         
@@ -37,7 +37,7 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
 
 
         let dataTask = self.dataTask(request: request, completionHander: { (response, object, error) in
-            
+            print("request.URL:",self.requestUrl?.absoluteString ?? "")
             print("response\(response), object\(object), error\(error)")
             
             if error == nil {
@@ -62,12 +62,12 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
         let paramSuffix:String = (parameters != nil) ? self.urlSuffixParams(parameters!) : ""
         
         let url = URL(string: urlString!+"?"+paramSuffix)
-        
         var request = URLRequest(url: url!)
+        self.requestUrl = url!
 
         request.httpMethod  = method
 
-        let soap12   = self.postBody()
+//        let soap12   = self.postBody()
 
 //        let soapData = soap12.data(using: .utf8)
 
