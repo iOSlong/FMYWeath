@@ -44,5 +44,4 @@ class FMYWJokeTableCell: UITableViewCell {
         self.labelContent?.sizeToFit()
 
     }
-
 }

@@ -13,6 +13,7 @@ class FMYWJokeDetailViewController: FMYWViewController {
     var jokeItem:FMYWJokeModel? = nil
     var textViewJoke:UITextView? = nil
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +25,7 @@ class FMYWJokeDetailViewController: FMYWViewController {
         self.textViewJoke = UITextView(frame: CGRect(x: mySpanLeft, y: mySpanUp, width: myScreenW - 2 * mySpanLeft, height: self.view.height - myTabBarH))
         self.textViewJoke?.font = UIFont.systemFont(ofSize: 20)
         self.textViewJoke?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        self.textViewJoke?.textAlignment = .center
         self.view.addSubview(self.textViewJoke!)
 
 
@@ -32,6 +34,8 @@ class FMYWJokeDetailViewController: FMYWViewController {
         self.textViewJoke?.sizeToFit()
 
         self.textViewJoke?.height = (self.textViewJoke?.height)! >= self.view.height - myTabBarH ? self.view.height - myTabBarH : (self.textViewJoke?.height)!
+        
+    
 
     }
 }

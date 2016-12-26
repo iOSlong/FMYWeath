@@ -16,32 +16,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let homeVC      = FMYWHomeViewController()
-        let jokeVC      = FMYWJokeViewController()
-        let cityIntroVC = FMYWCityInfoViewController()
-        let favorVC     = FMYWFavorViewController()
-        let cityListVC  = FMYWCityListViewController()
+        let homeVC          = FMYWHomeViewController()
+        let jokeVC          = FMYWJokeViewController()
+        let todayHistoryVC  = FMYWTodayHistoryViewController()
+        let favorVC         = FMYWFavorViewController()
+        let cityListVC      = FMYWCityListViewController()
 
         let navHome         = FMYWNavigationController(rootViewController:homeVC)
         let navJokes        = FMYWNavigationController(rootViewController:jokeVC)
-        let navCityIntro    = FMYWNavigationController(rootViewController:cityIntroVC)
+        let navtodayHistory = FMYWNavigationController(rootViewController:todayHistoryVC)
         let navFavor        = FMYWNavigationController(rootViewController:favorVC)
         let navCityList     = FMYWNavigationController(rootViewController:cityListVC)
 
-        homeVC.title       = "城市天气"
-        jokeVC.title       = "笑话大全"
-        cityIntroVC.title  = "城市介绍"
-        favorVC.title      = "收藏管理"
-        cityListVC.title   = "更多城市"
+        homeVC.title            = "城市天气"
+        jokeVC.title            = "笑话大全"
+        todayHistoryVC.title    = "历史今日"
+        favorVC.title           = "收藏管理"
+        cityListVC.title        = "更多城市"
 
-        navHome.title       = "城市天气"
-        navJokes.title      = "笑话大全"
-        navCityIntro.title  = "城市介绍"
-        navFavor.title      = "收藏管理"
-        navCityList.title   = "更多城市"
+        navHome.title           = "城市天气"
+        navJokes.title          = "笑话大全"
+        navtodayHistory.title   = "历史今日"
+        navFavor.title          = "收藏管理"
+        navCityList.title       = "更多城市"
 
         let tabBar  =   FMYWTabBarViewController()
-        tabBar.setViewControllers([navHome,navJokes,navCityIntro,navFavor,navCityList], animated: true)
+        tabBar.setViewControllers([navHome,navJokes,navtodayHistory,navFavor,navCityList], animated: true)
 
         self.window?.rootViewController = tabBar
 
