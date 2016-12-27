@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UIView+Positioning.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,12 +27,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>28FBB66CB2502F149720F38F95005233</key>
+		<key>312876FE31C224B3604152573C6D19E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3542F56038A40BA4EC19B747551646E5</key>
+		<key>B413F80FFC4E0602D156E1EFF744FC50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA39866B95175630397FC88D1B1C9385</key>
 		<dict>
 			<key>primary</key>
 			<true/>

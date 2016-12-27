@@ -37,6 +37,7 @@
 		01CE75721E11687400B76D1C /* FMYUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75711E11687400B76D1C /* FMYUtils.swift */; };
 		01CE75741E11711000B76D1C /* FMYWTodayHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75731E11711000B76D1C /* FMYWTodayHistoryDetailViewController.swift */; };
 		50AE2C717F150A3C08015D88 /* Pods_FMYWeath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122121E0E98CE14AB6EAFB7F /* Pods_FMYWeath.framework */; };
+		8E2860B31E128B6300EEC3BC /* FMYWImgShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860B21E128B6300EEC3BC /* FMYWImgShowView.swift */; };
 		8EFE72411E112DB000934A13 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFE72401E112DB000934A13 /* MJRefresh.framework */; };
 		8EFE72431E11425700934A13 /* FMYWJokeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFE72421E11425700934A13 /* FMYWJokeListViewController.swift */; };
 		8EFE72451E1149F300934A13 /* FMYWTodayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */; };
@@ -80,6 +81,7 @@
 		01CE75731E11711000B76D1C /* FMYWTodayHistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTodayHistoryDetailViewController.swift; sourceTree = "<group>"; };
 		118E2E455C1820DDCED88F4B /* Pods-FMYWeath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMYWeath.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMYWeath/Pods-FMYWeath.debug.xcconfig"; sourceTree = "<group>"; };
 		122121E0E98CE14AB6EAFB7F /* Pods_FMYWeath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMYWeath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E2860B21E128B6300EEC3BC /* FMYWImgShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWImgShowView.swift; sourceTree = "<group>"; };
 		8EFE72401E112DB000934A13 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FMYWeath-fsyorfjrssqzfpbjpgergnpycwhe/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
 		8EFE72421E11425700934A13 /* FMYWJokeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWJokeListViewController.swift; sourceTree = "<group>"; };
 		8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTodayHistoryViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				01CE75441E09710700B76D1C /* FMYWBtnTab.swift */,
 				01CE756C1E1018CF00B76D1C /* FMYWJokeTableCell.swift */,
+				8E2860B21E128B6300EEC3BC /* FMYWImgShowView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				01CE75351E0842A600B76D1C /* FMYWCityListViewController.swift in Sources */,
 				01CE753B1E0842A600B76D1C /* FMYWViewController.swift in Sources */,
 				01CE75451E09710700B76D1C /* FMYWBtnTab.swift in Sources */,
+				8E2860B31E128B6300EEC3BC /* FMYWImgShowView.swift in Sources */,
 				01CE75721E11687400B76D1C /* FMYUtils.swift in Sources */,
 				01CE75381E0842A600B76D1C /* FMYWHomeViewController.swift in Sources */,
 				01CE756B1E100D5400B76D1C /* FMYWJokeModel.swift in Sources */,
