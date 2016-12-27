@@ -64,6 +64,11 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
         self.tableView?.tableHeaderView = self.headerView
         self.tableView?.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: myScreenW, height: 5))
 
+
+        // MARK: 回调函数    TODO: 图片浏览，图片收藏，
+        self.footerView.imgShow { (selectedIndex, picURL) in
+            print(selectedIndex,picURL)
+        }
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -87,10 +92,6 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: identifier)
         }
 
-//        let picItem = self.picURL?[indexPath.row]
-//        cell?.textLabel?.text = (picItem as! NSDictionary).object(forKey: "pic_title") as! String?
-//        cell?.detailTextLabel?.text = (picItem as! NSDictionary).object(forKey: "url") as! String?
-        
         cell?.contentView.addSubview(self.footerView)
         
         return cell!
@@ -109,7 +110,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
         self.textViewDetail?.sizeToFit()
         
         self.headerView.height = (self.textViewDetail?.height)! + 2 * mySpanUp
-        self.headerView.backgroundColor = UIColor.lightGray
+        self.headerView.backgroundColor = UIColor.darkGray
 
         let picUrls = self.historyDetail?.picUrl as! NSArray
         for element in picUrls {
@@ -121,8 +122,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
             self.footerView.setPicUrl(picUrl: self.picURL!)
         }
         
-        self.textViewDetail?.text = "我国第一座自动化水电站开始发电\n\n    在61年前的今天，1955年12月27日 (农历冬月十四)，我国第一座自动化水电站开始发电。\r\n    1955年12月27日（距今61年），位于北京官厅水库旁的。这个水电站自1954年4月开始兴建，比原计划提前3个月建成。它主要依赖于能蓄水22.7亿立方米的官厅水库的水作为动力来发电，每年可发出相当于用10万多吨煤发出的电力。整个水电站工程由输水隧洞、洞压井、主厂房、中央控制室组成，可以自动控制隧洞进口水量。主厂房高30米，一部分建在永定河水下，安装3套中国自制的第一轮水轮发电机。\r\n\r\n"
-        
+
         self.tableView?.reloadData()
     }
 

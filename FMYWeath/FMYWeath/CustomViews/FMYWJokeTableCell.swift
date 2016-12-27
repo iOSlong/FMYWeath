@@ -39,7 +39,7 @@ class FMYWJokeTableCell: UITableViewCell {
         self.jokeModel  = jokeModel
 
         let content = jokeModel.content as! String
-        self.labelContent?.width    = myScreenW - 4.0 * mySpanLeft
+        self.labelContent?.width    = myScreenW - 6.0 * mySpanLeft
         self.labelContent?.text     = content
         self.labelContent?.sizeToFit()
 
