@@ -8,14 +8,75 @@
 
 import UIKit
 
-class FMYWAlmanacViewController: FMYWViewController {
+class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate {
+    
+    private var scroll:UIScrollView?
+    var scrollView:UIScrollView {
+        get {
+            if scroll == nil {
+                scroll = UIScrollView.init(frame: self.view.bounds)
+                scroll?.isPagingEnabled = true
+                scroll?.delegate = self
+//                scroll?.bounces  = false
+            }
+            return scroll!
+        }
+    }
 
+    var almanacPlarArr:NSMutableArray = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.netGetAlmanac(date: nil)
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        self.configureUIItems()
+        
+        for ival in ["",""] {
+            self.netGetAlmanac(date: ival)
+        }
+        
+        self.netGetAlmanac(date: "")
 
     }
+    
+    func configureUIItems() {
+        self.view.addSubview(self.scrollView)
+    }
+    
+    
+    func loadAlmanacPlatFromData(almanacModel:FMYWAlmanacModel?) -> Void {
+        if almanacModel != nil {
+            let almanacPlat = FMYWAlmanacPlatView(frame: self.scrollView.bounds)
+            almanacPlat.almanacModel = almanacModel
+            self.scrollView.addSubview(almanacPlat)
+            self.almanacPlarArr.add(almanacPlat)
+        }
+        
+        for index in 0...self.almanacPlarArr.count - 1 {
+            let almanacPlat:FMYWAlmanacPlatView = self.almanacPlarArr[index] as! FMYWAlmanacPlatView
+            almanacPlat.left = CGFloat(index) * self.scrollView.width
+            if index == 1 {
+                almanacPlat.backgroundColor = .yellow
+            }
+        }
+        self.scrollView.contentSize = CGSize(width: CGFloat(self.almanacPlarArr.count) * self.scrollView.width, height: self.scrollView.height)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func netGetAlmanac(date:String?) {
         let date    = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFy_M_d)
@@ -33,20 +94,9 @@ class FMYWAlmanacViewController: FMYWViewController {
                 let almanac = FMYWAlmanacModel()
                 almanac.setValuesForKeys(resultItem as! [String : Any])
                 
-                print(almanac.yiItems)
-                                
-                
-    
-                
-//                for index in 0...resultArray.count-1 {
-//                    let element = resultArray[index] as! Dictionary<String, Any>
-//                    let jokeItem = FMYWTodayHistoryModel()
-//                    jokeItem.setValuesForKeys(element)
-//                    print(jokeItem)
-//                    self.dataSource?.add(jokeItem)
-//                }
-                
-//                self.perform(#selector(self.reloadTableItems), on:  Thread.main, with: self, waitUntilDone: false)
+                DispatchQueue.main.async {
+                    self.loadAlmanacPlatFromData(almanacModel: almanac)
+                }
                 
             } catch (let error) {
                 let dataStr =  String(data: object as! Data, encoding: .utf8)
