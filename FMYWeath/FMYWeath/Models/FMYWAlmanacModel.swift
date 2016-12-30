@@ -50,6 +50,25 @@ class FMYWAlmanacModel: NSObject {
             return itemStr.components(separatedBy: CharacterSet(charactersIn: " ,;")) as NSArray
         }
     }
+    
+    var timerInterval:TimeInterval? {
+        get {
+            let itemStr = self.yangli as! String
+            let timerVal = timeInteger(timeStr: itemStr, formateStr: .TFy_M_d)
+            return timerVal
+        }
+    }
+    
+    var showTime:String?{
+        get {
+            let retrunStr = timeShow(time: self.timerInterval!, formateStr: .TFy_M_d)
+            return retrunStr
+        }
+    }
+    
+    override var description: String {
+        return self.yinli as! String
+    }
 }
 
 

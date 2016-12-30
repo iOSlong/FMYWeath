@@ -46,13 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabBar
 
 
+        let comments = dateComponents()
 
-
-        let datetimeinterval = NSDate().timeIntervalSince1970
-        let timeStr = timeShow(time: datetimeinterval, formateStr:.TFd_M_h_m)
-        let timeStr2 = timeShow(time: datetimeinterval, formateStr:.TFy_M_d)
-        let timeStr3 = timeShow(time: datetimeinterval, formateStr:.TFy_M_d_h_m_s)
-        print(timeStr)
 
         return true
     }

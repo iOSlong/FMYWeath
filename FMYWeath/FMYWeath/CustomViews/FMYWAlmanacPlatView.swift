@@ -1,4 +1,3 @@
-//
 //  FMYWAlmanacPlatView.swift
 //  FMYWeath
 //
@@ -13,7 +12,7 @@ class GreGorianCalView: UIView {
     var labelYearMonth:UILabel = {
        let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 17)
+        label.font = UIFont.systemFont(ofSize: myFont.font_big01.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
     }()
@@ -21,7 +20,7 @@ class GreGorianCalView: UIView {
     var labelYearMonthEN:UILabel =  {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = UIFont.systemFont(ofSize: myFont.font_big01.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
     }()
@@ -29,7 +28,7 @@ class GreGorianCalView: UIView {
     var labelWeek:UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = UIFont.systemFont(ofSize: myFont.font_big01.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
     }()
@@ -37,7 +36,7 @@ class GreGorianCalView: UIView {
     var labelWeekEN:UILabel =  {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = UIFont.systemFont(ofSize: myFont.font_big01.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
     }()
@@ -45,7 +44,7 @@ class GreGorianCalView: UIView {
     var labelDay:UILabel =  {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 35)
+        label.font = UIFont.boldSystemFont(ofSize: myFont.font_bigest.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
     }()
@@ -63,15 +62,22 @@ class GreGorianCalView: UIView {
     
     
     func refreshUIItems() -> Void {
-        let yangli   = self.almanac?.yangli as! NSString
+        let yangli   = self.almanac?.yangli as! String
 //        var yinli       :NSString = self.almanac?.yinli
         
         // TODO 日期装换
-        self.labelDay.text = yangli.components(separatedBy: "-").last
-        self.labelYearMonth.text  = yangli as String
-        self.labelYearMonthEN.text = yangli as String
-        self.labelWeek.text = yangli as String
-        self.labelWeekEN.text  = yangli as String
+        let timeInterval = timeInteger(timeStr: yangli, formateStr: .TFy_M_d)
+        let day:String = timeShow(time: timeInterval, formateStr: .TFd2, localId: nil)
+        let ymVCN:String = timeShow(time: timeInterval, formateStr: .TFy_M_d, localId: .zh_CN)
+        let ymVEN:String = timeShow(time: timeInterval, formateStr: .TFM4, localId: .en_US_POSIX)
+        let w_EN:String = timeShow(time: timeInterval, formateStr: .TFE4, localId: .en_US_POSIX)
+        let w_CN:String = timeShow(time: timeInterval, formateStr: .TFE4, localId: .zh_CN)
+
+        self.labelDay.text = day
+        self.labelYearMonth.text  = ymVCN
+        self.labelYearMonthEN.text = ymVEN
+        self.labelWeek.text = w_CN
+        self.labelWeekEN.text  = w_EN
         
         self.labelDay.sizeToFit()
         self.labelWeek.sizeToFit()
@@ -111,9 +117,16 @@ class GreGorianCalView: UIView {
     
 }
 
+@objc protocol AlmanacPlatViewDelegate {
+    @objc optional
+    func almanacPlatEvent(almanacModel:FMYWAlmanacModel?) -> Void
+}
+
+
 
 class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
 //gregorian calendar
+    var delegate:AlmanacPlatViewDelegate? = nil
     var tableView:UITableView?
     var platGreGorianCal:GreGorianCalView = {
         let greGorin = GreGorianCalView(frame:.zero)
@@ -122,15 +135,23 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
     
     var almanacSectionHader:UIView = {
         let almanacSection = UIView(frame:.zero)
+        almanacSection.backgroundColor = .white
         return almanacSection
     }()
+    
     var labelYinli:UILabel = {
         let label:UILabel = UILabel(frame: .zero)
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textAlignment = .center
         return label
     }()
-
+    var btnShiChen:UIButton = {
+        let btn:UIButton = UIButton(frame: .zero)
+        btn.setTitle("十二时辰 >>", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: myFont.font_min02.rawValue)
+        btn.setTitleColor(.purple, for: .normal)
+        return btn
+    }()
     
     private var _almanacModel:FMYWAlmanacModel?
     var almanacModel:FMYWAlmanacModel? {
@@ -149,6 +170,7 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
     func loadDataFrom(almanac:FMYWAlmanacModel) -> Void {
         self.platGreGorianCal.almanac = almanac
         self.labelYinli.text = almanac.yinli as? String
+        self.tableView?.reloadData()
     }
     
     
@@ -169,22 +191,29 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
         self.tableView = UITableView.init(frame: self.bounds, style: .plain)
         self.tableView?.dataSource  = self
         self.tableView?.delegate    = self
+        self.tableView?.separatorStyle = .none
 //        self.tableView?.bounces     = false
     
         
         self.platGreGorianCal.width    = (self.tableView?.width)!
         self.platGreGorianCal.height   = 120
-        self.platGreGorianCal.backgroundColor = .red
+//        self.platGreGorianCal.backgroundColor = .red
         
         
         
-        self.almanacSectionHader.width  = (self.tableView?.width)!
-        self.almanacSectionHader.height = 80
-        self.almanacSectionHader.backgroundColor    = .yellow
+        self.almanacSectionHader.width  = ((self.tableView?.width)! - 80.0)
+        self.almanacSectionHader.height = 60
+//        self.almanacSectionHader.backgroundColor    = .yellow
         self.almanacSectionHader.addSubview(self.labelYinli)
+        self.almanacSectionHader.addSubview(self.btnShiChen)
         self.labelYinli.frame   = CGRect(x: 0, y: 0, width: (self.tableView?.width)!, height: 30)
-        self.labelYinli.centerY = self.almanacSectionHader.height * 0.4
+        self.labelYinli.centerY = self.almanacSectionHader.height * 0.5
+//        self.labelYinli.backgroundColor = .purple
         self.addSubview(self.tableView!)
+        self.btnShiChen.size  = CGSize(width: 80, height: 40)
+        self.btnShiChen.right = (self.tableView?.width)! - mySpanH
+        self.btnShiChen.centerY = self.almanacSectionHader.height * 0.5
+        self.btnShiChen.addTarget(self, action: #selector(btnShiChenClick(_:)), for: .touchUpInside)
         
         self.tableView?.tableHeaderView = self.platGreGorianCal
         
@@ -192,19 +221,22 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
 
     }
     
+    func btnShiChenClick(_:UIButton) -> Void {
+            self.delegate?.almanacPlatEvent?(almanacModel: self.almanacModel)
+    }
     
     // TableView Delegate & DataSource
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return self.almanacSectionHader
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return self.almanacSectionHader.height
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 64
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.almanacModel != nil ?  4 : 0;
+        return self.almanacModel != nil ?  7 : 0;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = NSStringFromClass(self.classForCoder)
@@ -213,6 +245,8 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
             cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: cellIdentifier)
         }
         cell?.selectionStyle = .none
+        cell?.detailTextLabel?.numberOfLines = 0
+        cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 13)
         switch indexPath.row {
         case 0:
             let item = self.almanacModel?.wuxing
@@ -229,6 +263,18 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
         case 3:
             let item = self.almanacModel?.jishen
             cell?.textLabel?.text = "祭神";
+            cell?.detailTextLabel?.text = item as! String?
+        case 4:
+            let item = self.almanacModel?.xiongshen
+            cell?.textLabel?.text = "凶神";
+            cell?.detailTextLabel?.text = item as! String?
+        case 5:
+            let item = self.almanacModel?.yi
+            cell?.textLabel?.text = "宜";
+            cell?.detailTextLabel?.text = item as! String?
+        case 6:
+            let item = self.almanacModel?.ji
+            cell?.textLabel?.text = "忌";
             cell?.detailTextLabel?.text = item as! String?
         default: break
         }

@@ -41,6 +41,8 @@
 		8E2860BE1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860BD1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift */; };
 		8E2860C01E13E33A00EEC3BC /* FMYWAlmanacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860BF1E13E33A00EEC3BC /* FMYWAlmanacModel.swift */; };
 		8E2860C21E13E7F500EEC3BC /* FMYWAlmanacPlatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860C11E13E7F500EEC3BC /* FMYWAlmanacPlatView.swift */; };
+		8EAF8DD21E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF8DD11E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift */; };
+		8EAF8DD41E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF8DD31E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift */; };
 		8EFE72411E112DB000934A13 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFE72401E112DB000934A13 /* MJRefresh.framework */; };
 		8EFE72431E11425700934A13 /* FMYWJokeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFE72421E11425700934A13 /* FMYWJokeListViewController.swift */; };
 		8EFE72451E1149F300934A13 /* FMYWTodayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */; };
@@ -88,6 +90,8 @@
 		8E2860BD1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacViewController.swift; sourceTree = "<group>"; };
 		8E2860BF1E13E33A00EEC3BC /* FMYWAlmanacModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacModel.swift; sourceTree = "<group>"; };
 		8E2860C11E13E7F500EEC3BC /* FMYWAlmanacPlatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacPlatView.swift; sourceTree = "<group>"; };
+		8EAF8DD11E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacPartTimeTableViewController.swift; sourceTree = "<group>"; };
+		8EAF8DD31E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacPartTimeTableCell.swift; sourceTree = "<group>"; };
 		8EFE72401E112DB000934A13 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FMYWeath-fsyorfjrssqzfpbjpgergnpycwhe/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
 		8EFE72421E11425700934A13 /* FMYWJokeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWJokeListViewController.swift; sourceTree = "<group>"; };
 		8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTodayHistoryViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */,
 				01CE75331E0842A600B76D1C /* FMYWViewController.swift */,
 				8E2860BD1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift */,
+				8EAF8DD11E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift */,
 				8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */,
 				01CE75731E11711000B76D1C /* FMYWTodayHistoryDetailViewController.swift */,
 				01CE75601E0FD71300B76D1C /* FMYWJokeViewController.swift */,
@@ -193,6 +198,7 @@
 			children = (
 				01CE75441E09710700B76D1C /* FMYWBtnTab.swift */,
 				01CE756C1E1018CF00B76D1C /* FMYWJokeTableCell.swift */,
+				8EAF8DD31E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift */,
 				8E2860B21E128B6300EEC3BC /* FMYWImgShowView.swift */,
 				8E2860C11E13E7F500EEC3BC /* FMYWAlmanacPlatView.swift */,
 			);
@@ -412,10 +418,12 @@
 				01CE75391E0842A600B76D1C /* FMYWNavigationController.swift in Sources */,
 				01CE75361E0842A600B76D1C /* FMYWExponentViewController.swift in Sources */,
 				8EFE72431E11425700934A13 /* FMYWJokeListViewController.swift in Sources */,
+				8EAF8DD41E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift in Sources */,
 				01CE75351E0842A600B76D1C /* FMYWCityListViewController.swift in Sources */,
 				01CE753B1E0842A600B76D1C /* FMYWViewController.swift in Sources */,
 				8E2860BE1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift in Sources */,
 				8E2860C01E13E33A00EEC3BC /* FMYWAlmanacModel.swift in Sources */,
+				8EAF8DD21E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift in Sources */,
 				01CE75451E09710700B76D1C /* FMYWBtnTab.swift in Sources */,
 				8E2860B31E128B6300EEC3BC /* FMYWImgShowView.swift in Sources */,
 				01CE75721E11687400B76D1C /* FMYUtils.swift in Sources */,

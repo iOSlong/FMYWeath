@@ -21,6 +21,15 @@ let mySpanV         = mySpanLeft/2.0
 let mySpanH         = mySpanLeft/2.0
 
 
+public enum myFont:CGFloat {
+    case font_min01     = 11
+    case font_min02     = 14
+    case font_normal    = 17
+    case font_big01     = 20
+    case font_big02     = 25
+    case font_big03     = 30
+    case font_bigest    = 40
+}
 
 // MARK: CONSTANT FUNCTION(PARAM)
 /*

@@ -20,6 +20,7 @@ let apiKey_almanac      =   "0cf2f45852cc03991786d1f1e029df75"
  |      key : apiKey_almanac
  */
 let url_almanac         = "http://v.juhe.cn/laohuangli/d"
+let url_almanac_h       = "http://v.juhe.cn/laohuangli/h"
 
 //1.按更新时间查询笑话  http://japi.juhe.cn/joke/content/list.from?sort=desc&page=&pagesize=2&time=1418816972&key=fd7e7824f6882e7b146a4c5b0eda5e5c
 let url_jokeList        =   "http://japi.juhe.cn/joke/content/list.from"
