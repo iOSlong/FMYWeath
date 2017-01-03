@@ -45,8 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window?.rootViewController = tabBar
 
-
-        let comments = dateComponents()
+        let newsItems = fileGetNewsItems()
 
 
         return true

@@ -147,7 +147,6 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
     }()
     var btnShiChen:UIButton = {
         let btn:UIButton = UIButton(frame: .zero)
-        btn.setTitle("十二时辰 >>", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: myFont.font_min02.rawValue)
         btn.setTitleColor(.purple, for: .normal)
         return btn
@@ -170,6 +169,8 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
     func loadDataFrom(almanac:FMYWAlmanacModel) -> Void {
         self.platGreGorianCal.almanac = almanac
         self.labelYinli.text = almanac.yinli as? String
+        self.btnShiChen.setTitle("十二时辰 >>", for: .normal)
+
         self.tableView?.reloadData()
     }
     

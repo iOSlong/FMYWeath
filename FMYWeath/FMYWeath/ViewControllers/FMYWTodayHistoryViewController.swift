@@ -13,7 +13,7 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
 
     var tableView:UITableView? =  nil
     var dataSource:NSMutableArray? = []
-    var refreshHeader:MJRefreshHeader? = nil
+    var refreshHeader:MJRefreshNormalHeader? = nil
     var refreshFooter:MJRefreshBackNormalFooter? = nil
     
     var pageCurrent = 0
@@ -41,6 +41,7 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
             self.loadMoreData()
         })
     }
+    
     func configureTableView() {
         self.tableView =  UITableView(frame: self.view.frame, style: .plain)
         self.tableView?.height = self.view.height - myTabBarH - myStatusBarH
@@ -67,6 +68,14 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
         if (self.dataSource?.count)! > indexPath.row {
             let modelItem:FMYWTodayHistoryModel = self.dataSource![indexPath.row] as! FMYWTodayHistoryModel
             cell?.textLabel?.text = modelItem.title as? String;
+            let url:String? = modelItem.pic as? String
+            cell?.imageView?.sd_setImage(with: URL(string: url!), completed: { (image, errot, cacheType, urlStr) in
+                // 这个地方会出现崩溃的情况
+//                let indexP:IndexPath = indexPath as IndexPath
+//                if indexP.row < 5 {
+//                    self.tableView?.reloadRows(at: [indexP], with: UITableViewRowAnimation.automatic)
+//                }
+            })
         }
         
         return cell!
@@ -94,19 +103,24 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     func loadNewData() {
         
 //        TODO：处理时间 格式，
-        let date    = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFM_d)
+        let day   = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFd2)
+        let month   = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFM1)
         self.pageCurrent += 0
-        let params:NSDictionary  =    ["key"  :apiKey_today,
-                                       "date" :date]
+        let params:NSDictionary  =    ["key"    :apiKey_today,
+                                       "v"      :"1.0",
+                                       "day"    :day,
+                                       "month"  :month]
         
         self.netTodayHistoryList(params: params, loadMore: false)
     }
     
     func loadMoreData()  {
-        let date    = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFM_d)
-        let params:NSDictionary  =    ["key"  :apiKey_today,
-                                       "date" :date]
-        
+        let day   = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFd2)
+        let month   = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFM1)
+        let params:NSDictionary  =    ["key"    :apiKey_today,
+                                       "v"      :"1.0",
+                                       "day"    :day,
+                                       "month"  :month]
         self.netTodayHistoryList(params: params, loadMore: false)
     }
     
@@ -129,16 +143,24 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
             
             do {
                 let responseDict =  try JSONSerialization.jsonObject(with: object as! Data, options:.mutableLeaves)
-                let resultArray:NSArray = (responseDict as! NSDictionary).object(forKey: "result") as! NSArray
-                
-                if loadMore == false && resultArray.count > 0 {
-                    self.dataSource?.removeAllObjects()
-                }else if loadMore == true && resultArray.count == Int(pageSize) {
-                    
+                let resultArray:NSArray? = (responseDict as! NSDictionary).object(forKey: "result") as? NSArray
+
+                if resultArray == nil || resultArray?.count == 0 {
+                    print("empty data")
+                    return
                 }
+
+
+                self.dataSource?.removeAllObjects()
+                if loadMore == false && (resultArray?.count)! > 0 {
+                    self.dataSource?.removeAllObjects()
+                }else if loadMore == true && resultArray?.count == Int(pageSize) {
+
+                }
+
                 
-                for index in 0...resultArray.count-1 {
-                    let element = resultArray[index] as! Dictionary<String, Any>
+                for index in 0...(resultArray?.count)!-1 {
+                    let element = resultArray?[index] as! Dictionary<String, Any>
                     let jokeItem = FMYWTodayHistoryModel()
                     jokeItem.setValuesForKeys(element)
                     print(jokeItem)
@@ -153,6 +175,11 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
             }
             
         }, failure: { (dataTask, error) in
+            DispatchQueue.main.async {
+                self.refreshHeader?.endRefreshing()
+                self.refreshFooter?.endRefreshing()
+            }
+
             print(error)
             print(dataTask ?? "empty    ")
             

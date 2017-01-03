@@ -15,7 +15,7 @@ let myTabBarH       = CGFloat(49.0)
 let myNavBarH       = myStatusBarH + 44.0
 let myScreenH       = UIScreen.main.bounds.height
 let myScreenW       = UIScreen.main.bounds.width
-let mySpanLeft      = CGFloat(8)
+let mySpanLeft      = CGFloat(myScreenW * (20.0/621.10))
 let mySpanUp        = mySpanLeft
 let mySpanV         = mySpanLeft/2.0
 let mySpanH         = mySpanLeft/2.0
@@ -44,3 +44,39 @@ func RGBCOLOR (_ r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) ->(UIColor) {
 func RGBACOLOR(_ r:CGFloat,g:CGFloat,b:CGFloat) -> UIColor {
     return UIColor (red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
 }
+
+// MARK: DEVICE MODE
+let screenModeSize:CGSize? = UIScreen.main.currentMode?.size
+
+func iPhone4s() ->Bool {
+    if  (screenModeSize != nil){
+        return  __CGSizeEqualToSize(screenModeSize!, CGSize.init(width: 640, height: 960))
+    }
+    return false
+}
+func iPhone5s() ->Bool {
+    if  (screenModeSize != nil){
+        return  __CGSizeEqualToSize(screenModeSize!, CGSize.init(width: 640, height: 1136))
+    }
+    return false
+}
+func iPhone6() ->Bool {
+    if  (screenModeSize != nil){
+        return  __CGSizeEqualToSize(screenModeSize!, CGSize.init(width: 750, height: 1334))
+    }
+    return false
+}
+func iPhone6Plus() ->Bool {
+    if  (screenModeSize != nil){
+        return  __CGSizeEqualToSize(screenModeSize!, CGSize.init(width: 1242, height: 2208))
+    }
+    return false
+}
+
+
+
+
+
+
+
+

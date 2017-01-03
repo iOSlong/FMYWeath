@@ -140,12 +140,19 @@ public func dateComponents() ->NSDateComponents {
 }
 
 
-//  MARK: PATH ABOUT
-public func diskCachePath(nameSpace: String) -> String {
+//  MARK: PATH FILE ABOUT
+public func pathDiskCachePath(nameSpace: String) -> String {
     let paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
     return (paths.first?.appendingFormat("/\(nameSpace)"))!
     //    return (paths.first?.appending(nameSpace))!
 }
+
+public func fileGetNewsItems() -> NSArray {
+    let plistObj    = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "fmywplist", ofType: "plist")!)
+    let newsItems   = plistObj?.object(forKey: "newsItem")
+    return newsItems as! NSArray
+}
+
 
 class FMYUtils: NSObject {
 
