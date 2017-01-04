@@ -22,6 +22,8 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
 
         self.configureTableView()
 
+        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
+
     }
     
     

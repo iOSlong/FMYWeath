@@ -25,4 +25,14 @@ class FMYWTodayHistoryModel: NSObject {
     var des     :Any? = nil
     var lunar     :Any? = nil
 
+    var ID:String? {
+        get {
+            if self.e_id != nil {
+                return self.e_id as! String?
+            }else if  self._id != nil {
+                return self._id as! String?
+            }
+            return nil
+        }
+    }
 }

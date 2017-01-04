@@ -23,7 +23,6 @@ class FMYWNewsDetailViewController: FMYWViewController,WKNavigationDelegate {
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

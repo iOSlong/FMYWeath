@@ -17,6 +17,7 @@ class FMYWTabBarViewController: UITabBarController {
 
         self.configureImgvBar()
 
+        self.tabBar.isHidden = true
     }
 
     override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
@@ -63,6 +64,19 @@ class FMYWTabBarViewController: UITabBarController {
             (self.tabItems?.object(at: self.selectedIndex) as! FMYWBtnTab).isSelected = false
             self.selectedIndex = index!
             (self.tabItems?.object(at: index!) as! FMYWBtnTab).isSelected = true
+        }
+    }
+
+    public func setBarHidden(hidden:Bool) -> Void {
+        //self.tabBarController?.tabBar.isHidden = hidden
+        if hidden {
+            UIView.animate(withDuration: 0.25, animations: { 
+                self.imgvBar?.top    = self.view.height
+            });
+        }else{
+            UIView.animate(withDuration: 0.25, animations: {
+                self.imgvBar?.bottom    = self.view.height
+            });
         }
     }
 }
