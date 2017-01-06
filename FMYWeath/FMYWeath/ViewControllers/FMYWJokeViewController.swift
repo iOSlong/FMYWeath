@@ -11,7 +11,7 @@ import UIKit
 class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableViewDelegate {
 
     var tableView:UITableView? =  nil
-    var dataSource:NSMutableArray? = ["笑话一排排","笑图乐哈哈"]
+    var dataSource:NSMutableArray? = ["笑话一排排","笑图乐哈哈","今日头条"]
     
     
     override func viewDidLoad() {
@@ -53,9 +53,14 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let jokeDetailVC:FMYWJokeListViewController = FMYWJokeListViewController()
-        jokeDetailVC.jokeSection = self.dataSource?[indexPath.row] as! String?
-        self.navigationController?.pushViewController(jokeDetailVC, animated: true)
+        if indexPath.row < 2 {
+            let jokeDetailVC:FMYWJokeListViewController = FMYWJokeListViewController()
+            jokeDetailVC.jokeSection = self.dataSource?[indexPath.row] as! String?
+            self.navigationController?.pushViewController(jokeDetailVC, animated: true)
+        }else if indexPath.row == 2 {
+            let itemVC:FMYWTodayNewsViewController = FMYWTodayNewsViewController()
+            self.navigationController?.pushViewController(itemVC, animated: true)
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -16,42 +16,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let almanacVC       = FMYWAlmanacViewController()
+        let todayHomeVC       = FMYWTodayHomeTableViewController()
         let jokeVC          = FMYWJokeViewController()
         let todayHistoryVC  = FMYWTodayHistoryViewController()
         let favorVC         = FMYWFavorViewController()
         let cityListVC      = FMYWCityListViewController()
 
-        let navAlmanac      = FMYWNavigationController(rootViewController:almanacVC)
+        let navTodayHome      = FMYWNavigationController(rootViewController:todayHomeVC)
         let navJokes        = FMYWNavigationController(rootViewController:jokeVC)
         let navtodayHistory = FMYWNavigationController(rootViewController:todayHistoryVC)
         let navFavor        = FMYWNavigationController(rootViewController:favorVC)
         let navCityList     = FMYWNavigationController(rootViewController:cityListVC)
 
-        almanacVC.title         = "黄道在今"
+        todayHomeVC.title       = "今日关注"  //   = "黄道在今"
         jokeVC.title            = "笑话大全"
         todayHistoryVC.title    = "历史今日"
         favorVC.title           = "收藏管理"
         cityListVC.title        = "更多城市"
 
-        navAlmanac.title        = "黄道在今"
+        navTodayHome.title        = "今日关注"
         navJokes.title          = "笑话大全"
         navtodayHistory.title   = "历史今日"
         navFavor.title          = "收藏管理"
         navCityList.title       = "更多城市"
 
         let tabBar  =   FMYWTabBarViewController()
-        tabBar.setViewControllers([navAlmanac,navJokes,navtodayHistory,navFavor,navCityList], animated: true)
+        tabBar.setViewControllers([navTodayHome,navJokes,navtodayHistory,navFavor,navCityList], animated: true)
 
         self.window?.rootViewController = tabBar
 
+        let newsItems = fileGetNewsItems()
 
-        let comments = dateComponents()
-
+        self.colorHexFunc()
 
         return true
     }
 
+    func colorHexFunc() -> Bool {
+        let scannner = Scanner.init(string: "#112233")
+        let hexNum:UnsafeMutablePointer<UInt32>? = UnsafeMutablePointer.init(bitPattern: 0)
+        let boolV = scannner.scanHexInt32(hexNum)
+        print(boolV,hexNum ?? "")
+        return boolV
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

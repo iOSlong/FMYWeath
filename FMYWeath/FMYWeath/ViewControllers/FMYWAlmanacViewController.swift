@@ -13,6 +13,10 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
     let timeDaySpan = 24 * 60 * 60
     var showDayIndex = 1
     var showDayLocation = 0
+    var barItemR:FMYWBarButtomItem? = nil
+    var currentMode:FMYWAlmanacModel? = nil
+    var todayMode:FMYWAlmanacModel? = nil
+
     private var scroll:UIScrollView?
     var scrollView:UIScrollView {
         get {
@@ -29,14 +33,32 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
 
     var almanacPlarArr:NSMutableArray = NSMutableArray()
     var almanacModelArr:NSMutableArray = NSMutableArray()
-    
-    
+
+    func btnTodayClick(_: UIButton) -> Void {
+        print("today:",self.currentMode?.showTime ?? "")
+        let today = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFy_M_d)
+        if today == self.currentMode?.showTime {
+            return
+        }
+        let todayIndex = self.almanacModelArr.index(of: self.todayMode!)
+        self.showDayLocation = todayIndex - 1
+        self.reloadScrollItems(animated: true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isTranslucent = false
         self.automaticallyAdjustsScrollViewInsets = false
-        
+
+        self.barItemR = FMYWBarButtomItem.barButtomItem(title: "today", target: self, action: #selector(btnTodayClick(_: )), forEvent: .touchUpInside)
+
+
+        let leftSpaceItem:UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        leftSpaceItem.width = iPhone6Plus() ? -18 : -10
+        self.navigationItem.rightBarButtonItems = [leftSpaceItem,self.barItemR!]
+
+
         self.configureUIItems()
         
         let dateNow         = Date()
@@ -89,20 +111,24 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
             self.showDayLocation = 0
         }
         
-        self.reloadScrollItems()
+        self.reloadScrollItems(animated: false)
     }
-    
+
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageIndex   = Int(scrollView.contentOffset.x/self.scrollView.width)
         print("currentPageIndex = :",pageIndex)
         
         let currentPlat:FMYWAlmanacPlatView = self.almanacPlarArr[pageIndex] as! FMYWAlmanacPlatView;
-        let currentAlmanac:FMYWAlmanacModel = currentPlat.almanacModel!
-        let currentShowIndex = self.almanacModelArr.index(of: currentAlmanac)
-        print(currentShowIndex, currentAlmanac.baiji ?? "")
+        let currentAlmanac:FMYWAlmanacModel? = currentPlat.almanacModel
+        self.currentMode = currentAlmanac
+        if currentAlmanac == nil {
+            return
+        }
+        let currentShowIndex = self.almanacModelArr.index(of: currentAlmanac!)
+        print(currentShowIndex, currentAlmanac?.baiji ?? "")
         
-        let timeInterval = currentAlmanac.timerInterval
+        let timeInterval = currentAlmanac?.timerInterval
         
         let dateNow      = Date(timeIntervalSince1970: timeInterval!)
         let dayToday     = dateFrom(span: 0, date: dateNow);         print(dayToday)
@@ -115,7 +141,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                 self.netGetAlmanac(date: dayBefore, add: false)
             }else{
                 showDayLocation = currentShowIndex - 1
-                self.reloadScrollItems()
+                self.reloadScrollItems(animated: false)
             }
         }else if pageIndex == 2 {
             //TODO 判断是否有后一个元素
@@ -123,7 +149,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                 self.netGetAlmanac(date: dayAfter, add: true)
             }else{
                 showDayLocation = currentShowIndex - 1
-                self.reloadScrollItems()
+                self.reloadScrollItems(animated: false)
             }
         }else{
 
@@ -131,7 +157,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
     }
     
     
-    func reloadScrollItems() -> Void {
+    func reloadScrollItems(animated:Bool) -> Void {
         DispatchQueue.main.async {
             
             let lengthShow = self.almanacModelArr.count >= 3 ? 3 : self.almanacModelArr.count
@@ -143,7 +169,9 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                 let almanacModelShow = almanacArr[index] as? FMYWAlmanacModel;
                 almanacPlat.almanacModel = almanacModelShow
             }
-            self.scrollView.contentOffset = CGPoint(x: CGFloat(self.showDayIndex) * self.scrollView.width, y: 0)
+//            self.scrollView.contentOffset =
+
+            self.scrollView.setContentOffset(CGPoint(x: CGFloat(self.showDayIndex) * self.scrollView.width, y: 0), animated: animated)
         }
     }
     
@@ -159,7 +187,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
     func netGetAlmanac(date:String?, add:Bool) {
         let param = ["key":apiKey_almanac, "date":date]
         // TODO： 处理队列访问机制，
-        _ = FMYHTTPSessionManager(url: URL(string: url_almanac), configuration: nil).net("GET", parameters: param as NSDictionary?, success: { (dataTask, object) in
+        _ = FMYHTTPSessionManager(url: URL(string: url_almanac), configuration: nil).net("GET", parameters: param as NSDictionary?, success: { [unowned self] (dataTask, object) in
             
             do {
                 let responseDict =  try JSONSerialization.jsonObject(with: object as! Data, options:.mutableLeaves)
@@ -170,7 +198,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                 
                 let almanac = FMYWAlmanacModel()
                 almanac.setValuesForKeys(resultItem as! [String : Any])
-                
+
                 if self.almanacModelArr.count >= 3 {
                     self.loadAlmanacPlatFromData(almanacModel: almanac, add: add)
                 }else {
@@ -186,7 +214,8 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                                 return .orderedAscending
                             }
                         })
-                        self.reloadScrollItems()
+                        self.todayMode = self.almanacModelArr[1] as? FMYWAlmanacModel;
+                        self.reloadScrollItems(animated: true)
                     }
                 }
                 

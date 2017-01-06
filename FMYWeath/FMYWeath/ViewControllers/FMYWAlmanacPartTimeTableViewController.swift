@@ -12,7 +12,30 @@ class FMYWAlmanacPartTimeTableViewController: UITableViewController {
 
     var almanacModel:FMYWAlmanacModel?
     var partTimeModeArr:NSMutableArray = NSMutableArray()
-    
+
+    var dateInfo:UIButton? = nil
+    private var _sectionHader:UIView? = nil
+    var sectionHeader:UIView? {
+        get {
+            if _sectionHader == nil {
+                _sectionHader = UIView(frame: CGRect(x: 0, y: 0, width: mySpanH, height: 50))
+                _sectionHader?.backgroundColor = .white
+                self.dateInfo = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 25))
+                self.dateInfo?.layer.cornerRadius = (self.dateInfo?.height)! * 0.5
+                self.dateInfo?.layer.borderColor    = UIColor.blue.cgColor
+                self.dateInfo?.layer.borderWidth    = 1
+                self.dateInfo?.left = mySpanLeft * 2
+                self.dateInfo?.centerY = (_sectionHader?.height)! * 0.5
+                self.dateInfo?.setTitleColor(.blue, for: .normal)
+                self.dateInfo?.setTitle((self.almanacModel?.showTime)!, for: .normal)
+                self.dateInfo?.titleLabel?.font = UIFont.boldSystemFont(ofSize: myFont.font_min02.rawValue)
+                _sectionHader?.addSubview(self.dateInfo!)
+            }
+            return _sectionHader
+        }
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +52,12 @@ class FMYWAlmanacPartTimeTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
+    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return self.sectionHeader
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return (self.sectionHeader?.height)!
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
