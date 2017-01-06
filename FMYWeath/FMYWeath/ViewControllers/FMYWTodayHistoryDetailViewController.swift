@@ -133,7 +133,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
 
     func refreshDataSource() {
         let params:NSDictionary  =    ["key"  :apiKey_today,
-                                       "e_id" :self.todayHistoryModel?.e_id ?? ""]
+                                       "e_id" :self.todayHistoryModel?.ID ?? ""]
         self.netTodayHistoryList(params: params, loadMore: false)
     }
 

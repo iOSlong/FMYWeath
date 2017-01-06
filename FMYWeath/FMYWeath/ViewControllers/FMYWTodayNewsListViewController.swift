@@ -60,7 +60,6 @@ class FMYWTodayNewsListViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.arrNewsItems.count
     }
 
@@ -71,11 +70,12 @@ class FMYWTodayNewsListViewController: UITableViewController {
         if cell == nil {
             cell = FMYWNewsTableViewCell.init(style: .subtitle, reuseIdentifier: "newsItemCellreuseID")
         }
+        if indexPath.row < self.arrNewsItems.count {
+            let newsItem = self.arrNewsItems[indexPath.row]
 
-        let newsItem = self.arrNewsItems[indexPath.row]
+            cell?.newsItem = newsItem as? FMYWNewsItemModel
 
-        cell?.newsItem = newsItem as? FMYWNewsItemModel
-
+        }
         cell?.accessoryType = .disclosureIndicator
 
         return cell!

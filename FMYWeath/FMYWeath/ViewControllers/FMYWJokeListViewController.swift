@@ -21,6 +21,16 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
     
     var pageCurrent = 0
     
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -41,11 +41,19 @@ class FMYWTodayNewsViewController: FMYWViewController ,FMYWNewsItemViewControlle
     var currentVC:FMYWTodayNewsListViewController? = nil
 
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:false)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "今日头条"
 
         self.setSegmentView()
 
@@ -61,7 +69,7 @@ class FMYWTodayNewsViewController: FMYWViewController ,FMYWNewsItemViewControlle
     func displayPageViewController() {
         let pageVC:FMYWTodayNewsPageViewController = FMYWTodayNewsPageViewController()
         pageVC.view.top     = self.segmentView.height
-        pageVC.view.height  = self.view.height - self.segmentView.height - myTabBarH
+        pageVC.view.height  = self.view.height - self.segmentView.height
         self.pageVC = pageVC
         self.pageVC?.segmentView = self.segmentView
         self.addChildViewController(pageVC)
@@ -114,7 +122,7 @@ class FMYWTodayNewsViewController: FMYWViewController ,FMYWNewsItemViewControlle
 
             let itemVC:FMYWTodayNewsListViewController = FMYWTodayNewsListViewController()
             itemVC.newsType = self.arrNewsType[index] as? FMYWNewsType
-            itemVC.view.frame = CGRect(x: 0, y:64.0 + self.segmentView.height + self.segmentView.top + 20, width:self.view.width, height: self.view.height * 0.4)
+            itemVC.view.frame = CGRect(x: 0, y:64.0 + self.segmentView.height + self.segmentView.top + 20, width:self.view.width, height: self.view.height)
 
             self.arrVCItems.add(itemVC)
         }

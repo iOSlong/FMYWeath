@@ -32,15 +32,14 @@ let url_jokeImgList     =   "http://japi.juhe.cn/joke/img/text.from?"
 let url_randjoke        = "http://v.juhe.cn/joke/randJoke.php"
 
 
-
 // 历史上的今天
 let url_todayOnHistory  = "http://api.juheapi.com/japi/toh"
 // 历史今天详情
-let url_todayOnHistoryDetail = "http://api.juheapi.com/japi/toh"
-
+let url_todayOnHistoryDetail = "http://v.juhe.cn/todayOnhistory/queryDetail.php"
 
 //今日头条
 let url_newsToutiao     = "http://v.juhe.cn/toutiao/index"
+
 
 
 let pageSize    = "15"
