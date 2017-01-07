@@ -58,6 +58,7 @@
 		8E2860BE1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860BD1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift */; };
 		8E2860C01E13E33A00EEC3BC /* FMYWAlmanacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860BF1E13E33A00EEC3BC /* FMYWAlmanacModel.swift */; };
 		8E2860C21E13E7F500EEC3BC /* FMYWAlmanacPlatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860C11E13E7F500EEC3BC /* FMYWAlmanacPlatView.swift */; };
+		8E49046C1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49046B1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift */; };
 		8EAF8DD21E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF8DD11E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift */; };
 		8EAF8DD41E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF8DD31E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift */; };
 		8EFE72411E112DB000934A13 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFE72401E112DB000934A13 /* MJRefresh.framework */; };
@@ -128,6 +129,7 @@
 		8E2860BD1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacViewController.swift; sourceTree = "<group>"; };
 		8E2860BF1E13E33A00EEC3BC /* FMYWAlmanacModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacModel.swift; sourceTree = "<group>"; };
 		8E2860C11E13E7F500EEC3BC /* FMYWAlmanacPlatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacPlatView.swift; sourceTree = "<group>"; };
+		8E49046B1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTodayHomeTableViewController.swift; sourceTree = "<group>"; };
 		8EAF8DD11E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacPartTimeTableViewController.swift; sourceTree = "<group>"; };
 		8EAF8DD31E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacPartTimeTableCell.swift; sourceTree = "<group>"; };
 		8EFE72401E112DB000934A13 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FMYWeath-fsyorfjrssqzfpbjpgergnpycwhe/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */,
 				01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */,
 				01CE75331E0842A600B76D1C /* FMYWViewController.swift */,
+				8E49046B1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift */,
 				8E2860BD1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift */,
 				8EAF8DD11E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift */,
 				8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */,
@@ -484,6 +487,7 @@
 				01CE75471E09758700B76D1C /* constantUI.swift in Sources */,
 				01CE756D1E1018CF00B76D1C /* FMYWJokeTableCell.swift in Sources */,
 				01CE75661E0FDD3C00B76D1C /* FMYHTTPSessionManager.swift in Sources */,
+				8E49046C1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift in Sources */,
 				01CE75421E096F9B00B76D1C /* UIView+Positioning.m in Sources */,
 				8EFE72471E114EC700934A13 /* FMYWTodayHistoryModel.swift in Sources */,
 				01CE75611E0FD71300B76D1C /* FMYWJokeViewController.swift in Sources */,
