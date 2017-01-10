@@ -63,6 +63,7 @@ public enum TimeFormat:String {
      */
     #endif
 
+    case TFm_d          = "M/d"
     case TFM_d          = "MM/dd"
     case TFd_M          = "dd/MM"
     case TFd_M_h_m      = "dd/MM hh:mm"

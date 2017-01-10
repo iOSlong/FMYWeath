@@ -47,7 +47,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
 
     func configureUIItems() {
         self.tableView =  UITableView(frame: self.view.frame, style: .plain)
-        self.tableView?.height = self.view.height - myTabBarH - myStatusBarH
+        self.tableView?.height = self.view.height
         self.view.addSubview(self.tableView!)
         self.tableView?.dataSource   = self
         self.tableView?.delegate     = self

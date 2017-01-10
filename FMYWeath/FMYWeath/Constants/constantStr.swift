@@ -33,7 +33,7 @@ let url_randjoke        = "http://v.juhe.cn/joke/randJoke.php"
 
 
 // 历史上的今天
-let url_todayOnHistory  = "http://api.juheapi.com/japi/toh"
+let url_todayOnHistory  = "http://v.juhe.cn/todayOnhistory/queryEvent.php"
 // 历史今天详情
 let url_todayOnHistoryDetail = "http://v.juhe.cn/todayOnhistory/queryDetail.php"
 

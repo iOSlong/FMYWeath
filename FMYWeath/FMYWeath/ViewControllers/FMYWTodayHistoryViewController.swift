@@ -18,6 +18,11 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     
     var pageCurrent = 0
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:true)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +49,7 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     
     func configureTableView() {
         self.tableView =  UITableView(frame: self.view.frame, style: .plain)
-        self.tableView?.height = self.view.height - myTabBarH - myStatusBarH
+        self.tableView?.height = self.view.height
         self.view.addSubview(self.tableView!)
         self.tableView?.dataSource   = self
         self.tableView?.delegate     = self
@@ -69,13 +74,15 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
             let modelItem:FMYWTodayHistoryModel = self.dataSource![indexPath.row] as! FMYWTodayHistoryModel
             cell?.textLabel?.text = modelItem.title as? String;
             let url:String? = modelItem.pic as? String
-            cell?.imageView?.sd_setImage(with: URL(string: url!), completed: { (image, errot, cacheType, urlStr) in
-                // 这个地方会出现崩溃的情况
-//                let indexP:IndexPath = indexPath as IndexPath
-//                if indexP.row < 5 {
-//                    self.tableView?.reloadRows(at: [indexP], with: UITableViewRowAnimation.automatic)
-//                }
-            })
+            if url != nil {
+                cell?.imageView?.sd_setImage(with: URL(string: url!), completed: { (image, errot, cacheType, urlStr) in
+                    // 这个地方会出现崩溃的情况
+                    //                let indexP:IndexPath = indexPath as IndexPath
+                    //                if indexP.row < 5 {
+                    //                    self.tableView?.reloadRows(at: [indexP], with: UITableViewRowAnimation.automatic)
+                    //                }
+                })
+            }
         }
         
         return cell!
@@ -102,25 +109,18 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     
     func loadNewData() {
         
-//        TODO：处理时间 格式，
-        let day   = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFd2)
-        let month   = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFM1)
+        let date    = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFm_d);
         self.pageCurrent += 0
         let params:NSDictionary  =    ["key"    :apiKey_today,
-                                       "v"      :"1.0",
-                                       "day"    :day,
-                                       "month"  :month]
-        
+                                       "date"      :date]
         self.netTodayHistoryList(params: params, loadMore: false)
     }
     
     func loadMoreData()  {
-        let day   = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFd2)
-        let month   = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFM1)
+        let date    = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFm_d);
+        self.pageCurrent += 0
         let params:NSDictionary  =    ["key"    :apiKey_today,
-                                       "v"      :"1.0",
-                                       "day"    :day,
-                                       "month"  :month]
+                                       "date"      :date]
         self.netTodayHistoryList(params: params, loadMore: false)
     }
     
