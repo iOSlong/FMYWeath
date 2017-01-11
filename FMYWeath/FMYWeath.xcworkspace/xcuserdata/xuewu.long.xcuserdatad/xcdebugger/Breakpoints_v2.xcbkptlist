@@ -740,11 +740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWJokePicTableCell.swift"
-            timestampString = "505827135.90769"
+            timestampString = "505829887.182289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "FMYWJokePicTableCell"
             landmarkType = "3">
          </BreakpointContent>
@@ -752,15 +752,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWJokePicTableCell.swift"
-            timestampString = "505829359.22489"
+            timestampString = "505829887.182289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "refreshUIItems()"
             landmarkType = "7">
          </BreakpointContent>

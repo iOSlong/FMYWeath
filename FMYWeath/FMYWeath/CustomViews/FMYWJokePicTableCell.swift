@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 public enum JokePicType:String {
     case JImgNone = "imageNone"
@@ -36,10 +37,11 @@ class FMYWJokePicModel: NSObject {
 
 
 
-class FMYWJokePicTableCell: FMYTableViewCell {
+class FMYWJokePicTableCell: FMYTableViewCell,WKNavigationDelegate {
     var labelContent:UILabel? = nil
     var labelTime:UILabel? = nil
     var imgvContent:UIImageView? = nil
+    var wkwebView:WKWebView? = nil
     
     private var temjokePicModel:FMYWJokePicModel? = nil
     var jokePicModel:FMYWJokePicModel? {
@@ -78,8 +80,13 @@ class FMYWJokePicTableCell: FMYTableViewCell {
         self.imgvContent?.contentMode = .scaleAspectFit
         self.imgvContent?.top = (self.labelContent?.bottom)! + mySpanH
         
+        
+        self.wkwebView = WKWebView.init(frame: (self.imgvContent?.frame)!)
+        self.wkwebView?.backgroundColor = .clear
+        
         self.contentView.addSubview(self.labelContent!)
         self.contentView.addSubview(self.imgvContent!)
+        self.contentView.addSubview(self.wkwebView!)
     }
     
     
@@ -105,6 +112,10 @@ class FMYWJokePicTableCell: FMYTableViewCell {
                 })
                 
                 self.imgvContent?.isHidden = false
+                
+                self.wkwebView?.load(URLRequest.init(url: URL(string: imgUrl)!));
+                self.wkwebView?.navigationDelegate = self
+                
                 
             }else{
                 self.imgvContent?.isHidden = true
