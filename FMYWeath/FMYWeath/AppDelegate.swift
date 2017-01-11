@@ -16,13 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let todayHomeVC       = FMYWTodayHomeTableViewController()
+        let todayHomeVC     = FMYWTodayHomeTableViewController(style: .grouped)
         let jokeVC          = FMYWJokeViewController()
         let todayHistoryVC  = FMYWTodayHistoryViewController()
         let favorVC         = FMYWFavorViewController()
         let cityListVC      = FMYWCityListViewController()
 
-        let navTodayHome      = FMYWNavigationController(rootViewController:todayHomeVC)
+        let navTodayHome    = FMYWNavigationController(rootViewController:todayHomeVC)
         let navJokes        = FMYWNavigationController(rootViewController:jokeVC)
         let navtodayHistory = FMYWNavigationController(rootViewController:todayHistoryVC)
         let navFavor        = FMYWNavigationController(rootViewController:favorVC)
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navCityList.title       = "更多城市"
 
         let tabBar  =   FMYWTabBarViewController()
-        tabBar.setViewControllers([navTodayHome,navJokes,navtodayHistory,navFavor,navCityList], animated: true)
+        tabBar.setViewControllers([navTodayHome,navJokes,navFavor,navCityList], animated: true)
 
         self.window?.rootViewController = tabBar
 

@@ -54,6 +54,8 @@ class FMYWImgShowView: UIView , UIScrollViewDelegate{
             self.picURLArr.addObjects(from: picUrl as! [Any])
             self.picURLArr.add(picUrl.firstObject ?? ["url":""])
             self.picURLArr.insert(picUrl.lastObject ?? ["url":""], at: 0)
+        }else{
+            self.picURLArr.addObjects(from: picUrl as! [Any])
         }
 
         if self.picURLArr.count > 0 {
@@ -63,6 +65,10 @@ class FMYWImgShowView: UIView , UIScrollViewDelegate{
                 let imgv    = UIImageView(frame: self.scrollView.bounds)
                 imgv.left   = CGFloat(index) * self.scrollView.width
                 imgv.contentMode = .scaleAspectFit
+
+//                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+//                label.text = String(index)
+//                imgv.addSubview(label)
 
                 let imgUrl  = (self.picURLArr[index] as! NSDictionary).object(forKey: "url") as! String?
 
@@ -81,14 +87,14 @@ class FMYWImgShowView: UIView , UIScrollViewDelegate{
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageIndex   = Int(scrollView.contentOffset.x/self.scrollView.width)
+        let pageIndex   = Int(scrollView.contentOffset.x)/Int(self.scrollView.width)
         let scrollW     = self.scrollView.width
         let pageCount   = self.picURLArr.count
         var shouldPage  = pageIndex
         if pageCount > 1 {
             if pageIndex == 0 {
                 shouldPage = pageCount - 2
-                self.scrollView.setContentOffset(CGPoint(x: CGFloat(pageCount - 2) * scrollW, y: 0), animated: false)
+//                self.scrollView.setContentOffset(CGPoint(x: CGFloat(pageCount - 2) * scrollW, y: 0), animated: false)
             }else if pageIndex == pageCount - 1 {
                 shouldPage = 1
             }

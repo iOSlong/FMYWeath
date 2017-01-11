@@ -11,9 +11,9 @@ import UIKit
 class FMYWTodayHomeTableViewController: UITableViewController {
     var sourceArr:NSMutableArray = {
        let muArr = NSMutableArray()
-        muArr.add(["VC":"FMYWAlmanacViewController"])
-        muArr.add(["VC":"FMYWTodayNewsViewController"])
-        muArr.add(["VC":"FMYWTodayHistoryViewController"])
+        muArr.add(["VC":"FMYWAlmanacViewController","name":"黄道在今"])
+        muArr.add(["VC":"FMYWTodayNewsViewController","name":"今日头条"])
+        muArr.add(["VC":"FMYWTodayHistoryViewController","name":"历史今日"])
         return muArr
     }()
     var platGreGorianCal:GreGorianCalView = {
@@ -28,11 +28,25 @@ class FMYWTodayHomeTableViewController: UITableViewController {
         let almanac = FMYWAlmanacModel()
         almanac.yangli = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFy_M_d)
         self.platGreGorianCal.almanac = almanac
+        (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:false)
     }
+
+    override init(style: UITableViewStyle) {
+        super.init(style: .grouped)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.tableHeaderView = self.platGreGorianCal
+
+        // 将返回按钮的标题设置为空
+        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
     }
 
 
@@ -46,58 +60,39 @@ class FMYWTodayHomeTableViewController: UITableViewController {
         if cell == nil {
             cell = UITableViewCell.init(style: .default, reuseIdentifier: reuseIdentifer)
         }
+
+        cell?.accessoryType = .disclosureIndicator
+
         let item:NSDictionary = self.sourceArr[indexPath.row] as! NSDictionary
-        let desVCName = item.object(forKey: "VC")
-        
-        // TODO 字符串转类
-        let desClass = NSClassFromString(desVCName as! String)
-        let desVC = desClass 
+        let desName = item.object(forKey: "name")
+
+        cell?.textLabel?.text = desName as! String?
+
         return cell!
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let item:NSDictionary = self.sourceArr[indexPath.row] as! NSDictionary
+//        let desVCName:String = item.object(forKey: "VC") as! String
+        // TODO 字符串转类
+//        let desClass:AnyClass = NSClassFromString(desVCName)!
+//        let desVC:UIViewController  = desClass.alloc() as! UIViewController
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        var desVC:UIViewController? = nil
+        if indexPath.row == 0 {
+            desVC = FMYWAlmanacViewController()
+        }else if indexPath.row == 1 {
+            desVC = FMYWTodayNewsViewController()
+        }else if indexPath.row == 2 {
+            desVC = FMYWTodayHistoryViewController()
+        }
+        self.navigationController?.pushViewController(desVC!, animated: true)
 
     }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 72
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

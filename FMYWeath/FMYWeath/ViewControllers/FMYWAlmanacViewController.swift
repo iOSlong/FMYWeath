@@ -21,7 +21,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
     var scrollView:UIScrollView {
         get {
             if scroll == nil {
-                scroll = UIScrollView(frame: CGRect(x: 0, y: 0, width: myScreenW, height: myScreenH - myTabBarH - myNavBarH))
+                scroll = UIScrollView(frame: CGRect(x: 0, y: 0, width: myScreenW, height: myScreenH - myNavBarH))
                 scroll?.isPagingEnabled = true
                 scroll?.delegate = self
                 scroll?.showsHorizontalScrollIndicator = false
@@ -44,6 +44,12 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
         self.showDayLocation = todayIndex - 1
         self.reloadScrollItems(animated: true)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:true)
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
