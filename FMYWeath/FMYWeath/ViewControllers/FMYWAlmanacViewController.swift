@@ -57,7 +57,9 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
         self.navigationController?.navigationBar.isTranslucent = false
         self.automaticallyAdjustsScrollViewInsets = false
 
-        self.barItemR = FMYWBarButtomItem.barButtomItem(title: "today", target: self, action: #selector(btnTodayClick(_: )), forEvent: .touchUpInside)
+        self.barItemR = FMYWBarButtomItem.barButtomItem(title: "今天", target: self, action: #selector(btnTodayClick(_: )), forEvent: .touchUpInside)
+
+        self.title = "黄道在今"
 
 
         let leftSpaceItem:UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
@@ -221,7 +223,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                             }
                         })
                         self.todayMode = self.almanacModelArr[1] as? FMYWAlmanacModel;
-                        self.reloadScrollItems(animated: true)
+                        self.reloadScrollItems(animated: false)
                     }
                 }
                 

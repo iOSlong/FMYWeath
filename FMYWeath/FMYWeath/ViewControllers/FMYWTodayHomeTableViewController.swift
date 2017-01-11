@@ -44,7 +44,10 @@ class FMYWTodayHomeTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.tableHeaderView = self.platGreGorianCal
-
+        self.tableView.backgroundColor = .clear
+        self.tableView.separatorColor = colorMainBack
+        
+        
         // 将返回按钮的标题设置为空
         self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
     }
@@ -60,8 +63,10 @@ class FMYWTodayHomeTableViewController: UITableViewController {
         if cell == nil {
             cell = UITableViewCell.init(style: .default, reuseIdentifier: reuseIdentifer)
         }
-
+        cell?.backgroundColor = .clear
+        cell?.textLabel?.textColor = .white
         cell?.accessoryType = .disclosureIndicator
+        cell?.selectionStyle = .blue
 
         let item:NSDictionary = self.sourceArr[indexPath.row] as! NSDictionary
         let desName = item.object(forKey: "name")
@@ -78,7 +83,9 @@ class FMYWTodayHomeTableViewController: UITableViewController {
         // TODO 字符串转类
 //        let desClass:AnyClass = NSClassFromString(desVCName)!
 //        let desVC:UIViewController  = desClass.alloc() as! UIViewController
-
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         var desVC:UIViewController? = nil
         if indexPath.row == 0 {
             desVC = FMYWAlmanacViewController()

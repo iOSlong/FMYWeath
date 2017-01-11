@@ -35,23 +35,27 @@ class FMYWAlmanacPartTimeTableCell: UITableViewCell {
     var labelTime:UILabel = {
         let label:UILabel = UILabel(frame:CGRect(x: 0, y: 0, width: title_w, height: 20))
         label.textAlignment = .right
+        label.textColor = .white
         return label
     }()
     var labelDes:UILabel = {
         let label:UILabel = UILabel(frame:CGRect(x: 0, y: 0, width: detail_w, height: 20))
         label.numberOfLines = 0
+        label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: myFont.font_min02.rawValue)
         return label
     }()
     var labelYi:UILabel = {
         let label:UILabel = UILabel(frame:CGRect(x: 0, y: 0, width: detail_w, height: 20))
         label.numberOfLines = 0
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: myFont.font_min02.rawValue)
         return label
     }()
     var labelJi:UILabel = {
         let label:UILabel = UILabel(frame:CGRect(x: 0, y: 0, width: detail_w, height: 20))
         label.numberOfLines = 0
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: myFont.font_min02.rawValue)
         return label
     }()
@@ -71,7 +75,8 @@ class FMYWAlmanacPartTimeTableCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        self.backgroundColor = .clear
+
         self.configureUIItems()
     }
     

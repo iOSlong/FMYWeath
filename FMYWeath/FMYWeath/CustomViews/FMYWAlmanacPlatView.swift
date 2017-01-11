@@ -12,6 +12,7 @@ class GreGorianCalView: UIView {
     var labelYearMonth:UILabel = {
        let label = UILabel(frame: .zero)
         label.textAlignment = .center
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: myFont.font_big01.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
@@ -20,6 +21,7 @@ class GreGorianCalView: UIView {
     var labelYearMonthEN:UILabel =  {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: myFont.font_big01.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
@@ -28,6 +30,7 @@ class GreGorianCalView: UIView {
     var labelWeek:UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: myFont.font_big01.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
@@ -36,6 +39,7 @@ class GreGorianCalView: UIView {
     var labelWeekEN:UILabel =  {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: myFont.font_big01.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
@@ -44,6 +48,7 @@ class GreGorianCalView: UIView {
     var labelDay:UILabel =  {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
+        label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: myFont.font_bigest.rawValue)
         label.sizeThatFits(CGSize(width: myScreenW*0.5, height: 20))
         return label
@@ -135,13 +140,14 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
     
     var almanacSectionHader:UIView = {
         let almanacSection = UIView(frame:.zero)
-        almanacSection.backgroundColor = .white
+//        almanacSection.backgroundColor = .white
         return almanacSection
     }()
     
     var labelYinli:UILabel = {
         let label:UILabel = UILabel(frame: .zero)
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
@@ -193,6 +199,7 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
         self.tableView?.dataSource  = self
         self.tableView?.delegate    = self
         self.tableView?.separatorStyle = .none
+        self.tableView?.backgroundColor = .clear
 //        self.tableView?.bounces     = false
     
         
@@ -246,8 +253,13 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
             cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: cellIdentifier)
         }
         cell?.selectionStyle = .none
+        cell?.backgroundColor = .clear
         cell?.detailTextLabel?.numberOfLines = 0
         cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 13)
+        
+        cell?.textLabel?.textColor = .white;
+        cell?.detailTextLabel?.textColor = .white;
+
         switch indexPath.row {
         case 0:
             let item = self.almanacModel?.wuxing

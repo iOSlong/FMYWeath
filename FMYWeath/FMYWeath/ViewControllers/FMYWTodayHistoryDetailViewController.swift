@@ -48,14 +48,15 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
     func configureUIItems() {
         self.tableView =  UITableView(frame: self.view.frame, style: .plain)
         self.tableView?.height = self.view.height
-        self.view.addSubview(self.tableView!)
         self.tableView?.dataSource   = self
         self.tableView?.delegate     = self
+        self.tableView?.backgroundColor = .clear
+        self.view.addSubview(self.tableView!)
 
 
         self.textViewDetail = UITextView(frame: CGRect(x: mySpanLeft, y: mySpanUp, width: myScreenW - 2 * mySpanLeft, height: self.view.height - myTabBarH))
         self.textViewDetail?.font = UIFont.systemFont(ofSize: 20)
-        self.textViewDetail?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        self.textViewDetail?.textColor = .white
         self.textViewDetail?.textAlignment = .left
         self.textViewDetail?.text = self.todayHistoryModel?.title as! String!
         self.textViewDetail?.bounces = false
@@ -110,7 +111,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
         self.textViewDetail?.sizeToFit()
         
         self.headerView.height = (self.textViewDetail?.height)! + 2 * mySpanUp
-        self.headerView.backgroundColor = UIColor.darkGray
+//        self.headerView.backgroundColor = UIColor.white
 
         let picUrls = self.historyDetail?.picUrl as! NSArray
         for element in picUrls {

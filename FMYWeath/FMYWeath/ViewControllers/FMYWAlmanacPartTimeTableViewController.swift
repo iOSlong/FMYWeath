@@ -19,7 +19,7 @@ class FMYWAlmanacPartTimeTableViewController: UITableViewController {
         get {
             if _sectionHader == nil {
                 _sectionHader = UIView(frame: CGRect(x: 0, y: 0, width: mySpanH, height: 50))
-                _sectionHader?.backgroundColor = .white
+//                _sectionHader?.backgroundColor = .white
                 self.dateInfo = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 25))
                 self.dateInfo?.layer.cornerRadius = (self.dateInfo?.height)! * 0.5
                 self.dateInfo?.layer.borderColor    = UIColor.blue.cgColor
@@ -42,6 +42,7 @@ class FMYWAlmanacPartTimeTableViewController: UITableViewController {
         self.title = "子丑寅卯"
 
         self.tableView.separatorStyle = .none
+        self.tableView.backgroundColor = .black
     
         self.netGetTimeDestiny(date: self.almanacModel?.showTime)
     }

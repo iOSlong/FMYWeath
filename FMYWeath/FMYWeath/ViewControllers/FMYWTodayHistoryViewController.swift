@@ -26,8 +26,10 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+//        self.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        self.title = "历史今日"
         
         self.configureFreshItems()
         

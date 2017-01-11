@@ -10,6 +10,9 @@ import UIKit
 
 class FMYWViewController: UIViewController {
 
+    public var rootInfo:NSDictionary? = nil
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
@@ -20,6 +23,10 @@ class FMYWViewController: UIViewController {
 
 
         self.hiddenBackItemTitle()
+        
+        
+        self.title = self.rootInfo?.object(forKey: "title") as! String?;
+
     }
 
 

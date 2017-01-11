@@ -45,6 +45,23 @@ func RGBACOLOR(_ r:CGFloat,g:CGFloat,b:CGFloat) -> UIColor {
     return UIColor (red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
 }
 
+
+let colorMainBack = RGBACOLOR(28, g: 32, b: 36)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // MARK: DEVICE MODE
 let screenModeSize:CGSize? = UIScreen.main.currentMode?.size
 

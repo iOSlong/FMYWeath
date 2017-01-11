@@ -104,15 +104,15 @@ public func timeShow(time:TimeInterval,
     
     let dateTimeLong = time///1000.0
     let dateTime = NSDate(timeIntervalSince1970: dateTimeLong)
-    let dateDes  = dateTime.addingTimeInterval(timeSpan!)
+    var dateDes  = dateTime.addingTimeInterval(timeSpan!)
     
     // 解决GMT时间差（8 小时）
-    let zone     = NSTimeZone.system
-    let interval = zone.secondsFromGMT(for: dateDes as Date)
-    let nowDate  = dateDes.addingTimeInterval(TimeInterval(interval))
+//    let zone     = NSTimeZone.system
+//    let interval = zone.secondsFromGMT(for: dateDes as Date)
+//    let nowDate  = dateDes.addingTimeInterval(TimeInterval(interval))
     
     let formater = localDateFormatter(formateStr:formaterStr, localID: localId)
-    let timeStr = formater.string(from: nowDate as Date)
+    let timeStr = formater.string(from: dateDes as Date)
     return timeStr
 }
 

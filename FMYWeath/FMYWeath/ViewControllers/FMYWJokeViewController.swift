@@ -16,7 +16,7 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+//        self.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
 
 
@@ -26,7 +26,12 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:false)
+    }
     
+
     func configureTableView() {
         self.tableView =  UITableView(frame: self.view.frame, style: .grouped)
         self.tableView?.height = self.view.height - myTabBarH - myStatusBarH
@@ -55,11 +60,20 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row < 2 {
+        let desTitle = self.dataSource?[indexPath.row] as! String?
+        let rootInfo = ["title":desTitle]
+        
+        if indexPath.row == 0 {
             let jokeDetailVC:FMYWJokeListViewController = FMYWJokeListViewController()
-            jokeDetailVC.jokeSection = self.dataSource?[indexPath.row] as! String?
+            jokeDetailVC.rootInfo = rootInfo as NSDictionary?
             self.navigationController?.pushViewController(jokeDetailVC, animated: true)
-        }else if indexPath.row == 2 {
+        }
+        else if indexPath.row == 1 {
+            let desVC:FMYWJokePicViewController = FMYWJokePicViewController()
+            desVC.rootInfo = rootInfo as NSDictionary?;
+            self.navigationController?.pushViewController(desVC, animated: true)
+        }
+        else if indexPath.row == 2 {
             let itemVC:FMYWTodayNewsViewController = FMYWTodayNewsViewController()
             self.navigationController?.pushViewController(itemVC, animated: true)
         }

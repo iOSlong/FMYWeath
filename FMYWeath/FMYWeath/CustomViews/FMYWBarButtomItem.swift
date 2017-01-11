@@ -27,7 +27,7 @@ class FMYWBarButtomItem: UIBarButtonItem {
     class func barButtomItem(title:String,target:Any?,action:Selector,forEvent:UIControlEvents) -> FMYWBarButtomItem {
         let itemBtn = UIButton(frame: .zero)
         itemBtn.setTitle(title, for: .normal)
-        itemBtn.setTitleColor(.blue, for: .normal)
+//        itemBtn.setTitleColor(.blue, for: .normal)
         itemBtn.size = sizeFrom(btn: itemBtn)
         itemBtn.addTarget(target, action: action, for:forEvent)
         return FMYWBarButtomItem(customView: itemBtn)

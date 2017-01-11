@@ -19,12 +19,18 @@ class FMYWJokeDetailViewController: FMYWViewController {
 
         self.configureJokeContent()
         // Do any additional setup after loading the view.
+        
+        let jokeContent = self.jokeItem?.content as! String
+        self.title = jokeContent.substring(to: jokeContent.endIndex)
+        
+        
     }
 
     func configureJokeContent() {
         self.textViewJoke = UITextView(frame: CGRect(x: mySpanLeft, y: mySpanUp, width: myScreenW - 2 * mySpanLeft, height: self.view.height - myTabBarH))
+        self.textViewJoke?.backgroundColor = colorMainBack
         self.textViewJoke?.font = UIFont.systemFont(ofSize: 20)
-        self.textViewJoke?.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        self.textViewJoke?.textColor = .white
         self.textViewJoke?.textAlignment = .center
         self.view.addSubview(self.textViewJoke!)
 

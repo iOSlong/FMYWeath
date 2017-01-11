@@ -61,6 +61,10 @@
 		8E49046C1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49046B1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift */; };
 		8EAF8DD21E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF8DD11E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift */; };
 		8EAF8DD41E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAF8DD31E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift */; };
+		8EE3E7A91E262A460032EF3D /* FMYWJokePicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3E7A81E262A460032EF3D /* FMYWJokePicViewController.swift */; };
+		8EE3E7AC1E2636950032EF3D /* FMYTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3E7AB1E2636950032EF3D /* FMYTableView.swift */; };
+		8EE3E7AE1E2636A60032EF3D /* FMYTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3E7AD1E2636A60032EF3D /* FMYTableViewCell.swift */; };
+		8EE3E7B01E2638D50032EF3D /* FMYWJokePicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3E7AF1E2638D50032EF3D /* FMYWJokePicTableCell.swift */; };
 		8EFE72411E112DB000934A13 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFE72401E112DB000934A13 /* MJRefresh.framework */; };
 		8EFE72431E11425700934A13 /* FMYWJokeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFE72421E11425700934A13 /* FMYWJokeListViewController.swift */; };
 		8EFE72451E1149F300934A13 /* FMYWTodayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */; };
@@ -132,6 +136,10 @@
 		8E49046B1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTodayHomeTableViewController.swift; sourceTree = "<group>"; };
 		8EAF8DD11E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacPartTimeTableViewController.swift; sourceTree = "<group>"; };
 		8EAF8DD31E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacPartTimeTableCell.swift; sourceTree = "<group>"; };
+		8EE3E7A81E262A460032EF3D /* FMYWJokePicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWJokePicViewController.swift; sourceTree = "<group>"; };
+		8EE3E7AB1E2636950032EF3D /* FMYTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYTableView.swift; sourceTree = "<group>"; };
+		8EE3E7AD1E2636A60032EF3D /* FMYTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYTableViewCell.swift; sourceTree = "<group>"; };
+		8EE3E7AF1E2638D50032EF3D /* FMYWJokePicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWJokePicTableCell.swift; sourceTree = "<group>"; };
 		8EFE72401E112DB000934A13 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/FMYWeath-fsyorfjrssqzfpbjpgergnpycwhe/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
 		8EFE72421E11425700934A13 /* FMYWJokeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWJokeListViewController.swift; sourceTree = "<group>"; };
 		8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTodayHistoryViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +217,7 @@
 				8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */,
 				01CE75731E11711000B76D1C /* FMYWTodayHistoryDetailViewController.swift */,
 				01CE75601E0FD71300B76D1C /* FMYWJokeViewController.swift */,
+				8EE3E7A81E262A460032EF3D /* FMYWJokePicViewController.swift */,
 				8EFE72421E11425700934A13 /* FMYWJokeListViewController.swift */,
 				01CE756E1E101F3A00B76D1C /* FMYWJokeDetailViewController.swift */,
 				01CE759C1E177E9600B76D1C /* FMYWTodayNewsViewController.swift */,
@@ -242,6 +251,7 @@
 		01CE75431E09702B00B76D1C /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				8EE3E7AA1E2636520032EF3D /* RootView */,
 				01CE75441E09710700B76D1C /* FMYWBtnTab.swift */,
 				01CE756C1E1018CF00B76D1C /* FMYWJokeTableCell.swift */,
 				01ED774A1E18AD6000812659 /* FMYWNewsTableViewCell.swift */,
@@ -249,6 +259,7 @@
 				8E2860B21E128B6300EEC3BC /* FMYWImgShowView.swift */,
 				8E2860C11E13E7F500EEC3BC /* FMYWAlmanacPlatView.swift */,
 				01CE75981E16B10E00B76D1C /* FMYWBarButtomItem.swift */,
+				8EE3E7AF1E2638D50032EF3D /* FMYWJokePicTableCell.swift */,
 				01CE75A21E178A8F00B76D1C /* CNSegmentView.h */,
 				01CE75A31E178A8F00B76D1C /* CNSegmentView.m */,
 				01CE75A51E17935F00B76D1C /* Control_BezierPath.h */,
@@ -345,6 +356,15 @@
 				C614AC1BAAD325DB652A9985 /* Pods-FMYWeath.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8EE3E7AA1E2636520032EF3D /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				8EE3E7AB1E2636950032EF3D /* FMYTableView.swift */,
+				8EE3E7AD1E2636A60032EF3D /* FMYTableViewCell.swift */,
+			);
+			path = RootView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01ED774C1E18AD6000812659 /* FMYWNewsTableViewCell.swift in Sources */,
+				8EE3E7A91E262A460032EF3D /* FMYWJokePicViewController.swift in Sources */,
 				8E2860C21E13E7F500EEC3BC /* FMYWAlmanacPlatView.swift in Sources */,
 				01CE75471E09758700B76D1C /* constantUI.swift in Sources */,
 				01CE756D1E1018CF00B76D1C /* FMYWJokeTableCell.swift in Sources */,
@@ -490,6 +511,7 @@
 				8E49046C1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift in Sources */,
 				01CE75421E096F9B00B76D1C /* UIView+Positioning.m in Sources */,
 				8EFE72471E114EC700934A13 /* FMYWTodayHistoryModel.swift in Sources */,
+				8EE3E7AC1E2636950032EF3D /* FMYTableView.swift in Sources */,
 				01CE75611E0FD71300B76D1C /* FMYWJokeViewController.swift in Sources */,
 				01CE75681E1003E800B76D1C /* constantStr.swift in Sources */,
 				8EFE72451E1149F300934A13 /* FMYWTodayHistoryViewController.swift in Sources */,
@@ -514,6 +536,8 @@
 				01CE75381E0842A600B76D1C /* FMYWHomeViewController.swift in Sources */,
 				01CE756B1E100D5400B76D1C /* FMYWJokeModel.swift in Sources */,
 				01CE75371E0842A600B76D1C /* FMYWFavorViewController.swift in Sources */,
+				8EE3E7AE1E2636A60032EF3D /* FMYTableViewCell.swift in Sources */,
+				8EE3E7B01E2638D50032EF3D /* FMYWJokePicTableCell.swift in Sources */,
 				01CE753A1E0842A600B76D1C /* FMYWTabBarViewController.swift in Sources */,
 				01CE759B1E177D7900B76D1C /* FMYWTodayNewsPageViewController.swift in Sources */,
 				01CE75AA1E17935F00B76D1C /* ControlBezierPlat.m in Sources */,

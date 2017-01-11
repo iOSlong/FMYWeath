@@ -16,7 +16,8 @@ class FMYWJokeTableCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
+        self.backgroundColor = .clear
         self.configureUIItems()
     }
 
@@ -24,7 +25,7 @@ class FMYWJokeTableCell: UITableViewCell {
         self.labelContent = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         self.labelContent?.left = mySpanLeft
 //        self.labelContent?.backgroundColor = UIColor.red
-        self.labelContent?.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        self.labelContent?.textColor = .white
         self.labelContent?.top  = mySpanUp
         self.labelContent?.textAlignment    = .left
         self.labelContent?.numberOfLines    = 3

@@ -28,10 +28,10 @@ class FMYWTabBarViewController: UITabBarController {
 
     func configureImgvBar() {
         self.imgvBar = UIImageView(frame:self.tabBar.bounds)
-        self.imgvBar?.backgroundColor = UIColor.yellow
+        self.imgvBar?.backgroundColor = colorMainBack
         self.imgvBar?.isUserInteractionEnabled = true
         self.imgvBar?.bottom    = self.view.height
-        self.imgvBar?.image     = UIImage(named: "tabbar_bg")
+//        self.imgvBar?.image     = UIImage(named: "tabbar_bg")
         self.view.addSubview(self.imgvBar!)
     }
 

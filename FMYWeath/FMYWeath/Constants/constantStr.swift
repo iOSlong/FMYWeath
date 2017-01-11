@@ -24,6 +24,9 @@ let url_almanac_h       = "http://v.juhe.cn/laohuangli/h"
 
 //1.按更新时间查询笑话
 let url_jokeList        =   "http://japi.juhe.cn/joke/content/list.from"
+// 按更新时间查询搞笑图片
+let url_jokeListImage   = "http://japi.juhe.cn/joke/img/list.from"
+
 
 //2.
 let url_jokeImgList     =   "http://japi.juhe.cn/joke/img/text.from?"
@@ -39,6 +42,8 @@ let url_todayOnHistoryDetail = "http://v.juhe.cn/todayOnhistory/queryDetail.php"
 
 //今日头条
 let url_newsToutiao     = "http://v.juhe.cn/toutiao/index"
+
+
 
 
 
