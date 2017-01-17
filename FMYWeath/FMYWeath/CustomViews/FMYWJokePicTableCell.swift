@@ -83,6 +83,8 @@ class FMYWJokePicTableCell: FMYTableViewCell,WKNavigationDelegate {
         
         self.wkwebView = WKWebView.init(frame: (self.imgvContent?.frame)!)
         self.wkwebView?.backgroundColor = .clear
+        self.wkwebView?.scrollView.bounces = false
+        self.wkwebView?.scrollView.backgroundColor = .clear
         
         self.contentView.addSubview(self.labelContent!)
         self.contentView.addSubview(self.imgvContent!)
