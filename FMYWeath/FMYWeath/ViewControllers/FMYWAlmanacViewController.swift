@@ -16,6 +16,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
     var barItemR:FMYWBarButtomItem? = nil
     var currentMode:FMYWAlmanacModel? = nil
     var todayMode:FMYWAlmanacModel? = nil
+    
 
     private var scroll:UIScrollView?
     var scrollView:UIScrollView {
@@ -77,6 +78,10 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
         for ival in [dayYesterday,dayToday,dayTomorrow] {
             self.netGetAlmanac(date: ival, add: true)
         }
+        
+        self.view.addSubview(self.activityIndicator!)
+        self.activityIndicator?.startAnimating()
+        self.activityIndicator?.isHidden = false
     }
     
     func dateFrom(span:TimeInterval,date:Date) -> String {
@@ -193,10 +198,14 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
     
     
     func netGetAlmanac(date:String?, add:Bool) {
+
         let param = ["key":apiKey_almanac, "date":date]
         // TODO： 处理队列访问机制，
         _ = FMYHTTPSessionManager(url: URL(string: url_almanac), configuration: nil).net("GET", parameters: param as NSDictionary?, success: { [unowned self] (dataTask, object) in
-            
+           
+            self.activityIndicator?.stopAnimating()
+            self.activityIndicator?.removeFromSuperview()
+
             do {
                 let responseDict =  try JSONSerialization.jsonObject(with: object as! Data, options:.mutableLeaves)
                 
@@ -233,7 +242,9 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
             }
             
         }, failure: { (dataTask, error) in
-            
+            self.activityIndicator?.stopAnimating()
+            self.activityIndicator?.isHidden = true
+
             print(error)
             
         })

@@ -28,6 +28,13 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
         }
     }
 
+    
+    
+    func showActivityIndicator(show:Bool) -> Void {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = show
+    }
+    
+    
 
     func net(_ method:String?,parameters:NSDictionary?,
              success:((URLSessionDataTask?,Any) ->Void)?,
@@ -35,10 +42,14 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
         
         let request:URLRequest = self.request(method, urlString: self.baseUrl?.absoluteString, parameters: parameters, error: nil)
 
-
-        let dataTask = self.dataTask(request: request, completionHander: { (response, object, error) in
+        self.showActivityIndicator(show: true)
+        
+        let dataTask = self.dataTask(request: request, completionHander: {[unowned self] (response, object, error) in
             print("request.URL:",self.requestUrl?.absoluteString ?? "")
             print("response\(response), object\(object), error\(error)")
+            
+            self.showActivityIndicator(show: false)
+
             
             if error == nil {
                 if success != nil{
@@ -95,15 +106,5 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
         }
         return paramSuffix
     }
-    
-    func postBody() -> String {
-        var  soap12 = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><getSupportCity xmlns=\"http://WebXml.com.cn/\"><byProvinceName>贵州</byProvinceName></getSupportCity></soap:Body></soap:Envelope>"
-
-        soap12 = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><getWeatherbyCityName xmlns=\"http://WebXml.com.cn/\"><theCityName>石家庄</theCityName></getWeatherbyCityName></soap:Body></soap:Envelope>"
-
-        return soap12
-    }
-    
-
 
 }
