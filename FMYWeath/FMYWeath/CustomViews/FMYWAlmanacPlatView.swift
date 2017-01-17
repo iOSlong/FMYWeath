@@ -140,7 +140,7 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
     
     var almanacSectionHader:UIView = {
         let almanacSection = UIView(frame:.zero)
-//        almanacSection.backgroundColor = .white
+        almanacSection.backgroundColor = colorMainBack
         return almanacSection
     }()
     
@@ -210,7 +210,7 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
         
         
         self.almanacSectionHader.width  = ((self.tableView?.width)! - 80.0)
-        self.almanacSectionHader.height = 60
+        self.almanacSectionHader.height = 40
 //        self.almanacSectionHader.backgroundColor    = .yellow
         self.almanacSectionHader.addSubview(self.labelYinli)
         self.almanacSectionHader.addSubview(self.btnShiChen)

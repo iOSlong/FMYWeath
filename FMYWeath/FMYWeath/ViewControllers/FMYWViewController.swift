@@ -19,7 +19,7 @@ class FMYWViewController: UIViewController {
             if tempIndicator == nil {
                 tempIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
                 tempIndicator?.center = CGPoint(x: self.view.width * 0.5, y: self.view.height * 0.5 - myNavBarH)
-                tempIndicator?.backgroundColor = .purple
+//                tempIndicator?.backgroundColor = .purple
                 tempIndicator?.tintColor = .red
                 
             }
@@ -27,15 +27,27 @@ class FMYWViewController: UIViewController {
         }
     }
 
-    
-    
-    
+
+    // MARK: 除了public 子类访问可用什么约束关键字 ？
+    func showActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator?.startAnimating()
+        }
+    }
+    // MARK: 这个地方不处理到主线程也是可以的，然而却有一个延迟！可以猜测stopAnimation的hidden操作是延迟了
+    public func stopActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator?.stopAnimating()
+        }
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black
+        self.view.backgroundColor = colorMainBlack
         self.navigationController?.navigationBar.isTranslucent = false
 
-        self.navigationController?.navigationBar.backgroundColor = .black
+        self.navigationController?.navigationBar.backgroundColor = colorMainBlack
         self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(named: "tabbar_bg"), for: .defaultPrompt)
 
 
@@ -52,10 +64,12 @@ class FMYWViewController: UIViewController {
         centerBtn.addTarget(self, action: #selector(centerBtnTest(_:)), for: .touchUpInside)
         centerBtn.layer.borderColor = UIColor.purple.cgColor
         centerBtn.layer.borderWidth = 2
-        self.view.addSubview(centerBtn)
-        
+//        self.view.addSubview(centerBtn)
+
+
+
         self.view.addSubview(self.activityIndicator!)
-        self.activityIndicator?.startAnimating()
+//        self.activityIndicator?.startAnimating()
 
         
     }

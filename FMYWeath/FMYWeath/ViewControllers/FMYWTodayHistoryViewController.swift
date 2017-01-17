@@ -11,7 +11,7 @@ import MJRefresh
 
 class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, UITableViewDataSource{
 
-    var tableView:UITableView? =  nil
+    var tableView:FMYTableView? =  nil
     var dataSource:NSMutableArray? = []
     var refreshHeader:MJRefreshNormalHeader? = nil
     var refreshFooter:MJRefreshBackNormalFooter? = nil
@@ -50,11 +50,15 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     }
     
     func configureTableView() {
-        self.tableView =  UITableView(frame: self.view.frame, style: .plain)
+        
+        self.tableView =  FMYTableView(frame: self.view.frame, style: .plain)
+        self.tableView?.separatorColor = colorMainBarBack
         self.tableView?.height = self.view.height
-        self.view.addSubview(self.tableView!)
         self.tableView?.dataSource   = self
         self.tableView?.delegate     = self
+
+        self.view.addSubview(self.tableView!)
+
         self.tableView?.mj_header   = self.refreshHeader
         self.tableView?.mj_footer   = self.refreshFooter
     }

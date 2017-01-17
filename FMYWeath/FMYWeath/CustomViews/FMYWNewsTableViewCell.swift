@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FMYWNewsTableViewCell: UITableViewCell {
+class FMYWNewsTableViewCell: FMYTableViewCell {
 
 
     @IBOutlet weak var labelTitle: UILabel!

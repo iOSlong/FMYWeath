@@ -20,7 +20,7 @@
 
 + (instancetype)buttonWithType:(UIButtonType)buttonType {
     CNSegmentBtn *btn = [super buttonWithType:buttonType];
-    btn.backgroundColor = [UIColor blackColor];
+    btn.backgroundColor = colorMainBack;
     [btn.titleLabel setFont:[UIFont systemFontOfSize:15]];
     [btn setTitleColor:RGBCOLOR_HEX(0x747474) forState:UIControlStateNormal];
     [btn setTitleColor:RGBCOLOR_HEX(0xFC5700) forState:UIControlStateSelected];
@@ -82,7 +82,7 @@
     if (self) {
         
         
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = colorMainBack;
         self.layer.shadowOffset = CGSizeMake(0, 0);
         self.layer.shadowRadius = 1;
         self.layer.shadowColor  = [UIColor redColor].CGColor;
@@ -121,7 +121,7 @@
         [_btnAdd setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [_btnAdd.titleLabel setFont:[UIFont systemFontOfSize:28]];
         [_btnAdd setImageEdgeInsets:UIEdgeInsetsMake(9,12.5,9,12.5)];
-        [_btnAdd setBackgroundColor:[UIColor darkTextColor]];
+        [_btnAdd setBackgroundColor:colorMainBack];
         
         _btnAdd.layer.shadowOffset = CGSizeMake(0, 0);
         _btnAdd.layer.shadowRadius = 2.5;

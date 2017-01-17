@@ -21,6 +21,9 @@ let mySpanV         = mySpanLeft/2.0
 let mySpanH         = mySpanLeft/2.0
 
 
+let myTest   =  false  // true 测试代码标记   false 默认使用常态代码
+
+
 public enum myFont:CGFloat {
     case font_min01     = 11
     case font_min02     = 14
@@ -45,8 +48,11 @@ func RGBACOLOR(_ r:CGFloat,g:CGFloat,b:CGFloat) -> UIColor {
     return UIColor (red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
 }
 
-
-let colorMainBack = RGBACOLOR(28, g: 32, b: 36)
+let colorMainBarBack    = RGBACOLOR(28, g: 32, b: 36)
+let colorMainBack       = RGBACOLOR(10, g: 13, b: 16)
+let colorMainBlack      = UIColor.black
+let colorMainPurple     = UIColor.purple
+let colorMainWhite      = UIColor.white
 
 
 

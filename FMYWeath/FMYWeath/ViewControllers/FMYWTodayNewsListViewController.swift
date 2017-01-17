@@ -20,6 +20,8 @@ class FMYWTodayNewsListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor  = colorMainBlack
+        self.tableView.separatorColor   = colorMainBarBack
 
         self.configureFreshItems()
         
@@ -94,7 +96,7 @@ class FMYWTodayNewsListViewController: UITableViewController {
 
 
     func netGetNews(params:NSDictionary, loadMore:Bool) -> Void {
-        _ = FMYHTTPSessionManager(url: URL(string:url_newsToutiao), configuration: nil).net("GET", parameters: params, success: {(dataTask, responsObj) in
+        _ = FMYHTTPSessionManager(url: URL(string:url_newsToutiao), configuration: nil).net("GET", parameters: params, success: {[unowned self] (dataTask, responsObj) in
 
             DispatchQueue.main.async {
                 self.refreshHeader?.endRefreshing()

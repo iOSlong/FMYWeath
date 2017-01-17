@@ -78,10 +78,8 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
         for ival in [dayYesterday,dayToday,dayTomorrow] {
             self.netGetAlmanac(date: ival, add: true)
         }
-        
-        self.view.addSubview(self.activityIndicator!)
-        self.activityIndicator?.startAnimating()
-        self.activityIndicator?.isHidden = false
+
+        self.showActivityIndicator()
     }
     
     func dateFrom(span:TimeInterval,date:Date) -> String {
@@ -180,7 +178,18 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
             for index  in 0...(almanacArr.count - 1) {
                 let almanacPlat:FMYWAlmanacPlatView = self.almanacPlarArr[index] as! FMYWAlmanacPlatView
                 let almanacModelShow = almanacArr[index] as? FMYWAlmanacModel;
-                almanacPlat.almanacModel = almanacModelShow
+
+                // MARK: 重复嵌套使用主线程更新UI会出现画面骚动闪烁
+                if myTest
+                {
+                    DispatchQueue.main.async {
+                        almanacPlat.almanacModel = almanacModelShow
+                    }
+                }
+                else{
+                    almanacPlat.almanacModel = almanacModelShow
+                }
+                
             }
 //            self.scrollView.contentOffset =
 
@@ -203,8 +212,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
         // TODO： 处理队列访问机制，
         _ = FMYHTTPSessionManager(url: URL(string: url_almanac), configuration: nil).net("GET", parameters: param as NSDictionary?, success: { [unowned self] (dataTask, object) in
            
-            self.activityIndicator?.stopAnimating()
-            self.activityIndicator?.removeFromSuperview()
+            self.stopActivityIndicator()
 
             do {
                 let responseDict =  try JSONSerialization.jsonObject(with: object as! Data, options:.mutableLeaves)
@@ -232,7 +240,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                             }
                         })
                         self.todayMode = self.almanacModelArr[1] as? FMYWAlmanacModel;
-                        self.reloadScrollItems(animated: false)
+                        self.reloadScrollItems(animated: true)
                     }
                 }
                 
@@ -242,8 +250,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
             }
             
         }, failure: { (dataTask, error) in
-            self.activityIndicator?.stopAnimating()
-            self.activityIndicator?.isHidden = true
+            self.stopActivityIndicator()
 
             print(error)
             

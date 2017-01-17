@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FMYWObject.h"
+//#import "FMYWeath-swift.h"
 
 typedef NS_ENUM(NSUInteger, CNSegmentEvent) {
     CNSegmentEventItemClick,

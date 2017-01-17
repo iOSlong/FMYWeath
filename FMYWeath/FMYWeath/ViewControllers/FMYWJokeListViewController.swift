@@ -51,7 +51,7 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
     func configureTableView() {
         self.tableView =  UITableView(frame: self.view.frame, style: .plain)
         self.tableView?.height = self.view.height - myStatusBarH
-        self.tableView?.backgroundColor = .black
+        self.tableView?.backgroundColor = colorMainBlack
         self.tableView?.dataSource   = self
         self.tableView?.delegate     = self
         self.tableView?.mj_header   = self.refreshHeader
