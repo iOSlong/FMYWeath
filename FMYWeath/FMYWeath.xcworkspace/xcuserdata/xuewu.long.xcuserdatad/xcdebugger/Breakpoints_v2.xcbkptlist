@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/NetAccess/FMYHTTPSessionManager.swift"
-            timestampString = "504450354.855546"
+            timestampString = "506345566.461137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "request(_:urlString:parameters:error:)"
             landmarkType = "7">
          </BreakpointContent>
