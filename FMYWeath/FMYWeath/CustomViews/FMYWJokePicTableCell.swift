@@ -83,6 +83,7 @@ class FMYWJokePicTableCell: FMYTableViewCell,WKNavigationDelegate {
         
         self.wkwebView = WKWebView.init(frame: (self.imgvContent?.frame)!)
         self.wkwebView?.backgroundColor = .clear
+        self.wkwebView?.isOpaque = false
         self.wkwebView?.scrollView.bounces = false
         self.wkwebView?.scrollView.backgroundColor = .clear
         
@@ -106,16 +107,16 @@ class FMYWJokePicTableCell: FMYTableViewCell,WKNavigationDelegate {
                 let imgUrl = self.jokePicModel?.url as! String
                 
                 // TODO: 处理批量下载存储映射问题（线程管理，下载队列处理）
-                self.imgvContent?.sd_setImage(with: URL(string: imgUrl), completed: { [unowned self] (image, error, cacheType, url) in
-                    print("over show!");
-                    
-                   self.imgvContent?.image =  UIImage.sd_animatedGIF(with: UIImagePNGRepresentation(image!))
-                    
-                })
+//                self.imgvContent?.sd_setImage(with: URL(string: imgUrl), completed: { [unowned self] (image, error, cacheType, url) in
+//                    print("over show!");
+//                    
+//                   self.imgvContent?.image =  UIImage.sd_animatedGIF(with: UIImagePNGRepresentation(image!))
+//                    
+//                })
+//                
+//                self.imgvContent?.isHidden = false
                 
-                self.imgvContent?.isHidden = false
-                
-                self.wkwebView?.load(URLRequest.init(url: URL(string: imgUrl)!));
+                _ = self.wkwebView?.load(URLRequest.init(url: URL(string: imgUrl)!));
                 self.wkwebView?.navigationDelegate = self
                 
                 

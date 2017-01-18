@@ -13,9 +13,33 @@ class FMYWCityListViewController: FMYWViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = colorMainBack
+        
+        
+        let mybtn = FMYButton.fmyButtonWith(frame: CGRect.init(x: 100, y: 100, width: 40, height: 40), imgNormal: "market_unselected_button", imgSelected: "market_selected_button", target: self, action: #selector(fmybuttonClick(btn :)), circleLayer: false)
+        
+//        mybtn.backgroundColor = UIColor.yellow
+        
+        self.view.addSubview(mybtn)
+        
+        
+        
+        let checkItemView = FMYWCheckItemView.init(frame: CGRect.init(x: 100, y: 200, width: 200, height: 50))
+        checkItemView.itemTitle = "会感知、相应和学习的流程与决策";
+        self.view.addSubview(checkItemView)
+        
+        checkItemView.fmycheckItem { [unowned self] (checkState) in
+            print(checkState)
+        }
         
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func fmybuttonClick(btn : UIButton) {
+        btn.isSelected = !btn.isSelected
+        
+        print("click")
     }
 
     override func didReceiveMemoryWarning() {

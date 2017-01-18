@@ -29,13 +29,13 @@ class FMYWViewController: UIViewController {
 
 
     // MARK: 除了public 子类访问可用什么约束关键字 ？
-    func showActivityIndicator() {
+    func startActivityIndicatorAnimation() {
         DispatchQueue.main.async {
             self.activityIndicator?.startAnimating()
         }
     }
     // MARK: 这个地方不处理到主线程也是可以的，然而却有一个延迟！可以猜测stopAnimation的hidden操作是延迟了
-    public func stopActivityIndicator() {
+    public func stopActivityIndicatorAnimation() {
         DispatchQueue.main.async {
             self.activityIndicator?.stopAnimating()
         }
@@ -65,7 +65,6 @@ class FMYWViewController: UIViewController {
         centerBtn.layer.borderColor = UIColor.purple.cgColor
         centerBtn.layer.borderWidth = 2
 //        self.view.addSubview(centerBtn)
-
 
 
         self.view.addSubview(self.activityIndicator!)

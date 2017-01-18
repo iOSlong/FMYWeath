@@ -79,7 +79,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
             self.netGetAlmanac(date: ival, add: true)
         }
 
-        self.showActivityIndicator()
+        self.startActivityIndicatorAnimation()
     }
     
     func dateFrom(span:TimeInterval,date:Date) -> String {
@@ -212,7 +212,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
         // TODO： 处理队列访问机制，
         _ = FMYHTTPSessionManager(url: URL(string: url_almanac), configuration: nil).net("GET", parameters: param as NSDictionary?, success: { [unowned self] (dataTask, object) in
            
-            self.stopActivityIndicator()
+            self.stopActivityIndicatorAnimation()
 
             do {
                 let responseDict =  try JSONSerialization.jsonObject(with: object as! Data, options:.mutableLeaves)
@@ -250,7 +250,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
             }
             
         }, failure: { (dataTask, error) in
-            self.stopActivityIndicator()
+            self.stopActivityIndicatorAnimation()
 
             print(error)
             

@@ -1,14 +1,14 @@
 //
-//  FMYWHomeViewController.swift
+//  FMYWDrivingExamSystemViewController.swift
 //  FMYWeath
 //
-//  Created by xw.long on 16/12/19.
-//  Copyright © 2016年 fmylove. All rights reserved.
+//  Created by xuewu.long on 17/1/18.
+//  Copyright © 2017年 fmylove. All rights reserved.
 //
 
 import UIKit
 
-class FMYWHomeViewController: FMYWViewController {
+class FMYWDrivingExamSystemViewController: FMYWViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

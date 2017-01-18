@@ -28,7 +28,7 @@ class FMYWJokeTableCell: FMYTableViewCell {
         self.labelContent?.textColor = .white
         self.labelContent?.top  = mySpanUp
         self.labelContent?.textAlignment    = .left
-        self.labelContent?.numberOfLines    = 3
+        self.labelContent?.numberOfLines    = 2
         self.contentView.addSubview(self.labelContent!)
     }
 

@@ -56,7 +56,7 @@ class FMYWJokePicViewController: FMYWViewController,UITableViewDataSource,UITabl
     
     func configureTableView() {
         self.tableView =  FMYTableView(frame: self.view.frame, style: .plain)
-        self.tableView?.height = self.view.height - myStatusBarH
+        self.tableView?.height = self.view.height - myNavBarH
         self.tableView?.dataSource   = self
         self.tableView?.delegate     = self
 //        self.tableView?.separatorColor = colorMainBack

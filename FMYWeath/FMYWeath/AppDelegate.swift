@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window?.rootViewController = tabBar
 
-        let newsItems = fileGetNewsItems()
+        _ = fileGetNewsItems()
 
         self.colorHexFunc()
 

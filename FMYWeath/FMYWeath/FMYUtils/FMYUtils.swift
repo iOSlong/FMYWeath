@@ -104,7 +104,7 @@ public func timeShow(time:TimeInterval,
     
     let dateTimeLong = time///1000.0
     let dateTime = NSDate(timeIntervalSince1970: dateTimeLong)
-    var dateDes  = dateTime.addingTimeInterval(timeSpan!)
+    let dateDes  = dateTime.addingTimeInterval(timeSpan!)
     
     // 解决GMT时间差（8 小时）
 //    let zone     = NSTimeZone.system

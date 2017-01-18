@@ -17,10 +17,17 @@ class FMYTableViewCell: UITableViewCell {
 
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = .clear
 
+        self.backgroundColor = .clear
+        
+        // MARK: 定制处理cell被选中时候的背景视图
+        let backgView = UIImageView(frame: self.bounds)
+        backgView.backgroundColor = colorMainBarBack;
+        self.selectedBackgroundView = backgView
+        
         self.textLabel?.textColor = colorMainWhite
         self.detailTextLabel?.textColor = colorMainWhite
+        
     }
 
     required init?(coder aDecoder: NSCoder) {

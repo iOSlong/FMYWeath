@@ -10,15 +10,16 @@ import UIKit
 
 class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableViewDelegate {
 
-    var tableView:UITableView? =  nil
-    var dataSource:NSMutableArray? = ["笑话一排排","笑图乐哈哈","今日头条"]
+    var tableView:FMYTableView? =  nil
+    var dataSource:NSMutableArray? = ["笑话一排排","图乐哈哈","驾考那些事儿"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.view.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.isTranslucent = false
+//        self.navigationController?.navigationBar.isTranslucent = false
 
+        self.title = "哈哈知乐"
 
         self.configureTableView()
 
@@ -33,8 +34,9 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
     
 
     func configureTableView() {
-        self.tableView =  UITableView(frame: self.view.frame, style: .grouped)
+        self.tableView =  FMYTableView(frame: self.view.frame, style: .grouped)
         self.tableView?.height = self.view.height - myTabBarH - myStatusBarH
+        self.tableView?.separatorColor = colorMainBarBack
         self.view.addSubview(self.tableView!)
         self.tableView?.dataSource   = self
         self.tableView?.delegate     = self
@@ -46,9 +48,9 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "jokeBaseCellIdentifier"
-        var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier) as! FMYWJokeTableCell?
+        var cell:FMYTableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier) as! FMYWJokeTableCell?
         if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
+            cell = FMYTableViewCell(style: .default, reuseIdentifier: identifier)
         }
         cell?.accessoryType = .disclosureIndicator
         
@@ -74,12 +76,13 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
             self.navigationController?.pushViewController(desVC, animated: true)
         }
         else if indexPath.row == 2 {
-            let itemVC:FMYWTodayNewsViewController = FMYWTodayNewsViewController()
-            self.navigationController?.pushViewController(itemVC, animated: true)
+            let desVC:FMYWDrivingLicenseViewController = FMYWDrivingLicenseViewController()
+            desVC.rootInfo = rootInfo as NSDictionary?
+            self.navigationController?.pushViewController(desVC, animated: true)
         }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 64
     }
 }
