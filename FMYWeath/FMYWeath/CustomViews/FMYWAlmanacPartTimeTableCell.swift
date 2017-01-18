@@ -35,41 +35,41 @@ class FMYWAlmanacPartTimeTableCell: UITableViewCell {
     var labelTime:UILabel = {
         let label:UILabel = UILabel(frame:CGRect(x: 0, y: 0, width: title_w, height: 20))
         label.textAlignment = .right
-        label.textColor = .white
+        label.textColor = colorMainWhite
         return label
     }()
     var labelDes:UILabel = {
         let label:UILabel = UILabel(frame:CGRect(x: 0, y: 0, width: detail_w, height: 20))
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = colorMainWhite
         label.font = UIFont.boldSystemFont(ofSize: myFont.font_min02.rawValue)
         return label
     }()
     var labelYi:UILabel = {
         let label:UILabel = UILabel(frame:CGRect(x: 0, y: 0, width: detail_w, height: 20))
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = colorMainWhite
         label.font = UIFont.systemFont(ofSize: myFont.font_min02.rawValue)
         return label
     }()
     var labelJi:UILabel = {
         let label:UILabel = UILabel(frame:CGRect(x: 0, y: 0, width: detail_w, height: 20))
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = colorMainWhite
         label.font = UIFont.systemFont(ofSize: myFont.font_min02.rawValue)
         return label
     }()
     var imgvLine:UIImageView = {
         let imgv    = UIImageView()
         imgv.width  = 1.5
-        imgv.backgroundColor = .blue
+        imgv.backgroundColor = colorMainPurple
         return imgv
     }()
     var imgvDot:UIImageView = {
         let imgv    = UIImageView(frame: CGRect(x: 0, y: 0, width: 5, height: 5))
-        imgv.backgroundColor = .blue
+        imgv.backgroundColor = colorMainPurple
         imgv.layer.cornerRadius = imgv.width * 0.5
-        imgv.layer.backgroundColor = UIColor.blue.cgColor
+        imgv.layer.backgroundColor = colorMainPurple.cgColor
         return imgv
     }()
 

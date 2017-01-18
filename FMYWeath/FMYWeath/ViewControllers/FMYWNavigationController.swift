@@ -12,12 +12,12 @@ class FMYWNavigationController: UINavigationController {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.navigationBar.backgroundColor = .black
+        self.navigationBar.backgroundColor = colorMainBlack
 
     }
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
-        self.navigationBar.backgroundColor = .black
+        self.navigationBar.backgroundColor = colorMainBlack
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,11 +26,11 @@ class FMYWNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = colorMainBlack
     
 
         /// 1. 设置背景颜色  Item图标颜色
-        self.navigationBar.barTintColor = colorMainBack
+        self.navigationBar.barTintColor = colorMainBarBack
         self.navigationBar.tintColor = .white
         
 

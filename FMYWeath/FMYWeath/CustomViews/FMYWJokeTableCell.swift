@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FMYWJokeTableCell: UITableViewCell {
+class FMYWJokeTableCell: FMYTableViewCell {
 
     var labelContent:UILabel?   = nil
     var imgvJoke:UIImageView?   = nil

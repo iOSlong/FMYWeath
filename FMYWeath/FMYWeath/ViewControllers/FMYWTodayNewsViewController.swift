@@ -45,10 +45,6 @@ class FMYWTodayNewsViewController: FMYWViewController ,FMYWNewsItemViewControlle
         super.viewWillAppear(animated)
         (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:true)
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:false)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

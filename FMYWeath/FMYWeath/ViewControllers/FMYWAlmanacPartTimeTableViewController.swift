@@ -19,14 +19,15 @@ class FMYWAlmanacPartTimeTableViewController: UITableViewController {
         get {
             if _sectionHader == nil {
                 _sectionHader = UIView(frame: CGRect(x: 0, y: 0, width: mySpanH, height: 50))
-//                _sectionHader?.backgroundColor = .white
+                _sectionHader?.backgroundColor = .clear
                 self.dateInfo = UIButton(frame: CGRect(x: 0, y: 0, width: 120, height: 25))
                 self.dateInfo?.layer.cornerRadius = (self.dateInfo?.height)! * 0.5
-                self.dateInfo?.layer.borderColor    = UIColor.blue.cgColor
+                self.dateInfo?.layer.borderColor    = colorMainPurple.cgColor
                 self.dateInfo?.layer.borderWidth    = 1
+                self.dateInfo?.backgroundColor = colorMainBack
                 self.dateInfo?.left = mySpanLeft * 2
                 self.dateInfo?.centerY = (_sectionHader?.height)! * 0.5
-                self.dateInfo?.setTitleColor(.blue, for: .normal)
+                self.dateInfo?.setTitleColor(colorMainPurple, for: .normal)
                 self.dateInfo?.setTitle((self.almanacModel?.showTime)!, for: .normal)
                 self.dateInfo?.titleLabel?.font = UIFont.boldSystemFont(ofSize: myFont.font_min02.rawValue)
                 _sectionHader?.addSubview(self.dateInfo!)
@@ -42,7 +43,7 @@ class FMYWAlmanacPartTimeTableViewController: UITableViewController {
         self.title = "子丑寅卯"
 
         self.tableView.separatorStyle = .none
-        self.tableView.backgroundColor = .black
+        self.tableView.backgroundColor = colorMainBack
     
         self.netGetTimeDestiny(date: self.almanacModel?.showTime)
     }
@@ -52,7 +53,7 @@ class FMYWAlmanacPartTimeTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return (self.partTimeModeArr.count>0) ? 1 : 0
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return self.sectionHeader

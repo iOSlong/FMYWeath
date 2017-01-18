@@ -88,6 +88,7 @@ static NSString *FONT_Roboto_Regular                       = @"Roboto-Regular"; 
 #define CNCOLOR_LINE_SEPERATE       RGBCOLOR_HEX(0xE8E8E8)
 #define CNCOLOR_OFFLINE_BACKGROUND  RGBCOLOR_HEX(0xEDEDED)
 
+#define colorMainBack   RGB(20, 24, 28)
 
 #define TIMER_HIDE_DELAY           (1.0f)
 
