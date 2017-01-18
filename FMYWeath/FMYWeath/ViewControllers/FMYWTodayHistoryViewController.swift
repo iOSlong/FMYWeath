@@ -50,7 +50,7 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     }
     
     func configureTableView() {
-        
+
         self.tableView =  FMYTableView(frame: self.view.frame, style: .plain)
         self.tableView?.separatorColor = colorMainBarBack
         self.tableView?.height = self.view.height

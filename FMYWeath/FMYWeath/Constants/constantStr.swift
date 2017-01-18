@@ -8,11 +8,11 @@
 
 import Foundation
 
-let apiKey_joke         =   "fd7e7824f6882e7b146a4c5b0eda5e5c"
-let apiKey_today        =   "72dc0d05547cc2c8380162ecaf186bf0"
-let apiKey_almanac      =   "0cf2f45852cc03991786d1f1e029df75"
-let apiKey_toutiao      =   "975b3aed023d5967743f0b7a2298e829"
-
+let apiKey_joke             =   "fd7e7824f6882e7b146a4c5b0eda5e5c"
+let apiKey_today            =   "72dc0d05547cc2c8380162ecaf186bf0"
+let apiKey_almanac          =   "0cf2f45852cc03991786d1f1e029df75"
+let apiKey_toutiao          =   "975b3aed023d5967743f0b7a2298e829"
+let apiKey_drivingLicence   =   "1ededb6d7ba09a9d96bfb1dc47f053d3"
 
 /* 
  老黄历
@@ -44,6 +44,8 @@ let url_todayOnHistoryDetail = "http://v.juhe.cn/todayOnhistory/queryDetail.php"
 let url_newsToutiao     = "http://v.juhe.cn/toutiao/index"
 
 
+//
+let url_drivingExam     = "http://v.juhe.cn/jztk/query"
 
 
 

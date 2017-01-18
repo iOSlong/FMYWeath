@@ -66,13 +66,19 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
         return dataTask
     }
 
+
     
     func request(_ method:String?,urlString:String?,parameters:NSDictionary?,error:Error?) ->URLRequest {
         assert(urlString?.isEmpty == false, "Invalid parameter not satisfying:"+urlString!)
         
         let paramSuffix:String = (parameters != nil) ? self.urlSuffixParams(parameters!) : ""
-        
-        let url = URL(string: urlString!+"?"+paramSuffix)
+
+        let urlStr = urlString!+"?"+paramSuffix
+        let muString = NSMutableString(string: urlStr)
+
+
+        muString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let url = URL(string: muString as String)
         var request = URLRequest(url: url!)
         self.requestUrl = url!
 

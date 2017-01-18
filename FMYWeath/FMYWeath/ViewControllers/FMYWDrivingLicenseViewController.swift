@@ -17,8 +17,8 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
     var arrModeChek:NSMutableArray = NSMutableArray()
     
     var submitBtn:FMYButton? = nil
-    var subject:String? = nil   //科目
-    var subMode:String? = nil   //驾照类型
+    var subject:String? = ""   //科目
+    var subMode:String? = ""   //驾照类型
     
     
     
@@ -55,7 +55,7 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         examSVC.rootInfo =
             ["title" : self.subject! + "  " + self.subMode!,
              "subject" : self.subject!,
-             "subMode" : self.subMode ?? ""]
+             "model" : self.subMode ?? ""]
         self.navigationController?.pushViewController(examSVC, animated: true)
     }
     
@@ -176,7 +176,7 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
     
     func judgeSubmitBtnState() -> Void {
         if self.subjectOne?.isSelected == true {
-            self.subject = self.subjectOne?.itemTitle
+            self.subject = "1"
             for item in self.arrModeChek {
                 if ((item as! FMYWCheckItemView).isSelected == true)
                 {
@@ -189,7 +189,7 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
             }
         }
         else if self.subjectFour?.isSelected == true {
-            self.subject = self.subjectFour?.itemTitle
+            self.subject = "4"
             self.subMode = ""
             
             self.enableSubmitBtn(inActivity: true)
@@ -206,7 +206,7 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         self.tempModeCheck?.isSelected = true
         self.enableSubmitBtn(inActivity: true)
         
-        self.subject = self.subjectOne?.itemTitle
+        self.subject = "1"
         self.subMode = tempCheck?.itemTitle
     }
     

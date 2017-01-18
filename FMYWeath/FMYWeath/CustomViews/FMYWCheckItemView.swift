@@ -20,33 +20,39 @@ class FMYWCheckItemView: UIView {
     private var eventHander:FMYCheckItemHander? = nil
 
     // MARK: 内部代码繁琐一点，是为了实现外部调用时候简单方便
-    private var tempSelected:Bool = false
-    var isSelected:Bool {
-        set{
-            self.tempSelected = newValue
+//    private var tempSelected:Bool? = false
+    var isSelected:Bool? {
+        didSet{
             self.refreshBtnCheckState() //更新UI
         }
-        get {
-            return self.tempSelected
-        }
+//        set{
+//            self.tempSelected = newValue
+//            self.refreshBtnCheckState() //更新UI
+//        }
+//        get {
+//            return self.tempSelected!
+//        }
     }
-    private var tempItemTitle:String? = nil
+//    private var tempItemTitle:String? = nil
     var itemTitle:String? {
-        set{
-            if (newValue != nil) {
-                tempItemTitle = newValue
-                self.refreshItemTitle() //更新UI
-            }
+        didSet{
+            self.refreshItemTitle() //更新UI
         }
-        get {
-            return self.tempItemTitle
-        }
+//        set{
+//            if (newValue != nil) {
+//                tempItemTitle = newValue
+//                self.refreshItemTitle() //更新UI
+//            }
+//        }
+//        get {
+//            return self.tempItemTitle
+//        }
     }
     
 
     //MARK: 界面布局刷新处理
     private func refreshBtnCheckState() {
-        self.btnCheck?.isSelected = self.isSelected;
+        self.btnCheck?.isSelected = self.isSelected!
     }
     
     private func refreshItemTitle()  {
@@ -71,11 +77,15 @@ class FMYWCheckItemView: UIView {
     }
     
     
-    
-    
-    
+
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        var newFrame = frame
+        if frame == CGRect.zero {
+            newFrame = CGRect.init(x: 0, y: 0, width: 40, height: 30)
+        }
+        super.init(frame: newFrame)
+
+        self.isSelected = false
         self.layer.borderColor = colorMainBarBack.cgColor
         self.layer.borderWidth = 2
         
@@ -122,9 +132,9 @@ class FMYWCheckItemView: UIView {
     }
     
     @objc private func checkItemTap(tapG : UITapGestureRecognizer) -> Void {
-        self.isSelected = !self.isSelected
+        self.isSelected = !self.isSelected!
         if (self.eventHander != nil) {
-            self.eventHander!(self.isSelected)
+            self.eventHander!(self.isSelected!)
         }
         print("checkItemTap")
     }
@@ -134,7 +144,7 @@ class FMYWCheckItemView: UIView {
         btn.isSelected = !btn.isSelected
         self.isSelected = btn.isSelected
         if (self.eventHander != nil) {
-            self.eventHander!(self.isSelected)
+            self.eventHander!(self.isSelected!)
         }
         print("fmybuttonClick")
     }
