@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		016738F21E2FB832009CAAF1 /* FMYCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */; };
+		016738F41E2FB890009CAAF1 /* FMYWExamCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016738F31E2FB890009CAAF1 /* FMYWExamCollectionCell.swift */; };
 		01CE75071E0839A700B76D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75061E0839A700B76D1C /* AppDelegate.swift */; };
 		01CE75091E0839A700B76D1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75081E0839A700B76D1C /* ViewController.swift */; };
 		01CE750C1E0839A700B76D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CE750A1E0839A700B76D1C /* Main.storyboard */; };
@@ -14,7 +16,6 @@
 		01CE75111E0839A700B76D1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CE750F1E0839A700B76D1C /* LaunchScreen.storyboard */; };
 		01CE75341E0842A600B76D1C /* FMYWCityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE752C1E0842A600B76D1C /* FMYWCityInfoViewController.swift */; };
 		01CE75351E0842A600B76D1C /* FMYWCityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */; };
-		01CE75361E0842A600B76D1C /* FMYWExponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE752E1E0842A600B76D1C /* FMYWExponentViewController.swift */; };
 		01CE75371E0842A600B76D1C /* FMYWFavorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE752F1E0842A600B76D1C /* FMYWFavorViewController.swift */; };
 		01CE75391E0842A600B76D1C /* FMYWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */; };
 		01CE753A1E0842A600B76D1C /* FMYWTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */; };
@@ -80,6 +81,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYCollectionViewCell.swift; sourceTree = "<group>"; };
+		016738F31E2FB890009CAAF1 /* FMYWExamCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWExamCollectionCell.swift; sourceTree = "<group>"; };
 		01CE75031E0839A700B76D1C /* FMYWeath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMYWeath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CE75061E0839A700B76D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CE75081E0839A700B76D1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +92,6 @@
 		01CE75121E0839A700B76D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01CE752C1E0842A600B76D1C /* FMYWCityInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWCityInfoViewController.swift; sourceTree = "<group>"; };
 		01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWCityListViewController.swift; sourceTree = "<group>"; };
-		01CE752E1E0842A600B76D1C /* FMYWExponentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWExponentViewController.swift; sourceTree = "<group>"; };
 		01CE752F1E0842A600B76D1C /* FMYWFavorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWFavorViewController.swift; sourceTree = "<group>"; };
 		01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWNavigationController.swift; sourceTree = "<group>"; };
 		01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTabBarViewController.swift; sourceTree = "<group>"; };
@@ -221,7 +223,6 @@
 			children = (
 				01CE752C1E0842A600B76D1C /* FMYWCityInfoViewController.swift */,
 				01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */,
-				01CE752E1E0842A600B76D1C /* FMYWExponentViewController.swift */,
 				01CE752F1E0842A600B76D1C /* FMYWFavorViewController.swift */,
 				01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */,
 				01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */,
@@ -278,6 +279,7 @@
 				01CE75981E16B10E00B76D1C /* FMYWBarButtomItem.swift */,
 				8EE3E7AF1E2638D50032EF3D /* FMYWJokePicTableCell.swift */,
 				8E2062E51E2F5B590094B8E6 /* FMYWCheckItemView.swift */,
+				016738F31E2FB890009CAAF1 /* FMYWExamCollectionCell.swift */,
 				01CE75A21E178A8F00B76D1C /* CNSegmentView.h */,
 				01CE75A31E178A8F00B76D1C /* CNSegmentView.m */,
 				01CE75A51E17935F00B76D1C /* Control_BezierPath.h */,
@@ -387,6 +389,7 @@
 				8EE3E7AD1E2636A60032EF3D /* FMYTableViewCell.swift */,
 				8E2062DB1E2F46D40094B8E6 /* FMYButton.swift */,
 				8E2062E71E2F5D3D0094B8E6 /* FMYLabel.swift */,
+				016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */,
 			);
 			path = RootView;
 			sourceTree = "<group>";
@@ -539,14 +542,15 @@
 				8E49046C1E1B81DD00B72F87 /* FMYWTodayHomeTableViewController.swift in Sources */,
 				01CE75421E096F9B00B76D1C /* UIView+Positioning.m in Sources */,
 				8EFE72471E114EC700934A13 /* FMYWTodayHistoryModel.swift in Sources */,
+				016738F21E2FB832009CAAF1 /* FMYCollectionViewCell.swift in Sources */,
 				8EE3E7AC1E2636950032EF3D /* FMYTableView.swift in Sources */,
 				01CE75611E0FD71300B76D1C /* FMYWJokeViewController.swift in Sources */,
 				8E2062EB1E2F689F0094B8E6 /* FMYWDrivingLicenseViewController.swift in Sources */,
 				01CE75681E1003E800B76D1C /* constantStr.swift in Sources */,
 				8EFE72451E1149F300934A13 /* FMYWTodayHistoryViewController.swift in Sources */,
 				01CE75391E0842A600B76D1C /* FMYWNavigationController.swift in Sources */,
-				01CE75361E0842A600B76D1C /* FMYWExponentViewController.swift in Sources */,
 				8EFE72431E11425700934A13 /* FMYWJokeListViewController.swift in Sources */,
+				016738F41E2FB890009CAAF1 /* FMYWExamCollectionCell.swift in Sources */,
 				01ED774F1E18B7F500812659 /* FMYWNewsDetailViewController.swift in Sources */,
 				8EAF8DD41E1664D100693C26 /* FMYWAlmanacPartTimeTableCell.swift in Sources */,
 				8E2062DC1E2F46D40094B8E6 /* FMYButton.swift in Sources */,
