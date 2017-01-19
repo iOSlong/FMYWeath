@@ -163,4 +163,8 @@ class FMYWTodayNewsViewController: FMYWViewController ,FMYWNewsItemViewControlle
         })
     }
 
+    
+    deinit {
+        print("release all useless obj!" + self.classForCoder.description())
+    }
 }

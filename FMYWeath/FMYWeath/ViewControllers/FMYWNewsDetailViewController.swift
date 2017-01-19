@@ -31,7 +31,9 @@ class FMYWNewsDetailViewController: FMYWViewController,WKNavigationDelegate {
 
         self.view.addSubview(self.mkwebView!)
 
-        let request = URLRequest(url: URL(string: self.newsItem?.url as! String)!)
+        var urlStr = "http://images.juheapi.com/jztk/subject4/524.swf"
+        urlStr = self.newsItem?.url as! String
+        let request = URLRequest(url: URL(string: urlStr)!)
         _ = self.mkwebView?.load(request)
         self.mkwebView?.navigationDelegate = self
     }

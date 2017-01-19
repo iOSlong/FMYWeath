@@ -35,9 +35,6 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
 
         // Do any additional setup after loading the view.
         
-        
-        self.displayUIItems()
-        
         self.submitBtn = FMYButton(type: .roundedRect)
         self.submitBtn?.frame = CGRect.init(x: myScreenW * 0.5 - 50, y: 380, width: 100, height: 35)
         self.submitBtn?.addTarget(self, action: #selector(submitBtnClick(_:)), for: .touchUpInside)
@@ -47,7 +44,10 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         self.submitBtn?.layer.borderWidth = 2
         self.submitBtn?.layer.cornerRadius = (self.submitBtn?.height)! * 0.38
         self.view.addSubview(self.submitBtn!)
-        
+        self.enableSubmitBtn(inActivity: false)
+
+        self.displayUIItems()
+
     }
     
     func submitBtnClick(_ :FMYButton) -> Void {
@@ -145,7 +145,6 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         
         self.enableSubObject(inActivity: false)
         
-        self.enableSubmitBtn(inActivity: false)
 
     }
     
@@ -219,5 +218,9 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
+    deinit {
+        print("release all useless obj!" + self.classForCoder.description())
+    }
 }

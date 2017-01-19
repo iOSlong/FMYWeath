@@ -45,7 +45,7 @@ class FMYWTodayHomeTableViewController: UITableViewController {
 
         self.tableView.tableHeaderView = self.platGreGorianCal
         self.tableView.backgroundColor = .clear
-        self.tableView.separatorColor = colorMainBack
+        self.tableView?.separatorColor = colorMainBarBack
         
         
         // 将返回按钮的标题设置为空

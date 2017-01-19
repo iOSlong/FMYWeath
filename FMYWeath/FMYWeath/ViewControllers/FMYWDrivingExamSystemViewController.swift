@@ -38,10 +38,10 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 2
         layout.minimumInteritemSpacing = 2
-        
+    
 
         self.collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: myScreenW, height: self.view.height - myNavBarH), collectionViewLayout: layout)
-        self.collectionView?.backgroundColor = .clear
+        self.collectionView?.backgroundColor = colorMainBarBack
         self.collectionView?.delegate   = self
         self.collectionView?.dataSource = self
 
@@ -63,15 +63,25 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
         }
 
         if indexPath.row < (self.dataSourceArr?.count)! {
-            let item:FMYWExamModel = self.dataSourceArr![indexPath.row] as! FMYWExamModel
+            let item:FMYWExamModel? = self.dataSourceArr![indexPath.row] as? FMYWExamModel
             cell?.examModel = item
         }
         return cell!
     }
 
-    // MARK: UICollectionViewDelegateFlowLayout delegate  call first
+    
+    // MARK: UICollectionViewDelegateFlowLayout delegate  call first  and only once
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: myScreenW, height: CGFloat(arc4random()%100 + 100) + myScreenW * 0.38)
+        
+        if indexPath.row < (self.dataSourceArr?.count)!
+        {
+            let item:FMYWExamModel? = self.dataSourceArr![indexPath.row] as? FMYWExamModel
+            
+            let cellH = FMYWExamCollectionCell.cellHeightFrom(examModel: item)
+            
+            return CGSize(width: myScreenW, height: cellH)
+        }
+        return CGSize.zero
     }
 
 
@@ -86,12 +96,15 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
         if self.model == nil {
             self.model = ""
         }
+        
+//       testType 测试类型，rand：随机测试（随机100个题目），order：顺序测试（所选科目全部题目 1094）
         let param = ["key":apiKey_drivingLicence,
                      "subject":self.subject,
-                     "model":self.model]
-        _ =  FMYHTTPSessionManager(url: URL(string: url_drivingExam), configuration: nil).net("GET", parameters: param as NSDictionary?, success: { [unowned self](dataTask, object) in
-            self.stopActivityIndicatorAnimation()
-
+                     "model":self.model,
+                     "testType":"order"]
+//        
+        _ =  FMYHTTPSessionManager(url: URL(string: url_drivingExam), configuration: nil).net("GET", parameters: param as NSDictionary?, success: { [weak self] (dataTask, object) in
+            self?.stopActivityIndicatorAnimation()
             do {
                 let responseDict =  try JSONSerialization.jsonObject(with: object as! Data, options:.mutableLeaves)
                 let resultItem:NSArray? = (responseDict as! NSDictionary).object(forKey: "result") as? NSArray
@@ -102,9 +115,9 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
                         let jokeItem = FMYWExamModel()
                         jokeItem.setValuesForKeys(element as! [String : Any])
                         print(jokeItem)
-                        self.dataSourceArr?.add(jokeItem)
+                        self?.dataSourceArr?.add(jokeItem)
                     }
-                    self.perform(#selector(self.reloadTableItems), on:  Thread.main, with: self, waitUntilDone: false)
+                    self?.perform(#selector(self?.reloadTableItems), on:  Thread.main, with: self, waitUntilDone: false)
                 }
 
             } catch (let error) {
@@ -112,10 +125,16 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
                 print(error,dataStr ?? "")
             }
             
-        }, failure:  { (dataTask, error) in
-            self.stopActivityIndicatorAnimation()
+        }, failure:  { [weak self] (dataTask, error) in
+            self?.stopActivityIndicatorAnimation()
 
         })
     }
 
+    // 42~ 68    |    检查循环引用
+    
+    deinit {
+        print("release all useless obj!" + self.classForCoder.description())
+    }
+    
 }

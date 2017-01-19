@@ -53,6 +53,7 @@ let colorMainBack       = RGBACOLOR(10, g: 13, b: 16)
 let colorMainBlack      = UIColor.black
 let colorMainPurple     = UIColor.purple
 let colorMainWhite      = UIColor.white
+let colorMainLightWhite = RGBACOLOR(200, g: 200, b: 200)
 
 
 

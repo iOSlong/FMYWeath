@@ -9,12 +9,15 @@
 import UIKit
 import MJRefresh
 
+// TODO:循环引用问题，！！
 class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, UITableViewDataSource{
 
     var tableView:FMYTableView? =  nil
     var dataSource:NSMutableArray? = []
-    var refreshHeader:MJRefreshNormalHeader? = nil
-    var refreshFooter:MJRefreshBackNormalFooter? = nil
+    
+    // MARK: weak 防止循环引用
+    weak var refreshHeader:MJRefreshNormalHeader? = nil
+    weak var refreshFooter:MJRefreshBackNormalFooter? = nil
     
     var pageCurrent = 0
     
@@ -32,10 +35,10 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
         self.title = "历史今日"
         
         self.configureFreshItems()
-        
+
         self.configureTableView()
-        
-        self.refreshHeader?.beginRefreshing()
+//
+//        self.refreshHeader?.beginRefreshing()
     }
     func configureFreshItems()  {
         self.refreshHeader = MJRefreshNormalHeader(refreshingBlock: {
@@ -43,7 +46,7 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
             self.loadNewData()
         })
         
-        self.refreshFooter = MJRefreshBackNormalFooter.init(refreshingBlock: {
+        self.refreshFooter = MJRefreshBackNormalFooter(refreshingBlock: {
             print("上拉加载 ……")
             self.loadMoreData()
         })
@@ -59,8 +62,8 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
 
         self.view.addSubview(self.tableView!)
 
-        self.tableView?.mj_header   = self.refreshHeader
-        self.tableView?.mj_footer   = self.refreshFooter
+//        self.tableView?.mj_header   = self.refreshHeader
+//        self.tableView?.mj_footer   = self.refreshFooter
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -190,5 +193,9 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
             print(dataTask ?? "empty    ")
             
         })
+    }
+    
+    deinit {
+        print("release all useless obj!" + self.classForCoder.description())
     }
 }
