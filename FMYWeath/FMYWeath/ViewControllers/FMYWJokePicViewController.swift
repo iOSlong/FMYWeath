@@ -88,7 +88,7 @@ class FMYWJokePicViewController: FMYWViewController,UITableViewDataSource,UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 270
     }
     
     func reloadTableItems() {

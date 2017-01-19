@@ -20,7 +20,10 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
     var subject:String? = ""   //科目
     var subMode:String? = ""   //驾照类型
     
-    
+    var testType:String? = "rand"
+    var testTypeRand:FMYWCheckItemView? = nil   //rand:随机测试（随机100个题目），
+    var testTypeOrder:FMYWCheckItemView? = nil  //order：顺序测试（所选科目全部题目）
+
     
     
     
@@ -35,8 +38,15 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
 
         // Do any additional setup after loading the view.
         
+
+        self.displayRequiredItems()
+
+
+    }
+
+    func displayAccessItems() -> Void {
         self.submitBtn = FMYButton(type: .roundedRect)
-        self.submitBtn?.frame = CGRect.init(x: myScreenW * 0.5 - 50, y: 380, width: 100, height: 35)
+        self.submitBtn?.frame = CGRect.init(x: myScreenW * 0.5 - 50, y: 380, width: 100, height: 36)
         self.submitBtn?.addTarget(self, action: #selector(submitBtnClick(_:)), for: .touchUpInside)
         self.submitBtn?.setTitle("开题 ~ GO", for: .normal)
         self.submitBtn?.setTitleColor(colorMainWhite, for: .normal)
@@ -46,22 +56,48 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         self.view.addSubview(self.submitBtn!)
         self.enableSubmitBtn(inActivity: false)
 
-        self.displayUIItems()
+        self.testTypeRand     = FMYWCheckItemView(frame: CGRect(x: 0, y: 0, width: 100, height: 28))
+        self.testTypeOrder    = FMYWCheckItemView(frame: CGRect(x: 0, y: 0, width: 100, height: 28))
+        self.testTypeRand?.itemTitle  = "随机题 100个"
+        self.testTypeOrder?.itemTitle = "所选科目全部题目"
 
+        self.testTypeRand?.bottom  = (self.submitBtn?.top)! - 30
+        self.testTypeOrder?.bottom = (self.submitBtn?.top)! - 30
+        self.testTypeRand?.left =  (self.subjectOne?.left)!
+        self.testTypeOrder?.centerX = myScreenW * 0.75
+        self.view.addSubview(self.testTypeRand!)
+        self.view.addSubview(self.testTypeOrder!)
+        self.testTypeRand?.isSelected = true
+
+        self.testTypeRand?.fmycheckItem(checkHander: { [unowned self] (isSelected) in
+            self.testTypeOrder?.isSelected = !isSelected
+        })
+        self.testTypeOrder?.fmycheckItem(checkHander: {[unowned self]  (isSelected) in
+            self.testTypeRand?.isSelected = !isSelected
+        })
+
+        
     }
-    
+
     func submitBtnClick(_ :FMYButton) -> Void {
         let examSVC:FMYWDrivingExamSystemViewController = FMYWDrivingExamSystemViewController()
+        if (self.testTypeRand?.isSelected)! == true {
+            self.testType = "rand"
+        }else{
+            self.testType = "order"
+        }
+
         examSVC.rootInfo =
             ["title" : self.subject! + "  " + self.subMode!,
              "subject" : self.subject!,
+             "testType" : self.testType ?? "",
              "model" : self.subMode ?? ""]
         self.navigationController?.pushViewController(examSVC, animated: true)
     }
     
+
     
-    
-    func displayUIItems() {
+    func displayRequiredItems() {
         let itemTitle = FMYLabel.fmylabel(frame: CGRect.zero,
                                           font: UIFont.systemFont(ofSize: myFont.font_big01.rawValue),
                                           textColor: colorMainWhite,
@@ -69,7 +105,7 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         
         itemTitle?.text     = "选择考试科目类型";
         itemTitle?.sizeToFit()
-        itemTitle?.center   = CGPoint(x:myScreenW * 0.5, y: myNavBarH)
+        itemTitle?.center   = CGPoint(x:myScreenW * 0.5, y: myTabBarH)
         self.view.addSubview(itemTitle!)
         
         
@@ -117,7 +153,7 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         subTitle?.text     = "驾照类型(科 1)";
         subTitle?.sizeToFit()
         
-        let subPointTop  = CGPoint(x:(self.subjectOne?.centerX)!, y:(self.subjectOne?.bottom)! + 40)
+        let subPointTop  = CGPoint(x:(self.subjectOne?.centerX)!, y:(self.subjectOne?.bottom)! + 30)
         self.view.addSubview(subTitle!)
         subTitle?.center   = subPointTop
         
@@ -145,6 +181,7 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         
         self.enableSubObject(inActivity: false)
         
+        self.displayAccessItems()
 
     }
     

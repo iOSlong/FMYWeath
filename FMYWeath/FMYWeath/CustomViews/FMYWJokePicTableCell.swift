@@ -78,7 +78,7 @@ class FMYWJokePicTableCell: FMYTableViewCell,WKNavigationDelegate {
         
         self.imgvContent = UIImageView(frame: CGRect(x:mySpanLeft, y:mySpanUp, width: myScreenW - 2 * mySpanLeft, height:200))
         self.imgvContent?.contentMode = .scaleAspectFit
-        self.imgvContent?.top = (self.labelContent?.bottom)! + mySpanH
+        self.imgvContent?.top = (self.labelContent?.bottom)! + mySpanUp
         
         
         self.wkwebView = WKWebView.init(frame: (self.imgvContent?.frame)!)
@@ -103,6 +103,8 @@ class FMYWJokePicTableCell: FMYTableViewCell,WKNavigationDelegate {
             self.labelContent?.sizeToFit()
             
             self.imgvContent?.top = (self.labelContent?.bottom)! + mySpanH
+            self.wkwebView?.top = (self.labelContent?.bottom)! + mySpanH
+
             if self.jokePicModel?.picType == .JImgHave {
                 let imgUrl = self.jokePicModel?.url as! String
                 

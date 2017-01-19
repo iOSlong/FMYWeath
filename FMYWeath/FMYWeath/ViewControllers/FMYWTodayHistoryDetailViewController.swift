@@ -13,7 +13,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
     var  todayHistoryModel:FMYWTodayHistoryModel? = nil
     private var historyDetail:FMYWTodayHistoryModel? = nil
 
-    var tableView:UITableView? =  nil
+    var tableView:FMYTableView? =  nil
 
     var textViewDetail:UITextView? = nil
 
@@ -24,6 +24,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
 
     var footerView:FMYWImgShowView = {
         let footerView = FMYWImgShowView(frame:CGRect(x: mySpanH, y: mySpanV, width: myScreenW - 2 * mySpanH, height: 300))
+        footerView.backgroundColor  = .clear
         return footerView
     }()
     
@@ -46,17 +47,17 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
     }
 
     func configureUIItems() {
-        self.tableView =  UITableView(frame: self.view.frame, style: .plain)
-        self.tableView?.height = self.view.height
+        self.tableView =  FMYTableView(frame: self.view.frame, style: .plain)
+        self.tableView?.height = self.view.height - myNavBarH
         self.tableView?.dataSource   = self
         self.tableView?.delegate     = self
-        self.tableView?.backgroundColor = .clear
         self.view.addSubview(self.tableView!)
 
 
         self.textViewDetail = UITextView(frame: CGRect(x: mySpanLeft, y: mySpanUp, width: myScreenW - 2 * mySpanLeft, height: self.view.height - myTabBarH))
         self.textViewDetail?.font = UIFont.systemFont(ofSize: 20)
-        self.textViewDetail?.textColor = .white
+        self.textViewDetail?.textColor = colorMainLightWhite
+        self.textViewDetail?.backgroundColor = .clear
         self.textViewDetail?.textAlignment = .left
         self.textViewDetail?.text = self.todayHistoryModel?.title as! String!
         self.textViewDetail?.bounces = false
@@ -88,9 +89,9 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "jokeBaseCellIdentifier"
-        var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier)
+        var cell:FMYTableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier) as! FMYTableViewCell?
         if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: identifier)
+            cell = FMYTableViewCell(style: .subtitle, reuseIdentifier: identifier)
         }
 
         cell?.contentView.addSubview(self.footerView)
