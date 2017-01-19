@@ -63,6 +63,7 @@
 		8E2062E81E2F5D3D0094B8E6 /* FMYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2062E71E2F5D3D0094B8E6 /* FMYLabel.swift */; };
 		8E2062EB1E2F689F0094B8E6 /* FMYWDrivingLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2062E91E2F689F0094B8E6 /* FMYWDrivingLicenseViewController.swift */; };
 		8E2062EE1E2F68FC0094B8E6 /* FMYWDrivingExamSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2062ED1E2F68FC0094B8E6 /* FMYWDrivingExamSystemViewController.swift */; };
+		8E2062F01E3087500094B8E6 /* FMYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2062EF1E3087500094B8E6 /* FMYExtension.swift */; };
 		8E2860B31E128B6300EEC3BC /* FMYWImgShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860B21E128B6300EEC3BC /* FMYWImgShowView.swift */; };
 		8E2860BE1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860BD1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift */; };
 		8E2860C01E13E33A00EEC3BC /* FMYWAlmanacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2860BF1E13E33A00EEC3BC /* FMYWAlmanacModel.swift */; };
@@ -147,6 +148,7 @@
 		8E2062E71E2F5D3D0094B8E6 /* FMYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYLabel.swift; sourceTree = "<group>"; };
 		8E2062E91E2F689F0094B8E6 /* FMYWDrivingLicenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWDrivingLicenseViewController.swift; sourceTree = "<group>"; };
 		8E2062ED1E2F68FC0094B8E6 /* FMYWDrivingExamSystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWDrivingExamSystemViewController.swift; sourceTree = "<group>"; };
+		8E2062EF1E3087500094B8E6 /* FMYExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYExtension.swift; sourceTree = "<group>"; };
 		8E2860B21E128B6300EEC3BC /* FMYWImgShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWImgShowView.swift; sourceTree = "<group>"; };
 		8E2860BD1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacViewController.swift; sourceTree = "<group>"; };
 		8E2860BF1E13E33A00EEC3BC /* FMYWAlmanacModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWAlmanacModel.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				01CE75711E11687400B76D1C /* FMYUtils.swift */,
+				8E2062EF1E3087500094B8E6 /* FMYExtension.swift */,
 			);
 			path = FMYUtils;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				8EE3E7AC1E2636950032EF3D /* FMYTableView.swift in Sources */,
 				01CE75611E0FD71300B76D1C /* FMYWJokeViewController.swift in Sources */,
 				8E2062EB1E2F689F0094B8E6 /* FMYWDrivingLicenseViewController.swift in Sources */,
+				8E2062F01E3087500094B8E6 /* FMYExtension.swift in Sources */,
 				01CE75681E1003E800B76D1C /* constantStr.swift in Sources */,
 				8EFE72451E1149F300934A13 /* FMYWTodayHistoryViewController.swift in Sources */,
 				01CE75391E0842A600B76D1C /* FMYWNavigationController.swift in Sources */,

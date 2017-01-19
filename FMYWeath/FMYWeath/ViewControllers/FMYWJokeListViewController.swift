@@ -14,8 +14,8 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
         
     var tableView:UITableView? =  nil
     var dataSource:NSMutableArray? = []
-    var refreshHeader:MJRefreshHeader? = nil
-    var refreshFooter:MJRefreshBackNormalFooter? = nil
+    weak var refreshHeader:MJRefreshHeader? = nil
+    weak var refreshFooter:MJRefreshBackNormalFooter? = nil
     
     var pageCurrent = 0
     
@@ -35,7 +35,7 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
         
         self.configureTableView()
         
-        self.refreshHeader?.beginRefreshing()
+        self.refreshFooter?.beginRefreshing()
     }
     func configureFreshItems()  {
         self.refreshHeader = MJRefreshNormalHeader(refreshingBlock: {
@@ -126,18 +126,18 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
     }
     
     
-    
+    // TODO: Swift 中 闭包  循环应用问题
     func netGetJokeList(params:NSDictionary, loadMore:Bool) {
         
         let httpSession = FMYHTTPSessionManager(url: URL(string: url_jokeList), configuration: nil)
         
-        _ =  httpSession.net("GET", parameters: params, success: { (dataTask, object) in
+        _ =  httpSession.net("GET", parameters: params, success: { [weak self] (dataTask, object) in
             
             DispatchQueue.main.async {
-                self.refreshHeader?.endRefreshing()
-                self.refreshFooter?.endRefreshing()
+                self?.refreshHeader?.endRefreshing()
+                self?.refreshFooter?.endRefreshing()
             }
-            self.pageCurrent += 1
+            self?.pageCurrent += 1
             
             print(object)
             print(dataTask ?? "empty")
@@ -148,7 +148,7 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
                 let dataElement:NSArray = resultDict.object(forKey: "data") as! NSArray
                 
                 if loadMore == false && dataElement.count > 0 {
-                    self.dataSource?.removeAllObjects()
+                    self?.dataSource?.removeAllObjects()
                 }else if loadMore == true && dataElement.count == Int(pageSize) {
                     
                 }
@@ -158,10 +158,10 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
                     let jokeItem = FMYWJokeModel()
                     jokeItem.setValuesForKeys(element)
                     print(jokeItem)
-                    self.dataSource?.add(jokeItem)
+                    self?.dataSource?.add(jokeItem)
                 }
                 
-                self.perform(#selector(self.reloadTableItems), on:  Thread.main, with: self, waitUntilDone: false)
+                self?.perform(#selector(self?.reloadTableItems), on:  Thread.main, with: self, waitUntilDone: false)
                 
             } catch (let error) {
                 let dataStr =  String(data: object as! Data, encoding: .utf8)
@@ -179,4 +179,11 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
         })
         
     }
+    
+    
+    
+    deinit {
+        print("release all useless obj!" + self.classForCoder.description())
+    }
+    
 }

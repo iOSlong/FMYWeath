@@ -10,7 +10,42 @@ import UIKit
 
 class FMYLabel: UILabel {
     
+    // MARK: 定义单列实现部分
+    static func shareExamTitle() -> FMYLabel {
+        
+        struct Singleton {
+            
+            static var single = FMYLabel.fmylabel(frame: .zero, font: UIFont.systemFont(ofSize: myFont.font_normal.rawValue), textColor: colorMainLightWhite, numberOfLines: 0, textAlignment: .left)!
+        }
+        
+        DispatchQueue.once("shareExamTitle") {
+            Singleton.single = shareExamTitle()
+        }
+        
+        return Singleton.single
+    }
+
+    
+    // MARK: other needed single parts   ……
+    
+    
 }
+
+//final class shareExamTitleLable:FMYLabel {
+//    static func shareExamTitle() -> FMYLabel {
+//        
+//        struct Singleton {
+//            
+//            static var single = FMYLabel.fmylabel(frame: .zero, font: UIFont.systemFont(ofSize: myFont.font_normal.rawValue), textColor: colorMainLightWhite, numberOfLines: 0, textAlignment: .left)!
+//        }
+//        
+//        DispatchQueue.once("shareExamTitle") {
+//            Singleton.single = shareExamTitle()
+//        }
+//        
+//        return Singleton.single
+//    }
+//}
 
 extension FMYLabel {
     // TODO: 如何实现将函数声明和函数实现部分封开

@@ -45,8 +45,8 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
         self.showActivityIndicator(show: true)
         
         let dataTask = self.dataTask(request: request, completionHander: {[unowned self] (response, object, error) in
-            print("request.URL:",self.requestUrl?.absoluteString ?? "")
-            print("response\(response), object\(object), error\(error)")
+//            print("request.URL:",self.requestUrl?.absoluteString ?? "")
+//            print("response\(response), object\(object), error\(error)")
             
             self.showActivityIndicator(show: false)
 
