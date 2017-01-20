@@ -44,57 +44,8 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
 
     }
 
-    func displayAccessItems() -> Void {
-        self.submitBtn = FMYButton(type: .roundedRect)
-        self.submitBtn?.frame = CGRect.init(x: myScreenW * 0.5 - 50, y: 380, width: 100, height: 36)
-        self.submitBtn?.addTarget(self, action: #selector(submitBtnClick(_:)), for: .touchUpInside)
-        self.submitBtn?.setTitle("开题 ~ GO", for: .normal)
-        self.submitBtn?.setTitleColor(colorMainWhite, for: .normal)
-        self.submitBtn?.layer.borderColor = colorMainBarBack.cgColor
-        self.submitBtn?.layer.borderWidth = 2
-        self.submitBtn?.layer.cornerRadius = (self.submitBtn?.height)! * 0.38
-        self.view.addSubview(self.submitBtn!)
-        self.enableSubmitBtn(inActivity: false)
-
-        self.testTypeRand     = FMYWCheckItemView(frame: CGRect(x: 0, y: 0, width: 100, height: 28))
-        self.testTypeOrder    = FMYWCheckItemView(frame: CGRect(x: 0, y: 0, width: 100, height: 28))
-        self.testTypeRand?.itemTitle  = "随机题 100个"
-        self.testTypeOrder?.itemTitle = "所选科目全部题目"
-
-        self.testTypeRand?.bottom  = (self.submitBtn?.top)! - 30
-        self.testTypeOrder?.bottom = (self.submitBtn?.top)! - 30
-        self.testTypeRand?.left =  (self.subjectOne?.left)!
-        self.testTypeOrder?.centerX = myScreenW * 0.75
-        self.view.addSubview(self.testTypeRand!)
-        self.view.addSubview(self.testTypeOrder!)
-        self.testTypeRand?.isSelected = true
-
-        self.testTypeRand?.fmycheckItem(checkHander: { [unowned self] (isSelected) in
-            self.testTypeOrder?.isSelected = !isSelected
-        })
-        self.testTypeOrder?.fmycheckItem(checkHander: {[unowned self]  (isSelected) in
-            self.testTypeRand?.isSelected = !isSelected
-        })
-
-        
-    }
-
-    func submitBtnClick(_ :FMYButton) -> Void {
-        let examSVC:FMYWDrivingExamSystemViewController = FMYWDrivingExamSystemViewController()
-        if (self.testTypeRand?.isSelected)! == true {
-            self.testType = "rand"
-        }else{
-            self.testType = "order"
-        }
-
-        examSVC.rootInfo =
-            ["title" : self.subject! + "  " + self.subMode!,
-             "subject" : self.subject!,
-             "testType" : self.testType ?? "",
-             "model" : self.subMode ?? ""]
-        self.navigationController?.pushViewController(examSVC, animated: true)
-    }
-    
+   
+  
 
     
     func displayRequiredItems() {
@@ -184,6 +135,62 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         self.displayAccessItems()
 
     }
+    
+    func displayAccessItems() -> Void {
+        self.submitBtn = FMYButton(type: .roundedRect)
+        self.submitBtn?.frame = CGRect.init(x: myScreenW * 0.5 - 50, y: 380, width: 100, height: 36)
+        self.submitBtn?.addTarget(self, action: #selector(submitBtnClick(_:)), for: .touchUpInside)
+        self.submitBtn?.setTitle("开题 ~ GO", for: .normal)
+        self.submitBtn?.setTitleColor(colorMainWhite, for: .normal)
+        self.submitBtn?.layer.borderColor = colorMainBarBack.cgColor
+        self.submitBtn?.layer.borderWidth = 2
+        self.submitBtn?.layer.cornerRadius = (self.submitBtn?.height)! * 0.38
+        self.view.addSubview(self.submitBtn!)
+        self.enableSubmitBtn(inActivity: false)
+        
+        self.testTypeRand     = FMYWCheckItemView(frame: CGRect(x: 0, y: 0, width: 100, height: 28))
+        self.testTypeOrder    = FMYWCheckItemView(frame: CGRect(x: 0, y: 0, width: 100, height: 28))
+        self.testTypeRand?.itemTitle  = "随机题 100个"
+        self.testTypeOrder?.itemTitle = "所选科目全部题目"
+        
+        self.testTypeRand?.bottom  = (self.submitBtn?.top)! - 30
+        self.testTypeOrder?.bottom = (self.submitBtn?.top)! - 30
+        self.testTypeRand?.left =  (self.subjectOne?.left)!
+        self.testTypeOrder?.centerX = myScreenW * 0.75
+        self.view.addSubview(self.testTypeRand!)
+        self.view.addSubview(self.testTypeOrder!)
+        self.testTypeRand?.isSelected = true
+        
+        self.testTypeRand?.fmycheckItem(checkHander: { [unowned self] (isSelected) in
+            self.testTypeOrder?.isSelected = !isSelected
+        })
+        self.testTypeOrder?.fmycheckItem(checkHander: {[unowned self]  (isSelected) in
+            self.testTypeRand?.isSelected = !isSelected
+        })
+        
+        
+    }
+
+    
+    
+    
+    func submitBtnClick(_ :FMYButton) -> Void {
+        let examSVC:FMYWDrivingExamSystemViewController = FMYWDrivingExamSystemViewController()
+        if (self.testTypeRand?.isSelected)! == true {
+            self.testType = "rand"
+        }else{
+            self.testType = "order"
+        }
+        
+        examSVC.rootInfo =
+            ["title" : self.subject! + "  " + self.subMode!,
+             "subject" : self.subject!,
+             "testType" : self.testType ?? "",
+             "model" : self.subMode ?? ""]
+        self.navigationController?.pushViewController(examSVC, animated: true)
+    }
+    
+    
     
     
     func enableSubObject(inActivity:Bool) -> Void {

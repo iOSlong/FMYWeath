@@ -70,7 +70,6 @@ class GreGorianCalView: UIView {
         let yangli   = self.almanac?.yangli as! String
 //        var yinli       :NSString = self.almanac?.yinli
         
-        // TODO 日期装换
         let timeInterval = timeInteger(timeStr: yangli, formateStr: .TFy_M_d)
         let day:String = timeShow(time: timeInterval, formateStr: .TFd2, localId: nil)
         let ymVCN:String = timeShow(time: timeInterval, formateStr: .TFy_M_d, localId: .zh_CN)
@@ -130,14 +129,15 @@ class GreGorianCalView: UIView {
 
 
 class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
-//gregorian calendar
-    var delegate:AlmanacPlatViewDelegate? = nil
+//gregorian calendar  MARK:
+    weak var delegate:AlmanacPlatViewDelegate? = nil
     var tableView:UITableView?
     var platGreGorianCal:GreGorianCalView = {
         let greGorin = GreGorianCalView(frame:.zero)
         return greGorin
     }()
     
+
     var almanacSectionHader:UIView = {
         let almanacSection = UIView(frame:.zero)
         almanacSection.backgroundColor = colorMainBack
@@ -235,6 +235,7 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
     
     // TableView Delegate & DataSource
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
         return self.almanacSectionHader
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
