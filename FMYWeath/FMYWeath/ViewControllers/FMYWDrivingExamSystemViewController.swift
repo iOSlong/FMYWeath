@@ -12,6 +12,7 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
 
     var subject :String? = nil
     var model:String? = nil
+    var testType:String? = "rand"
 
 
     var collectionView:UICollectionView? = nil
@@ -23,13 +24,13 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
             print(self.rootInfo ?? "empty rootInfo")
             self.subject = self.rootInfo?.object(forKey: "subject") as! String?
             self.model  = self.rootInfo?.object(forKey: "model") as! String?
+            self.testType = self.rootInfo?.object(forKey: "testType") as! String?
         }
 
 
         self.configureCollectionView()
 
         self.netGetExamContent()
-        self.startActivityIndicatorAnimation()
     }
 
     func configureCollectionView() -> Void {
@@ -41,7 +42,6 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
     
 
         self.collectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: myScreenW, height: self.view.height - myNavBarH), collectionViewLayout: layout)
-        self.collectionView?.backgroundColor = colorMainBarBack
         self.collectionView?.delegate   = self
         self.collectionView?.dataSource = self
 
@@ -88,6 +88,7 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
 
     func reloadTableItems() -> Void {
         print(self.dataSourceArr ?? "")
+        self.collectionView?.backgroundColor = colorMainBarBack
         self.collectionView?.reloadData()
     }
 
@@ -101,10 +102,11 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
         let param = ["key":apiKey_drivingLicence,
                      "subject":self.subject,
                      "model":self.model,
-                     "testType":"order"]
-//        
+                     "testType":self.testType]
+        self.view.bringSubview(toFront: self.activityIndicator!)
+        self.startActivityIndicatorAnimation()
+
         _ =  FMYHTTPSessionManager(url: URL(string: url_drivingExam), configuration: nil).net("GET", parameters: param as NSDictionary?, success: { [weak self] (dataTask, object) in
-            self?.stopActivityIndicatorAnimation()
             do {
                 let responseDict =  try JSONSerialization.jsonObject(with: object as! Data, options:.mutableLeaves)
                 let resultItem:NSArray? = (responseDict as! NSDictionary).object(forKey: "result") as? NSArray
@@ -117,10 +119,12 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
                         print(jokeItem)
                         self?.dataSourceArr?.add(jokeItem)
                     }
+                    self?.stopActivityIndicatorAnimation()
                     self?.perform(#selector(self?.reloadTableItems), on:  Thread.main, with: self, waitUntilDone: false)
                 }
 
             } catch (let error) {
+                self?.stopActivityIndicatorAnimation()
                 let dataStr =  String(data: object as! Data, encoding: .utf8)
                 print(error,dataStr ?? "")
             }

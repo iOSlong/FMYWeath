@@ -38,7 +38,7 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
 
         self.configureTableView()
 //
-//        self.refreshHeader?.beginRefreshing()
+        self.refreshHeader?.beginRefreshing()
     }
     func configureFreshItems()  {
         self.refreshHeader = MJRefreshNormalHeader(refreshingBlock: {
@@ -62,8 +62,8 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
 
         self.view.addSubview(self.tableView!)
 
-//        self.tableView?.mj_header   = self.refreshHeader
-//        self.tableView?.mj_footer   = self.refreshFooter
+        self.tableView?.mj_header   = self.refreshHeader
+        self.tableView?.mj_footer   = self.refreshFooter
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

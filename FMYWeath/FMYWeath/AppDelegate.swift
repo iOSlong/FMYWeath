@@ -32,13 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         jokeVC.title            = "笑话大全"
         todayHistoryVC.title    = "历史今日"
         favorVC.title           = "收藏管理"
-        cityListVC.title        = "更多城市"
+        cityListVC.title        = "袖里乾坤"
 
         navTodayHome.title      = "关注今日"
         navJokes.title          = "笑话大全"
         navtodayHistory.title   = "历史今日"
         navFavor.title          = "收藏管理"
-        navCityList.title       = "更多城市"
+        navCityList.title       = "袖里乾坤"
 
         let tabBar  =   FMYWTabBarViewController()
         tabBar.setViewControllers([navTodayHome,navJokes,navFavor,navCityList], animated: true)
