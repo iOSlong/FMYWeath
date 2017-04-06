@@ -9,6 +9,8 @@
 import UIKit
 
 class FMYButton: UIButton {
+    var colorSelected:UIColor?   = nil
+    var colorNormal:UIColor?     = nil
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -17,11 +19,34 @@ class FMYButton: UIButton {
         // Drawing code
     }
     */
-
+    
+    
+    
+    
+    
+    fileprivate var _isSelected:Bool? = false
+    override var isSelected: Bool {
+        get {
+            return _isSelected!
+        }
+        set(newValue) {
+            super.isEnabled = newValue
+            _isSelected     = newValue
+            if _isSelected! {
+                self.setTitleColor(colorSelected, for: .selected)
+                self.setTitleColor(colorSelected, for: .normal)
+            }else{
+                self.setTitleColor(colorNormal, for: .selected)
+                self.setTitleColor(colorNormal, for: .normal)
+            }
+        }
+    }
+    
 }
 
 // MARK: 利用拓展， 定制一些方便使用的构造方法， 实现方便调用的控件样式
 extension FMYButton {
+    
     class func fmyButtonWith(frame:CGRect, imgNormal:String, imgSelected:String, target:AnyObject, action:Selector, circleLayer:Bool) -> FMYButton{
         
         let btn  = FMYButton(type: .custom)
@@ -70,7 +95,23 @@ extension FMYButton {
 
         btn.addTarget(target, action: action, for: .touchUpInside)
         
-        return nil
+        return btn
+    }
+    
+    
+    class func fmyButtom(frame:CGRect, txtColor:UIColor, colorSelected:UIColor, target:AnyObject, action:Selector, mode:UIViewContentMode, contentEdgeInsets:UIEdgeInsets) -> FMYButton? {
+        
+        let btn  = FMYButton(type: .custom)
+        btn.frame = frame
+        btn.contentEdgeInsets = contentEdgeInsets
+        btn.imageView?.contentMode = mode
+
+        btn.setTitleColor(txtColor, for: .normal)
+        btn.setTitleColor(colorSelected, for: .selected)
+        
+        btn.addTarget(target, action: action, for: .touchUpInside)
+        
+        return btn
     }
 }
 

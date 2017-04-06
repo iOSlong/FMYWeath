@@ -25,6 +25,7 @@ class FMYURLSessionManager: NSObject,URLSessionDataDelegate {
 //    var paramsVC:completionHander? = nil
 
 
+    
     var muData = Data()
 
 

@@ -174,26 +174,23 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
             let lengthShow = self.almanacModelArr.count >= 3 ? 3 : self.almanacModelArr.count
             
             let almanacArr:NSArray = self.almanacModelArr.subarray(with: NSRange(location:self.showDayLocation, length:lengthShow )) as NSArray;
-                                DispatchQueue.main.async {
-
+            
+            
             for index  in 0...(almanacArr.count - 1) {
                 let almanacPlat:FMYWAlmanacPlatView = self.almanacPlarArr[index] as! FMYWAlmanacPlatView
                 let almanacModelShow = almanacArr[index] as? FMYWAlmanacModel;
-
+                
                 // MARK: 重复嵌套使用主线程更新UI会出现画面骚动闪烁
                 if myTest
                 {
-                        almanacPlat.almanacModel = almanacModelShow
+                    almanacPlat.almanacModel = almanacModelShow
                 }
                 else{
                     almanacPlat.almanacModel = almanacModelShow
                 }
                 
             }
-            }
-
-//            self.scrollView.contentOffset =
-
+            
             self.scrollView.setContentOffset(CGPoint(x: CGFloat(self.showDayIndex) * self.scrollView.width, y: 0), animated: animated)
         }
     }
@@ -241,7 +238,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                             }
                         })
                         self.todayMode = self.almanacModelArr[1] as? FMYWAlmanacModel;
-                        self.reloadScrollItems(animated: true)
+                        self.reloadScrollItems(animated: false)
                     }
                 }
                 

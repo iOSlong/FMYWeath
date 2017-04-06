@@ -40,7 +40,7 @@ class FMYWBtnTab: UIButton {
         self.addSubview(labelTitle!)
     }
 
-    // TODO   重写set方法
+    // TODO:   重写set方法
     fileprivate var _isSelected:Bool? = false
     override var isSelected: Bool {
         get {
