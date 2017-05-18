@@ -119,14 +119,6 @@ class FMYWExamCollectionCell: FMYCollectionViewCell,WKNavigationDelegate {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
     // 更新数据之后进行刷新
     var examModel:FMYWExamModel?{
         didSet{
@@ -185,8 +177,8 @@ class FMYWExamCollectionCell: FMYCollectionViewCell,WKNavigationDelegate {
         self.contentView.addSubview(self.checkItem4)
         
 
-        self.contentView.addSubview(self.answerBtn)
-        
+//        self.contentView.addSubview(self.answerBtn)
+
         
         self.examTitle.left     = mySpanLeft
         self.checkItem1.left    = mySpanLeft

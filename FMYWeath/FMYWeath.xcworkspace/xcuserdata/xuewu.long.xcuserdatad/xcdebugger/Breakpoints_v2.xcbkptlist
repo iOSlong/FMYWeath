@@ -980,27 +980,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
+            timestampString = "516785320.86812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "configureDisplayItems()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "configureDisplayItems()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1058,11 +1042,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
+            timestampString = "516787668.435614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "368"
-            endingLineNumber = "368"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "refreshCaculateData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1074,11 +1058,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
+            timestampString = "516787668.435614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
             landmarkName = "refreshDisplay()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1090,11 +1074,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
+            timestampString = "516787668.435614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
             landmarkName = "refreshCaculateData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1106,11 +1090,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
+            timestampString = "516787668.435614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
             landmarkName = "CalculateExcamCellHelp"
             landmarkType = "3">
          </BreakpointContent>
@@ -1122,11 +1106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
+            timestampString = "516787668.435614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "refreshDisplay()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1250,11 +1234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
+            timestampString = "516787668.435614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "refreshDisplay()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1266,11 +1250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
+            timestampString = "516787668.435614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311">
+            startingLineNumber = "303"
+            endingLineNumber = "303">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1280,11 +1264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FMYWeath/CustomViews/FMYWExamCollectionCell.swift"
-            timestampString = "511251957.799103"
+            timestampString = "516785320.86812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "configureDisplayItems()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1430,6 +1414,22 @@
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "setPicUrl(picUrl:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FMYWeath/ViewControllers/FMYWFavorViewController.swift"
+            timestampString = "516792370.983729"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
