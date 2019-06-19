@@ -20,19 +20,12 @@ class FMYWCheckItemView: UIView {
     private var eventHander:FMYCheckItemHander? = nil
 
     // MARK: 内部代码繁琐一点，是为了实现外部调用时候简单方便
-//    private var tempSelected:Bool? = false
     var isSelected:Bool? {
         didSet{
             self.refreshBtnCheckState() //更新UI
         }
-//        set{
-//            self.tempSelected = newValue
-//            self.refreshBtnCheckState() //更新UI
-//        }
-//        get {
-//            return self.tempSelected!
-//        }
     }
+    
 //    private var tempItemTitle:String? = nil
     var itemTitle:String? {
         didSet{

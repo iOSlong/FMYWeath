@@ -35,7 +35,7 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
     }
     
     
-
+    // TODO: 如何将接口可实现分割开来 ？
     func net(_ method:String?,parameters:NSDictionary?,
              success:((URLSessionDataTask?,Any) ->Void)?,
              failure:((URLSessionDataTask?,Error) ->Void)?) -> URLSessionDataTask {
@@ -85,9 +85,7 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
         request.httpMethod  = method
 
 //        let soap12   = self.postBody()
-
 //        let soapData = soap12.data(using: .utf8)
-
 //        request.httpBody    = soapData
 //        request.setValue(String(format: "%d", (soap12 as NSString).length), forHTTPHeaderField:"Content-Length")
 ////        request.setValue("text/xml; charset=utf-8", forHTTPHeaderField:"Content-Type")

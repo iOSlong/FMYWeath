@@ -43,14 +43,14 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
         self.refreshHeader?.beginRefreshing()
     }
     func configureFreshItems()  {
-        self.refreshHeader = MJRefreshNormalHeader(refreshingBlock: {
+        self.refreshHeader = MJRefreshNormalHeader(refreshingBlock: {[weak self] in
             print("下拉刷新 ……")
-            self.loadNewData()
+            self?.loadNewData()
         })
         
-        self.refreshFooter = MJRefreshBackNormalFooter(refreshingBlock: {
+        self.refreshFooter = MJRefreshBackNormalFooter(refreshingBlock: {[weak self] in
             print("上拉加载 ……")
-            self.loadMoreData()
+            self?.loadMoreData()
         })
     }
     

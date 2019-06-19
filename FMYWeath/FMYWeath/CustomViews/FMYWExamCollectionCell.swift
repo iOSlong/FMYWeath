@@ -64,6 +64,8 @@ class FMYWExamModel: NSObject {
 }
 
 
+
+
 let imgShowH = myScreenW * 0.38
 
 class FMYWExamCollectionCell: FMYCollectionViewCell,WKNavigationDelegate {
@@ -101,6 +103,22 @@ class FMYWExamCollectionCell: FMYCollectionViewCell,WKNavigationDelegate {
     let checkItem3:FMYWCheckItemView = FMYWCheckItemView()
     let checkItem4:FMYWCheckItemView = FMYWCheckItemView()
     var arrCheckItem:NSArray? = nil
+    
+    
+    var answerBtn:FMYButton {
+       let answer =  FMYButton.fmyButtom(frame: .zero,
+                            txtColor: colorMainPurple,
+                            colorSelected: colorMainWhite,
+                            target: self,
+                            action: #selector(anserClick(btn:)),
+                            mode: .center,
+                            contentEdgeInsets: .zero)!
+        answer.backgroundColor = UIColor.red;
+        answer.size = CGSize(width: 50, height: 50);
+        return answer
+    }
+    
+    
     // 更新数据之后进行刷新
     var examModel:FMYWExamModel?{
         didSet{
@@ -110,6 +128,13 @@ class FMYWExamCollectionCell: FMYCollectionViewCell,WKNavigationDelegate {
         }
     }
 
+    @objc func anserClick(btn:FMYButton) -> Void {
+        btn.isSelected = !btn.isEnabled
+        
+        if btn.isSelected {
+            print("isSelected")
+        }
+    }
 
     
     override init(frame: CGRect) {
@@ -152,6 +177,9 @@ class FMYWExamCollectionCell: FMYCollectionViewCell,WKNavigationDelegate {
         self.contentView.addSubview(self.checkItem4)
         
 
+//        self.contentView.addSubview(self.answerBtn)
+
+        
         self.examTitle.left     = mySpanLeft
         self.checkItem1.left    = mySpanLeft
 
@@ -355,9 +383,6 @@ final class CalculateExcamCellHelp:NSObject {
         }
     }
 
-    
-    
-    
     override init() {
         super.init()
         self.arrCheckItem = [self.checkItem1,self.checkItem2,self.checkItem3,self.checkItem4]

@@ -49,13 +49,10 @@ class FMYWImgShowView: UIView , UIScrollViewDelegate{
     }
 
     func setPicUrl(picUrl:NSArray) {
-
+        self.picURLArr.addObjects(from: picUrl as! [Any])
         if picUrl.count > 1 {
-            self.picURLArr.addObjects(from: picUrl as! [Any])
             self.picURLArr.add(picUrl.firstObject ?? ["url":""])
             self.picURLArr.insert(picUrl.lastObject ?? ["url":""], at: 0)
-        }else{
-            self.picURLArr.addObjects(from: picUrl as! [Any])
         }
 
         if self.picURLArr.count > 0 {

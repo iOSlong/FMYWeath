@@ -29,13 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navCityList     = FMYWNavigationController(rootViewController:cityListVC)
 
         todayHomeVC.title       = "关注今日"  //   = "黄道在今"
-        jokeVC.title            = "笑话大全"
+        jokeVC.title            = "哈哈知乐"
         todayHistoryVC.title    = "历史今日"
         favorVC.title           = "收藏管理"
         cityListVC.title        = "袖里乾坤"
 
         navTodayHome.title      = "关注今日"
-        navJokes.title          = "笑话大全"
+        navJokes.title          = "哈哈知乐"
         navtodayHistory.title   = "历史今日"
         navFavor.title          = "收藏管理"
         navCityList.title       = "袖里乾坤"

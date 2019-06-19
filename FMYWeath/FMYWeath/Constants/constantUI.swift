@@ -21,7 +21,7 @@ let mySpanV         = mySpanLeft/2.0
 let mySpanH         = mySpanLeft/2.0
 
 
-let myTest   =  false  // true 测试代码标记   false 默认使用常态代码
+let myTest   =  true  // true 测试代码标记   false 默认使用常态代码
 
 
 public enum myFont:CGFloat {

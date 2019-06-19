@@ -75,8 +75,6 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         self.testTypeOrder?.fmycheckItem(checkHander: {[unowned self]  (isSelected) in
             self.testTypeRand?.isSelected = !isSelected
         })
-
-        
     }
 
     @objc func submitBtnClick(_ :FMYButton) -> Void {
@@ -94,7 +92,6 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
              "model" : self.subMode ?? ""]
         self.navigationController?.pushViewController(examSVC, animated: true)
     }
-    
 
     
     func displayRequiredItems() {
