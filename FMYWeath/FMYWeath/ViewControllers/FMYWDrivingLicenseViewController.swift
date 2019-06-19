@@ -79,7 +79,7 @@ class FMYWDrivingLicenseViewController: FMYWViewController {
         
     }
 
-    func submitBtnClick(_ :FMYButton) -> Void {
+    @objc func submitBtnClick(_ :FMYButton) -> Void {
         let examSVC:FMYWDrivingExamSystemViewController = FMYWDrivingExamSystemViewController()
         if (self.testTypeRand?.isSelected)! == true {
             self.testType = "rand"

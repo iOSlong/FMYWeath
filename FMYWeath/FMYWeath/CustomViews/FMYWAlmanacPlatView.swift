@@ -229,7 +229,7 @@ class FMYWAlmanacPlatView: UIView , UITableViewDelegate, UITableViewDataSource{
 
     }
     
-    func btnShiChenClick(_:UIButton) -> Void {
+    @objc func btnShiChenClick(_:UIButton) -> Void {
             self.delegate?.almanacPlatEvent?(almanacModel: self.almanacModel)
     }
     

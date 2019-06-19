@@ -86,7 +86,7 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
 
 
 
-    func reloadTableItems() -> Void {
+    @objc func reloadTableItems() -> Void {
         print(self.dataSourceArr ?? "")
         self.collectionView?.backgroundColor = colorMainBarBack
         self.collectionView?.reloadData()

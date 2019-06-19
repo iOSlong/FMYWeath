@@ -91,7 +91,7 @@ class FMYWJokePicViewController: FMYWViewController,UITableViewDataSource,UITabl
         return 270
     }
     
-    func reloadTableItems() {
+    @objc func reloadTableItems() {
         self.tableView?.reloadData()
     }
     

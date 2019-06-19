@@ -35,8 +35,8 @@ class FMYWNavigationController: UINavigationController {
         
 
         /// 2. 设置导航条上的字体颜色
-        let attributes = NSDictionary.init(objects: [UIColor.white, UIFont.italicSystemFont(ofSize: 23)], forKeys: [NSForegroundColorAttributeName as NSCopying,NSFontAttributeName as NSCopying])
-        self.navigationBar.titleTextAttributes = attributes as? [String : Any]
+        let attributes = NSDictionary.init(objects: [UIColor.white, UIFont.italicSystemFont(ofSize: 23)], forKeys: [NSAttributedStringKey.foregroundColor as NSCopying,NSAttributedStringKey.font as NSCopying])
+        self.navigationBar.titleTextAttributes = attributes as? [NSAttributedStringKey : Any]
         
         
         self.navigationBar.isTranslucent = true

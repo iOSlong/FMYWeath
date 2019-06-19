@@ -35,7 +35,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
     var almanacPlarArr:NSMutableArray = NSMutableArray()
     var almanacModelArr:NSMutableArray = NSMutableArray()
 
-    func btnTodayClick(_: UIButton) -> Void {
+    @objc func btnTodayClick(_: UIButton) -> Void {
         print("today:",self.currentMode?.showTime ?? "")
         let today = timeShow(time: Date().timeIntervalSince1970, formateStr: .TFy_M_d)
         if today == self.currentMode?.showTime {

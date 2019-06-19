@@ -104,7 +104,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
     }
     
 
-    func reloadUIItems()  {
+    @objc func reloadUIItems()  {
 
 
         let jokeContent = (self.historyDetail?.title as! String) + "\n\n" + (self.historyDetail?.content as! String)

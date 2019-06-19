@@ -16,9 +16,11 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     var dataSource:NSMutableArray? = []
     
     // MARK: weak 防止循环引用
-    weak var refreshHeader:MJRefreshNormalHeader? = nil
-    weak var refreshFooter:MJRefreshBackNormalFooter? = nil
-    
+//    weak var refreshHeader:MJRefreshNormalHeader? = nil
+//    weak var refreshFooter:MJRefreshBackNormalFooter? = nil
+     var refreshHeader:MJRefreshNormalHeader? = nil
+     var refreshFooter:MJRefreshBackNormalFooter? = nil
+
     var pageCurrent = 0
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,7 +112,7 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
     }
     
     
-    func reloadTableItems() {
+    @objc func reloadTableItems() {
         self.tableView?.reloadData()
     }
     

@@ -95,7 +95,7 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
     }
     
     
-    func reloadTableItems() {
+    @objc func reloadTableItems() {
         self.tableView?.reloadData()
     }
     

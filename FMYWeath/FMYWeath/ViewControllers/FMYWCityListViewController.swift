@@ -36,7 +36,7 @@ class FMYWCityListViewController: FMYWViewController {
     }
     
     
-    func fmybuttonClick(btn : UIButton) {
+    @objc func fmybuttonClick(btn : UIButton) {
         btn.isSelected = !btn.isSelected
         
         print("click")

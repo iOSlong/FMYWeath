@@ -158,7 +158,7 @@ class FMYWTodayNewsViewController: FMYWViewController ,FMYWNewsItemViewControlle
     public func gotoNewsItemsVC() -> Void {
         let itemVC = FMYWNewsItemViewController()
         itemVC.delegate = self
-        self.present(itemVC, animated: true, completion: {over in
+        self.present(itemVC, animated: true, completion: {
             print("int to item editing")
         })
     }

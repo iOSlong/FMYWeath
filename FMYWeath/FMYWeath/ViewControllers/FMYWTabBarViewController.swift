@@ -56,7 +56,7 @@ class FMYWTabBarViewController: UITabBarController {
     }
 
 
-    func tabItemClick(_ tabItem:FMYWBtnTab) {
+    @objc func tabItemClick(_ tabItem:FMYWBtnTab) {
         let index = self.tabItems?.index(of: tabItem)
         if index == self.selectedIndex {
             print("do nothing!")

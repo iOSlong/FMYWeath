@@ -73,7 +73,7 @@ class FMYWViewController: UIViewController {
         
     }
     
-    func centerBtnTest(_ : UIButton) -> Void {
+    @objc func centerBtnTest(_ : UIButton) -> Void {
         if (self.activityIndicator?.isAnimating)! {
             self.activityIndicator?.stopAnimating()
         }else{

@@ -47,7 +47,7 @@ class FMYWNewsItemViewController: FMYWViewController {
     }
 
 
-    func btnBackClick(_ :UIButton) -> Void {
+    @objc func btnBackClick(_ :UIButton) -> Void {
 
         for index in 0...(self.controlBPlat?.arrControl_BP.count)! - 1 {
 
@@ -70,11 +70,10 @@ class FMYWNewsItemViewController: FMYWViewController {
 
                 UserDefaults.standard.synchronize()
 
-                self.dismiss(animated: true, completion: {overed in
+                self.dismiss(animated: true) {
                     self.delegate?.newsItemViewControllerDelegate!()
                     print("dismiss over!")
-                })
-
+                }
                 break
             }
         }
