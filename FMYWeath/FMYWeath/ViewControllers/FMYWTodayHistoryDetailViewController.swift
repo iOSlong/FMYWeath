@@ -160,9 +160,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
                     
                     let itemDict = resultArray?.firstObject as! Dictionary<String, Any>
                     
-                    //                self.historyDetail = FMYWTodayHistoryModel()
-                    self.historyDetail?.setValuesForKeys(itemDict)
-                    
+                    self.historyDetail = FMYWTodayHistoryModel.deserialize(from: itemDict)                    
                     self.perform(#selector(self.reloadUIItems), on:  Thread.main, with: self, waitUntilDone: false)
                 }
                 

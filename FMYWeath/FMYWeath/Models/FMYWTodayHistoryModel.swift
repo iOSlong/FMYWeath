@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import HandyJSON
 
-class FMYWTodayHistoryModel: NSObject {
+class FMYWTodayHistoryModel: HandyJSON {
     var date     :Any? = nil
     var day      :Any? = nil
     var e_id     :Any? = nil
@@ -34,5 +35,7 @@ class FMYWTodayHistoryModel: NSObject {
             }
             return nil
         }
+    }
+    required init() {
     }
 }

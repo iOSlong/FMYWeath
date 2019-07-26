@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HandyJSON
 
 class FMYWAlmanacModel: NSObject {
     var yangli      :Any? = nil
@@ -66,9 +67,10 @@ class FMYWAlmanacModel: NSObject {
         }
     }
     
-    override var description: String {
-        return self.yinli as! String
-    }
+//    required init() {}
+//    override var description: String {
+//        return self.yinli as! String
+//    }
 }
 
 

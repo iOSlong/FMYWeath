@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import HandyJSON
 
-class FMYWJokeModel: NSObject {
+class FMYWJokeModel: HandyJSON {
     var content     :Any? = nil
     var hashId      :Any? = nil
     var updatetime  :Any? = nil
     var unixtime    :Any? = nil
+    
+    required init() {}
 }

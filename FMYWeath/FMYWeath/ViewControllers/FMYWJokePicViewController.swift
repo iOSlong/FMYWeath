@@ -145,10 +145,8 @@ class FMYWJokePicViewController: FMYWViewController,UITableViewDataSource,UITabl
                 
                 for index in 0...dataElement.count-1 {
                     let element = dataElement[index] as! Dictionary<String, Any>
-                    let tempItem = FMYWJokePicModel()
-                    tempItem.setValuesForKeys(element)
-                    print(tempItem)
-                    self.dataSource?.add(tempItem)
+                    let tempItem = FMYWJokePicModel.deserialize(from:element)
+                    self.dataSource?.add(tempItem as Any)
                 }
                 
                 self.perform(#selector(self.reloadTableItems), on:  Thread.main, with: self, waitUntilDone: false)

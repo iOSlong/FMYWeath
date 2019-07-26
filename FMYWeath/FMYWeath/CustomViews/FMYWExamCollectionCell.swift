@@ -8,9 +8,9 @@
 
 import UIKit
 import WebKit
+import HandyJSON
 
-
-class FMYWExamModel: NSObject {
+class FMYWExamModel: HandyJSON {
     var id     :String? = nil
     var question    :String? = nil
     var answer      :String? = nil
@@ -60,6 +60,9 @@ class FMYWExamModel: NSObject {
     
     var isOptionQ:Bool? {
         return self.isJudgeQ;
+    }
+    
+    required init() {
     }
 }
 

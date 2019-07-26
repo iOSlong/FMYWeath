@@ -164,6 +164,7 @@
 		8EFE72421E11425700934A13 /* FMYWJokeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWJokeListViewController.swift; sourceTree = "<group>"; };
 		8EFE72441E1149F300934A13 /* FMYWTodayHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTodayHistoryViewController.swift; sourceTree = "<group>"; };
 		8EFE72461E114EC700934A13 /* FMYWTodayHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWTodayHistoryModel.swift; sourceTree = "<group>"; };
+		B140251722EAF6710045D097 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C614AC1BAAD325DB652A9985 /* Pods-FMYWeath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMYWeath.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMYWeath/Pods-FMYWeath.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +212,7 @@
 				01CE752B1E0842A600B76D1C /* ViewControllers */,
 				01CE75061E0839A700B76D1C /* AppDelegate.swift */,
 				01CE75081E0839A700B76D1C /* ViewController.swift */,
+				B140251722EAF6710045D097 /* PrefixHeader.pch */,
 				01CE753F1E096E4A00B76D1C /* FMYWeath-Bridging-Header.h */,
 				01CE750A1E0839A700B76D1C /* Main.storyboard */,
 				01CE750D1E0839A700B76D1C /* Assets.xcassets */,
@@ -409,7 +411,6 @@
 				01CE75001E0839A700B76D1C /* Frameworks */,
 				01CE75011E0839A700B76D1C /* Resources */,
 				E1147FD4C36CE8B37166C9DB /* [CP] Embed Pods Frameworks */,
-				92E214EEC67A97ED2A7E0217 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -485,34 +486,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		92E214EEC67A97ED2A7E0217 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMYWeath/Pods-FMYWeath-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AD3E54195B0272FCF443B8EB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FMYWeath-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E1147FD4C36CE8B37166C9DB /* [CP] Embed Pods Frameworks */ = {
@@ -521,13 +510,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FMYWeath/Pods-FMYWeath-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/UIView+Positioning/UIView_Positioning.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIView_Positioning.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMYWeath/Pods-FMYWeath-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FMYWeath/Pods-FMYWeath-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -712,7 +710,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = FMYWeath/PrefixHeader.pch;
 				INFOPLIST_FILE = FMYWeath/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = linxi.FMYWeath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -727,7 +728,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = FMYWeath/PrefixHeader.pch;
 				INFOPLIST_FILE = FMYWeath/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = linxi.FMYWeath;
 				PRODUCT_NAME = "$(TARGET_NAME)";

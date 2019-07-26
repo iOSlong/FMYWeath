@@ -5,6 +5,7 @@
 //  Created by xw.long on 16/12/20.
 //  Copyright © 2016年 fmylove. All rights reserved.
 //
+import HandyJSON
 
 import Foundation
 

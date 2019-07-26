@@ -220,7 +220,18 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                 print(resultItem)
                 
                 let almanac = FMYWAlmanacModel()
-                almanac.setValuesForKeys(resultItem as! [String : Any])
+                almanac.yangli = resultItem.object(forKey: "yangli");
+                almanac.wuxing = resultItem.object(forKey: "wuxing");
+                almanac.jishen = resultItem.object(forKey: "jishen");
+                almanac.id = resultItem.object(forKey: "id");
+                almanac.ji = resultItem.object(forKey: "ij");
+                almanac.yinli = resultItem.object(forKey: "yinli");
+                almanac.baiji = resultItem.object(forKey: "baiji");
+                almanac.chongsha = resultItem.object(forKey: "chongsha");
+                almanac.yi = resultItem.object(forKey: "yi");
+                almanac.xiongshen = resultItem.object(forKey: "xiongshen");
+
+//                almanac.setValuesForKeys(resultItem as! [String : Any])
 
                 if self.almanacModelArr.count >= 3 {
                     self.loadAlmanacPlatFromData(almanacModel: almanac, add: add)

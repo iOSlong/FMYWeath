@@ -155,8 +155,8 @@ class FMYWJokeListViewController: FMYWViewController,UITableViewDataSource, UITa
                 
                 for index in 0...dataElement.count-1 {
                     let element = dataElement[index] as! Dictionary<String, Any>
-                    let jokeItem = FMYWJokeModel()
-                    jokeItem.setValuesForKeys(element)
+                    let jokeItem = FMYWJokeModel.deserialize(from: element)
+//                    jokeItem.setValuesForKeys(element)
                     print(jokeItem)
                     self?.dataSource?.add(jokeItem)
                 }

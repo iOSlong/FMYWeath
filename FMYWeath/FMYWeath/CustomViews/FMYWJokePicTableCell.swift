@@ -8,13 +8,14 @@
 
 import UIKit
 import WebKit
+import HandyJSON
 
 public enum JokePicType:String {
     case JImgNone = "imageNone"
     case JImgHave = "imageHave"
 }
 
-class FMYWJokePicModel: NSObject {
+class FMYWJokePicModel: HandyJSON {
     var content     :Any? = nil
     var hashId      :Any? = nil
     var unixtime    :Any? = nil
@@ -30,6 +31,8 @@ class FMYWJokePicModel: NSObject {
             }
         }
         return .JImgNone
+    }
+    required init() {
     }
 }
 

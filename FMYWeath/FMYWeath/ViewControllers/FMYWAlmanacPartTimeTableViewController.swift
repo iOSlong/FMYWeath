@@ -97,9 +97,8 @@ class FMYWAlmanacPartTimeTableViewController: UITableViewController {
                 let resultItem:NSArray = (responseDict as! NSDictionary).object(forKey: "result") as! NSArray
                 
                 for item in resultItem {
-                    let ptModel:AlmanacPartTimeMode = AlmanacPartTimeMode()
-                    ptModel.setValuesForKeys(item as! [String : Any])
-                    self.partTimeModeArr.add(ptModel)
+                    let ptModel = AlmanacPartTimeMode.deserialize(from: item as? [String : Any])
+                    self.partTimeModeArr.add(ptModel as Any)
                 }
                 
                 DispatchQueue.main.async {

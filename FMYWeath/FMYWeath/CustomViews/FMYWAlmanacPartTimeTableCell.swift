@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import HandyJSON
 
-class AlmanacPartTimeMode: NSObject {
+class AlmanacPartTimeMode: HandyJSON {
     var yi          :Any? = nil
     var ji          :Any? = nil
     var des         :Any? = nil
     var hours       :Any? = nil
     var yangli      :Any? = nil
+    
+    required init() {
+        
+    }
 }
 
 

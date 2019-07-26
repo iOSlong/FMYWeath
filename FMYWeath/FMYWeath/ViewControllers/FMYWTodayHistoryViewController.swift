@@ -172,9 +172,7 @@ class FMYWTodayHistoryViewController: FMYWViewController , UITableViewDelegate, 
                 
                 for index in 0...(resultArray?.count)!-1 {
                     let element = resultArray?[index] as! Dictionary<String, Any>
-                    let jokeItem = FMYWTodayHistoryModel()
-                    jokeItem.setValuesForKeys(element)
-                    print(jokeItem)
+                    let jokeItem = FMYWTodayHistoryModel.deserialize(from: element)
                     self.dataSource?.add(jokeItem)
                 }
                 

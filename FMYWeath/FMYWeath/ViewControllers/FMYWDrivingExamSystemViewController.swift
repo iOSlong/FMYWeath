@@ -114,10 +114,8 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
                 if resultItem != nil {
                     for index in 0...(resultItem?.count)!-1 {
                         let element = resultItem?[index] as! NSDictionary
-                        let jokeItem = FMYWExamModel()
-                        jokeItem.setValuesForKeys(element as! [String : Any])
-                        print(jokeItem)
-                        self?.dataSourceArr?.add(jokeItem)
+                        let jokeItem = FMYWExamModel.deserialize(from: element)
+                        self?.dataSourceArr?.add(jokeItem as Any)
                     }
                     self?.stopActivityIndicatorAnimation()
                     self?.perform(#selector(self?.reloadTableItems), on:  Thread.main, with: self, waitUntilDone: false)
