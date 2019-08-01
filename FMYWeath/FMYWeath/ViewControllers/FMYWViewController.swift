@@ -17,7 +17,7 @@ class FMYWViewController: UIViewController {
     var activityIndicator:UIActivityIndicatorView? {
         get {
             if tempIndicator == nil {
-                tempIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+                tempIndicator = UIActivityIndicatorView.init(style: .whiteLarge)
                 tempIndicator?.center = CGPoint(x: self.view.width * 0.5, y: self.view.height * 0.5 - myNavBarH)
 //                tempIndicator?.backgroundColor = .purple
                 tempIndicator?.tintColor = .red

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		016738F21E2FB832009CAAF1 /* FMYCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */; };
 		016738F41E2FB890009CAAF1 /* FMYWExamCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016738F31E2FB890009CAAF1 /* FMYWExamCollectionCell.swift */; };
+		01A57B6222F1E34A00423C26 /* FMYWeatherBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A57B6122F1E34A00423C26 /* FMYWeatherBusiness.swift */; };
 		01CE75071E0839A700B76D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75061E0839A700B76D1C /* AppDelegate.swift */; };
 		01CE75091E0839A700B76D1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75081E0839A700B76D1C /* ViewController.swift */; };
 		01CE750C1E0839A700B76D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CE750A1E0839A700B76D1C /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 /* Begin PBXFileReference section */
 		016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYCollectionViewCell.swift; sourceTree = "<group>"; };
 		016738F31E2FB890009CAAF1 /* FMYWExamCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWExamCollectionCell.swift; sourceTree = "<group>"; };
+		01A57B6122F1E34A00423C26 /* FMYWeatherBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMYWeatherBusiness.swift; sourceTree = "<group>"; };
 		01CE75031E0839A700B76D1C /* FMYWeath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMYWeath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CE75061E0839A700B76D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CE75081E0839A700B76D1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01A57B5F22F09D2B00423C26 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				01A57B6322F1E35300423C26 /* Weather */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		01A57B6322F1E35300423C26 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				01CE752C1E0842A600B76D1C /* FMYWCityInfoViewController.swift */,
+				01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */,
+				01A57B6122F1E34A00423C26 /* FMYWeatherBusiness.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		01CE74FA1E0839A700B76D1C = {
 			isa = PBXGroup;
 			children = (
@@ -210,8 +230,9 @@
 				01CE753E1E096CEB00B76D1C /* Categories */,
 				01CE753C1E096C7300B76D1C /* Constants */,
 				01CE752B1E0842A600B76D1C /* ViewControllers */,
-				01CE75061E0839A700B76D1C /* AppDelegate.swift */,
+				01A57B5F22F09D2B00423C26 /* Modules */,
 				01CE75081E0839A700B76D1C /* ViewController.swift */,
+				01CE75061E0839A700B76D1C /* AppDelegate.swift */,
 				B140251722EAF6710045D097 /* PrefixHeader.pch */,
 				01CE753F1E096E4A00B76D1C /* FMYWeath-Bridging-Header.h */,
 				01CE750A1E0839A700B76D1C /* Main.storyboard */,
@@ -225,8 +246,6 @@
 		01CE752B1E0842A600B76D1C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				01CE752C1E0842A600B76D1C /* FMYWCityInfoViewController.swift */,
-				01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */,
 				01CE752F1E0842A600B76D1C /* FMYWFavorViewController.swift */,
 				01CE75311E0842A600B76D1C /* FMYWNavigationController.swift */,
 				01CE75321E0842A600B76D1C /* FMYWTabBarViewController.swift */,
@@ -434,6 +453,7 @@
 				TargetAttributes = {
 					01CE75021E0839A700B76D1C = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 6ZUV3Y67Z8;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -514,6 +534,7 @@
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/UIView+Positioning/UIView_Positioning.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -521,6 +542,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIView_Positioning.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +582,7 @@
 				01CE75A91E17935F00B76D1C /* Control_BezierPath.m in Sources */,
 				01CE75351E0842A600B76D1C /* FMYWCityListViewController.swift in Sources */,
 				01CE753B1E0842A600B76D1C /* FMYWViewController.swift in Sources */,
+				01A57B6222F1E34A00423C26 /* FMYWeatherBusiness.swift in Sources */,
 				01ED773E1E1898B100812659 /* FMYWTodayNewsListViewController.swift in Sources */,
 				8E2860BE1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift in Sources */,
 				8E2860C01E13E33A00EEC3BC /* FMYWAlmanacModel.swift in Sources */,
@@ -653,7 +676,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -696,7 +719,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -710,15 +733,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = 6ZUV3Y67Z8;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = FMYWeath/PrefixHeader.pch;
 				INFOPLIST_FILE = FMYWeath/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = linxi.FMYWeath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FMYWeath/FMYWeath-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -728,15 +752,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = 6ZUV3Y67Z8;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = FMYWeath/PrefixHeader.pch;
 				INFOPLIST_FILE = FMYWeath/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = linxi.FMYWeath;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FMYWeath/FMYWeath-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

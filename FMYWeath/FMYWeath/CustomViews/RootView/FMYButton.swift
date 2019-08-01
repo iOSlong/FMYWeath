@@ -65,7 +65,7 @@ extension FMYButton {
         
         btn.frame = frame
         
-        btn.contentEdgeInsets = UIEdgeInsetsMake(fit_h, fit_w, fit_h, fit_w)
+        btn.contentEdgeInsets = UIEdgeInsets(top: fit_h, left: fit_w, bottom: fit_h, right: fit_w)
         
         btn.addTarget(target, action: action, for: .touchUpInside)
         
@@ -82,7 +82,7 @@ extension FMYButton {
     }
     
     
-    class func fmyButton(frame:CGRect, imgNormal:String, imgSelected:String, target:AnyObject, action:Selector, mode:UIViewContentMode, contentEdgeInsets:UIEdgeInsets) -> FMYButton? {
+    class func fmyButton(frame:CGRect, imgNormal:String, imgSelected:String, target:AnyObject, action:Selector, mode:UIView.ContentMode, contentEdgeInsets:UIEdgeInsets) -> FMYButton? {
         
         let btn  = FMYButton(type: .custom)
         btn.frame = frame
@@ -99,7 +99,7 @@ extension FMYButton {
     }
     
     
-    class func fmyButtom(frame:CGRect, txtColor:UIColor, colorSelected:UIColor, target:AnyObject, action:Selector, mode:UIViewContentMode, contentEdgeInsets:UIEdgeInsets) -> FMYButton? {
+    class func fmyButtom(frame:CGRect, txtColor:UIColor, colorSelected:UIColor, target:AnyObject, action:Selector, mode:UIView.ContentMode, contentEdgeInsets:UIEdgeInsets) -> FMYButton? {
         
         let btn  = FMYButton(type: .custom)
         btn.frame = frame

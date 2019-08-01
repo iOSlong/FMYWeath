@@ -10,9 +10,8 @@ import UIKit
 
 class FMYTableView: UITableView {
 
-    override init(frame: CGRect, style: UITableViewStyle) {
-        super.init(frame: frame, style: style)
-        
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)        
         self.backgroundColor = .clear
         self.separatorColor = colorMainBack
     }

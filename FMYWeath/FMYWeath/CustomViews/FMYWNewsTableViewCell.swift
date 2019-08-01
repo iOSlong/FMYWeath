@@ -16,7 +16,7 @@ class FMYWNewsTableViewCell: FMYTableViewCell {
 
 
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.textLabel?.numberOfLines = 2
         self.textLabel?.font = UIFont.systemFont(ofSize: myFont.font_min02.rawValue)

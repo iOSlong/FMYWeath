@@ -34,7 +34,7 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
     
 
     func configureTableView() {
-        self.tableView =  FMYTableView(frame: self.view.frame, style: .grouped)
+        self.tableView = FMYTableView.init(frame: self.view.frame, style: UITableView.Style.grouped)
         self.tableView?.height = self.view.height - myTabBarH - myStatusBarH
         self.tableView?.separatorColor = colorMainBarBack
         self.view.addSubview(self.tableView!)
@@ -50,7 +50,7 @@ class FMYWJokeViewController: FMYWViewController,UITableViewDataSource,UITableVi
         let identifier = "jokeBaseCellIdentifier"
         var cell:FMYTableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier) as! FMYWJokeTableCell?
         if cell == nil {
-            cell = FMYTableViewCell(style: .default, reuseIdentifier: identifier)
+            cell = FMYTableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: identifier)
         }
         cell?.accessoryType = .disclosureIndicator
         

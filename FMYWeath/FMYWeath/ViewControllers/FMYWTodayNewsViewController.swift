@@ -68,7 +68,7 @@ class FMYWTodayNewsViewController: FMYWViewController ,FMYWNewsItemViewControlle
         pageVC.view.height  = self.view.height - self.segmentView.height
         self.pageVC = pageVC
         self.pageVC?.segmentView = self.segmentView
-        self.addChildViewController(pageVC)
+        self.addChild(pageVC)
         self.view.addSubview(pageVC.view)
 
         self.setItemViewControllers()

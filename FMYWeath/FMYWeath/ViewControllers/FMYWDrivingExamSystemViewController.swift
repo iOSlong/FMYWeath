@@ -103,7 +103,7 @@ class FMYWDrivingExamSystemViewController: FMYWViewController,UICollectionViewDe
                      "subject":self.subject,
                      "model":self.model,
                      "testType":self.testType]
-        self.view.bringSubview(toFront: self.activityIndicator!)
+        self.view.bringSubviewToFront(self.activityIndicator!)
         self.startActivityIndicatorAnimation()
 
         _ =  FMYHTTPSessionManager(url: URL(string: url_drivingExam), configuration: nil).net("GET", parameters: param as NSDictionary?, success: { [weak self] (dataTask, object) in

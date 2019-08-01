@@ -31,7 +31,7 @@ class FMYWTodayHomeTableViewController: UITableViewController {
         (self.tabBarController as! FMYWTabBarViewController).setBarHidden(hidden:false)
     }
 
-    override init(style: UITableViewStyle) {
+    override init(style: UITableView.Style) {
         super.init(style: .grouped)
     }
     

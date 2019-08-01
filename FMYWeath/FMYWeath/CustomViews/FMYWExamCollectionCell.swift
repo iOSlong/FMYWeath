@@ -90,7 +90,7 @@ class FMYWExamCollectionCell: FMYCollectionViewCell,WKNavigationDelegate {
     var activityIndicator:UIActivityIndicatorView? {
         get {
             if tempIndicator == nil {
-                tempIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+                tempIndicator = UIActivityIndicatorView.init(style: .whiteLarge)
                 tempIndicator?.center = CGPoint(x: myScreenW * 0.5, y: imgShowH * 0.520)
                 tempIndicator?.tintColor = .red
             }

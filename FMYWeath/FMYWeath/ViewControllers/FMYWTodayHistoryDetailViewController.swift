@@ -59,7 +59,7 @@ class FMYWTodayHistoryDetailViewController: FMYWViewController , UITableViewData
         self.textViewDetail?.textColor = colorMainLightWhite
         self.textViewDetail?.backgroundColor = .clear
         self.textViewDetail?.textAlignment = .left
-        self.textViewDetail?.text = self.todayHistoryModel?.title as! String!
+        self.textViewDetail?.text = self.todayHistoryModel?.title as! String?
         self.textViewDetail?.bounces = false
         self.textViewDetail?.isEditable = false
         self.headerView.addSubview(self.textViewDetail!)

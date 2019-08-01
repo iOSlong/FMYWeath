@@ -44,8 +44,8 @@ public extension UIView {
     
     func layoutSize(_ size : CGSize) -> Void {
         self.readyForLayout()
-        let lcW =  NSLayoutConstraint(item: self, attribute: .width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: size.width)
-        let lcH =  NSLayoutConstraint(item: self, attribute: .height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: size.height)
+        let lcW =  NSLayoutConstraint(item: self, attribute: .width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: size.width)
+        let lcH =  NSLayoutConstraint(item: self, attribute: .height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: size.height)
         self.addConstraints([lcW, lcH])
     }
     
@@ -71,8 +71,8 @@ public extension UIView {
     }
     
     func layoutCenter() {
-        let cX =  NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: NSLayoutRelation.equal, toItem: self.superview, attribute: .centerX, multiplier: 1, constant: 0)
-        let cY =  NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: NSLayoutRelation.equal, toItem: self.superview, attribute: .centerY, multiplier: 1, constant: 0)
+        let cX =  NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.superview, attribute: .centerX, multiplier: 1, constant: 0)
+        let cY =  NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.superview, attribute: .centerY, multiplier: 1, constant: 0)
         self.superview?.addConstraints([cX, cY])
     }
     
@@ -82,10 +82,10 @@ public extension UIView {
     }
     
     //////=========Relation
-    func layoutRelation(_ relation:NSLayoutRelation,
+    func layoutRelation(_ relation:NSLayoutConstraint.Relation,
                         _ toView:UIView,
-                        _ desAttribute:NSLayoutAttribute,
-                        _ toAttribute:NSLayoutAttribute) {
+                        _ desAttribute:NSLayoutConstraint.Attribute,
+                        _ toAttribute:NSLayoutConstraint.Attribute) {
         
     }
     

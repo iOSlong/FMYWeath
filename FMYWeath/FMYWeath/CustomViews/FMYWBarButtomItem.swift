@@ -24,7 +24,7 @@ class FMYWBarButtomItem: UIBarButtonItem {
     var btnCustomer:UIButton? = nil
 
     //  类方法的实现，
-    class func barButtomItem(title:String,target:Any?,action:Selector,forEvent:UIControlEvents) -> FMYWBarButtomItem {
+    class func barButtomItem(title:String,target:Any?,action:Selector,forEvent:UIControl.Event) -> FMYWBarButtomItem {
         let itemBtn = UIButton(frame: .zero)
         itemBtn.setTitle(title, for: .normal)
 //        itemBtn.setTitleColor(.blue, for: .normal)

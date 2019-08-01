@@ -4,73 +4,38 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>HandyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-FMYWeath.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWXMLHash.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>UIView+Positioning.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>28FBB66CB2502F149720F38F95005233</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>312876FE31C224B3604152573C6D19E7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3542F56038A40BA4EC19B747551646E5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3F49BAD25D6B612C47C29D1E5703F9DA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>94012C8664F491A17ED9C63018DA7971</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B413F80FFC4E0602D156E1EFF744FC50</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CA39866B95175630397FC88D1B1C9385</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E14A62900910444707A5504D25EC98DC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>
