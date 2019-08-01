@@ -31,7 +31,9 @@ class FMYHTTPSessionManager: FMYURLSessionManager {
     
     
     func showActivityIndicator(show:Bool) -> Void {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = show
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = show
+        }
     }
     
     

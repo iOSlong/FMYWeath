@@ -85,11 +85,11 @@ class FMYURLSessionManager: NSObject,URLSessionDataDelegate {
 //        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         print(error ?? "")
 //        self.parseXMLData(muData)
-        let dataStr =  String(data: muData, encoding: .utf8)
+//        let dataStr =  String(data: muData, encoding: .utf8)
         if self.completionHander != nil{
             self.completionHander!(nil,muData,nil)
         }
-        print(dataStr ?? "")
+//        print(dataStr ?? "")
     }
 
     

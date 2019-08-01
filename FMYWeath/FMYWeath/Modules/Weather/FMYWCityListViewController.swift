@@ -16,7 +16,12 @@ class FMYWCityListViewController: FMYWViewController {
 
         self.view.backgroundColor = colorMainBack
 
-        self.business.getRegionCountry()
         // Do any additional setup after loading the view.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.business.getRegionCountry()
+        self.business.getRegionDataset()
     }
 }

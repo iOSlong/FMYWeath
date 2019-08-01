@@ -10,6 +10,7 @@
 		016738F21E2FB832009CAAF1 /* FMYCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */; };
 		016738F41E2FB890009CAAF1 /* FMYWExamCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016738F31E2FB890009CAAF1 /* FMYWExamCollectionCell.swift */; };
 		01A57B6222F1E34A00423C26 /* FMYWeatherBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A57B6122F1E34A00423C26 /* FMYWeatherBusiness.swift */; };
+		01A57B6522F337CD00423C26 /* FMYRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A57B6422F337CC00423C26 /* FMYRegion.swift */; };
 		01CE75071E0839A700B76D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75061E0839A700B76D1C /* AppDelegate.swift */; };
 		01CE75091E0839A700B76D1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CE75081E0839A700B76D1C /* ViewController.swift */; };
 		01CE750C1E0839A700B76D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CE750A1E0839A700B76D1C /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 		016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYCollectionViewCell.swift; sourceTree = "<group>"; };
 		016738F31E2FB890009CAAF1 /* FMYWExamCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWExamCollectionCell.swift; sourceTree = "<group>"; };
 		01A57B6122F1E34A00423C26 /* FMYWeatherBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMYWeatherBusiness.swift; sourceTree = "<group>"; };
+		01A57B6422F337CC00423C26 /* FMYRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMYRegion.swift; sourceTree = "<group>"; };
 		01CE75031E0839A700B76D1C /* FMYWeath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMYWeath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CE75061E0839A700B76D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01CE75081E0839A700B76D1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				01CE752C1E0842A600B76D1C /* FMYWCityInfoViewController.swift */,
 				01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */,
 				01A57B6122F1E34A00423C26 /* FMYWeatherBusiness.swift */,
+				01A57B6422F337CC00423C26 /* FMYRegion.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				01CE75A41E178A8F00B76D1C /* CNSegmentView.m in Sources */,
 				01CE756F1E101F3A00B76D1C /* FMYWJokeDetailViewController.swift in Sources */,
 				01CE75091E0839A700B76D1C /* ViewController.swift in Sources */,
+				01A57B6522F337CD00423C26 /* FMYRegion.swift in Sources */,
 				01CE75AC1E1793AD00B76D1C /* FMYWNewsItemViewController.swift in Sources */,
 				01CE75651E0FDD3C00B76D1C /* FMYURLSessionManager.swift in Sources */,
 				01CE75341E0842A600B76D1C /* FMYWCityInfoViewController.swift in Sources */,
