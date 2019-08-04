@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013FE40E22F52DF000A8AF9E /* FMYWeatherShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FE40D22F52DF000A8AF9E /* FMYWeatherShowViewController.swift */; };
+		013FE41022F5328300A8AF9E /* FMYWView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FE40F22F5328300A8AF9E /* FMYWView.swift */; };
+		013FE41222F532A900A8AF9E /* FMYWWeatherShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FE41122F532A900A8AF9E /* FMYWWeatherShowView.swift */; };
+		013FE41522F71DD400A8AF9E /* FMYWeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FE41422F71DD400A8AF9E /* FMYWeatherDetail.swift */; };
 		016738F21E2FB832009CAAF1 /* FMYCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */; };
 		016738F41E2FB890009CAAF1 /* FMYWExamCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016738F31E2FB890009CAAF1 /* FMYWExamCollectionCell.swift */; };
 		01A57B6222F1E34A00423C26 /* FMYWeatherBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A57B6122F1E34A00423C26 /* FMYWeatherBusiness.swift */; };
@@ -84,6 +88,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013FE40D22F52DF000A8AF9E /* FMYWeatherShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMYWeatherShowViewController.swift; sourceTree = "<group>"; };
+		013FE40F22F5328300A8AF9E /* FMYWView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMYWView.swift; sourceTree = "<group>"; };
+		013FE41122F532A900A8AF9E /* FMYWWeatherShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMYWWeatherShowView.swift; sourceTree = "<group>"; };
+		013FE41422F71DD400A8AF9E /* FMYWeatherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMYWeatherDetail.swift; sourceTree = "<group>"; };
 		016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYCollectionViewCell.swift; sourceTree = "<group>"; };
 		016738F31E2FB890009CAAF1 /* FMYWExamCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMYWExamCollectionCell.swift; sourceTree = "<group>"; };
 		01A57B6122F1E34A00423C26 /* FMYWeatherBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMYWeatherBusiness.swift; sourceTree = "<group>"; };
@@ -200,13 +208,34 @@
 				01CE752D1E0842A600B76D1C /* FMYWCityListViewController.swift */,
 				01A57B6122F1E34A00423C26 /* FMYWeatherBusiness.swift */,
 				01A57B6422F337CC00423C26 /* FMYRegion.swift */,
+				013FE41422F71DD400A8AF9E /* FMYWeatherDetail.swift */,
+				013FE40D22F52DF000A8AF9E /* FMYWeatherShowViewController.swift */,
+				013FE41122F532A900A8AF9E /* FMYWWeatherShowView.swift */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		01A57B6622F4833B00423C26 /* LCLib */ = {
+			isa = PBXGroup;
+			children = (
+				01A57B6722F4838800423C26 /* Networking */,
+			);
+			path = LCLib;
+			sourceTree = "<group>";
+		};
+		01A57B6722F4838800423C26 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				01CE75631E0FDD3C00B76D1C /* FMYURLSessionManager.swift */,
+				01CE75641E0FDD3C00B76D1C /* FMYHTTPSessionManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		01CE74FA1E0839A700B76D1C = {
 			isa = PBXGroup;
 			children = (
+				01A57B6622F4833B00423C26 /* LCLib */,
 				01CE75051E0839A700B76D1C /* FMYWeath */,
 				01CE75041E0839A700B76D1C /* Products */,
 				1E3F6A24680CDE08263B1FFC /* Pods */,
@@ -356,8 +385,6 @@
 		01CE75621E0FDCF100B76D1C /* NetAccess */ = {
 			isa = PBXGroup;
 			children = (
-				01CE75631E0FDD3C00B76D1C /* FMYURLSessionManager.swift */,
-				01CE75641E0FDD3C00B76D1C /* FMYHTTPSessionManager.swift */,
 			);
 			path = NetAccess;
 			sourceTree = "<group>";
@@ -417,6 +444,7 @@
 				8E2062DB1E2F46D40094B8E6 /* FMYButton.swift */,
 				8E2062E71E2F5D3D0094B8E6 /* FMYLabel.swift */,
 				016738F11E2FB832009CAAF1 /* FMYCollectionViewCell.swift */,
+				013FE40F22F5328300A8AF9E /* FMYWView.swift */,
 			);
 			path = RootView;
 			sourceTree = "<group>";
@@ -534,18 +562,22 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FMYWeath/Pods-FMYWeath-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/UIView+Positioning/UIView_Positioning.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIView_Positioning.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +608,7 @@
 				8E2062F01E3087500094B8E6 /* FMYExtension.swift in Sources */,
 				01CE75681E1003E800B76D1C /* constantStr.swift in Sources */,
 				8EFE72451E1149F300934A13 /* FMYWTodayHistoryViewController.swift in Sources */,
+				013FE41022F5328300A8AF9E /* FMYWView.swift in Sources */,
 				01CE75391E0842A600B76D1C /* FMYWNavigationController.swift in Sources */,
 				8EFE72431E11425700934A13 /* FMYWJokeListViewController.swift in Sources */,
 				016738F41E2FB890009CAAF1 /* FMYWExamCollectionCell.swift in Sources */,
@@ -589,6 +622,7 @@
 				01ED773E1E1898B100812659 /* FMYWTodayNewsListViewController.swift in Sources */,
 				8E2860BE1E13DC8700EEC3BC /* FMYWAlmanacViewController.swift in Sources */,
 				8E2860C01E13E33A00EEC3BC /* FMYWAlmanacModel.swift in Sources */,
+				013FE40E22F52DF000A8AF9E /* FMYWeatherShowViewController.swift in Sources */,
 				8EAF8DD21E16645100693C26 /* FMYWAlmanacPartTimeTableViewController.swift in Sources */,
 				01CE75451E09710700B76D1C /* FMYWBtnTab.swift in Sources */,
 				8E2062E61E2F5B590094B8E6 /* FMYWCheckItemView.swift in Sources */,
@@ -603,6 +637,8 @@
 				8EE3E7AE1E2636A60032EF3D /* FMYTableViewCell.swift in Sources */,
 				8E2062E81E2F5D3D0094B8E6 /* FMYLabel.swift in Sources */,
 				8EE3E7B01E2638D50032EF3D /* FMYWJokePicTableCell.swift in Sources */,
+				013FE41222F532A900A8AF9E /* FMYWWeatherShowView.swift in Sources */,
+				013FE41522F71DD400A8AF9E /* FMYWeatherDetail.swift in Sources */,
 				01CE753A1E0842A600B76D1C /* FMYWTabBarViewController.swift in Sources */,
 				01CE759B1E177D7900B76D1C /* FMYWTodayNewsPageViewController.swift in Sources */,
 				01CE75AA1E17935F00B76D1C /* ControlBezierPlat.m in Sources */,

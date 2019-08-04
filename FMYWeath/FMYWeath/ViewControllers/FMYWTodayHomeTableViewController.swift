@@ -14,6 +14,7 @@ class FMYWTodayHomeTableViewController: UITableViewController {
         muArr.add(["VC":"FMYWAlmanacViewController","name":"黄道在今"])
         muArr.add(["VC":"FMYWTodayNewsViewController","name":"今日头条"])
         muArr.add(["VC":"FMYWTodayHistoryViewController","name":"历史今日"])
+        muArr.add(["VC":"FMYWeatherShowViewController","name":"今日天气"])
         return muArr
     }()
     var platGreGorianCal:GreGorianCalView = {
@@ -79,14 +80,14 @@ class FMYWTodayHomeTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let item:NSDictionary = self.sourceArr[indexPath.row] as! NSDictionary
-//        let desVCName:String = item.object(forKey: "VC") as! String
-        // TODO 字符串转类
-//        let desClass:AnyClass = NSClassFromString(desVCName)!
-//        let desVC:UIViewController  = desClass.alloc() as! UIViewController
-        
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
+        //        let item:NSDictionary = self.sourceArr[indexPath.row] as! NSDictionary
+        //        let desVCName:String = item.object(forKey: "VC") as! String
+        // TODO: AnyClass实例化
+        //        let desClass:AnyClass = swiftClassFromString(className: desVCName)!
+        //        guard let desVC2:UIViewController  = desClass.init() as? UIViewController
+
         var desVC:UIViewController? = nil
         if indexPath.row == 0 {
             desVC = FMYWAlmanacViewController()
@@ -94,9 +95,11 @@ class FMYWTodayHomeTableViewController: UITableViewController {
             desVC = FMYWTodayNewsViewController()
         }else if indexPath.row == 2 {
             desVC = FMYWTodayHistoryViewController()
+        }else if indexPath.row == 3 {
+            desVC = FMYWeatherShowViewController()
+            FMYWeatherBusiness.init()
         }
         self.navigationController?.pushViewController(desVC!, animated: true)
-
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

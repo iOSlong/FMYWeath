@@ -1,34 +1,42 @@
 PODS:
+  - Alamofire (4.8.2)
   - HandyJSON (5.0.0)
   - MJRefresh (3.1.12)
   - SDWebImage (4.0.0-beta2):
     - SDWebImage/Core (= 4.0.0-beta2)
   - SDWebImage/Core (4.0.0-beta2)
+  - SnapKit (5.0.0)
   - SWXMLHash (4.7.6)
   - "UIView+Positioning (1.1)"
 
 DEPENDENCIES:
+  - Alamofire
   - HandyJSON (~> 5.0.0)
   - MJRefresh (~> 3.1.12)
   - SDWebImage (~> 4.0.0-beta2)
+  - SnapKit (~> 5.0.0)
   - SWXMLHash (~> 4.7.0)
   - "UIView+Positioning (~> 1.1)"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - HandyJSON
     - MJRefresh
     - SDWebImage
+    - SnapKit
     - SWXMLHash
     - "UIView+Positioning"
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: e379f33106cf8d6766f970c0ef1c3fb609c94d78
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SWXMLHash: f6e0933ce74f2626669dc544851bc9fc1941670d
   "UIView+Positioning": e93fe9e3186d1ed7d60e344aa12787911e902056
 
-PODFILE CHECKSUM: a1e78894439138ca3ac245f4c987cb58fd5072fb
+PODFILE CHECKSUM: 9e8dc42c5709091bff9a3b7458d27c288ba58b06
 
 COCOAPODS: 1.7.1

@@ -224,7 +224,7 @@ class FMYWAlmanacViewController: FMYWViewController, UIScrollViewDelegate, Alman
                 almanac.wuxing = resultItem.object(forKey: "wuxing");
                 almanac.jishen = resultItem.object(forKey: "jishen");
                 almanac.id = resultItem.object(forKey: "id");
-                almanac.ji = resultItem.object(forKey: "ij");
+                almanac.ji = resultItem.object(forKey: "ji");
                 almanac.yinli = resultItem.object(forKey: "yinli");
                 almanac.baiji = resultItem.object(forKey: "baiji");
                 almanac.chongsha = resultItem.object(forKey: "chongsha");

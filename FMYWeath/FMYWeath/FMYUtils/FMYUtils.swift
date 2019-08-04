@@ -154,6 +154,18 @@ public func fileGetNewsItems() -> NSArray {
     return newsItems as! NSArray
 }
 
+/**
+ * 在swift中使用NSClassFromString className要加工程名前缀
+ */
+public func swiftClassFromString(className:String) ->AnyClass? {
+    // get the project name
+    if  let appName: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String? {
+        // YourProject.className
+        let classStringName = appName + "." + className
+        return NSClassFromString(classStringName) ?? nil
+    }
+    return nil
+}
 
 class FMYUtils: NSObject {
 

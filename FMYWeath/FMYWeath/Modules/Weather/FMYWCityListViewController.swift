@@ -21,7 +21,12 @@ class FMYWCityListViewController: FMYWViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.business.getRegionCountry()
-        self.business.getRegionDataset()
+//        self.business.getRegionCountry()
+//        self.business.getRegionDataset { (regions) in
+//            print(regions)
+//        }
+        self.business.getWeather(cityCode: "1679") { (response) in
+            print(response)
+        }
     }
 }
