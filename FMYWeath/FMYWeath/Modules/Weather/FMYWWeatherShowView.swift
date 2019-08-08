@@ -8,21 +8,33 @@
 
 import UIKit
 
-class FMYWWeatherShowView: FMYWView {
-    let labelIcon:UILabel = {
-        let label = UILabel(frame: .zero); return label
+class FMYWWeatherShowView: FMYXibView {
+    private var _wd:FMYWeatherDetail?
+    var weatherDetail:FMYWeatherDetail {
+        set {
+            _wd = newValue
+            self.refreshWeatherItems()
+        }
+        get{return _wd ?? FMYWeatherDetail(items:nil)}
+    }
+
+    let labelRegionInfo:FMYLabel = {
+        let label = FMYLabel(frame: .zero); return label
     }()
-    let labelTempt:UILabel = {
-        let label = UILabel(frame: .zero); return label
+    let labelDate:FMYLabel = {
+        let label = FMYLabel(frame: .zero); return label
     }()
-    let labelDate:UILabel = {
-        let label = UILabel(frame: .zero); return label
+    let labelTempt:FMYLabel = {
+        let label = FMYLabel(frame: .zero); return label
     }()
-    let labelWind:UILabel = {
-        let label = UILabel(frame: .zero); return label
+    let labelIcon:FMYLabel = {
+        let label = FMYLabel(frame: .zero); return label
     }()
-    let labelAbstract:UILabel = {
-        let label = UILabel(frame: .zero)
+    let labelWind:FMYLabel = {
+        let label = FMYLabel(frame: .zero); return label
+    }()
+    let labelAbstract:FMYLabel = {
+        let label = FMYLabel(frame: .zero)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
@@ -36,10 +48,16 @@ class FMYWWeatherShowView: FMYWView {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
 
     func configureUIItems() {
+        self.labelDate.showBorderLine()
+        self.labelIcon.showBorderLine()
+        self.labelWind.showBorderLine()
+        self.labelTempt.showBorderLine()
+        self.labelAbstract.showBorderLine()
+
         self.addSubview(labelDate)
         self.addSubview(labelIcon)
         self.addSubview(labelWind)
@@ -79,6 +97,14 @@ class FMYWWeatherShowView: FMYWView {
             make.width.equalTo(120)
             make.height.equalTo(190)
         }
+    }
+
+
+    func refreshWeatherItems() {
+        self.labelDate.text = self.weatherDetail.timeDate
+        self.labelTempt.text = self.weatherDetail.scene
+        self.labelAbstract.text = self.weatherDetail.livingIndex
+        self.labelIcon.text = self.weatherDetail.airIndex
     }
 
     func additionalViewsClear()  {

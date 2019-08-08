@@ -25,8 +25,8 @@ class FMYWCityListViewController: FMYWViewController {
 //        self.business.getRegionDataset { (regions) in
 //            print(regions)
 //        }
-        self.business.getWeather(cityCode: "1679") { (response) in
-            print(response)
-        }
+//        self.business.getWeather(cityCode: "1679") { (response) in
+//            print(response)
+//        }
     }
 }

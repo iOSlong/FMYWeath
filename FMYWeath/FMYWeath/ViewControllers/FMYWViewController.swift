@@ -88,4 +88,9 @@ class FMYWViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
     }
 
+    // MARK: UIStatusBarStyle
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
 }

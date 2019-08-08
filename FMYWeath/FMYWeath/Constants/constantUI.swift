@@ -21,6 +21,10 @@ let mySpanUp        = mySpanLeft
 let mySpanV         = mySpanLeft/2.0
 let mySpanH         = mySpanLeft/2.0
 
+let myScreenBorderLong   = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+let myScreenBorderShort  = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+let myPageSpanSide       = 10.0
+
 
 let myTest   =  true  // true 测试代码标记   false 默认使用常态代码
 
@@ -35,7 +39,7 @@ public enum myFont:CGFloat {
     case font_bigest    = 40
 }
 
-// MARK: CONSTANT FUNCTION(PARAM)
+// MARK: - CONSTANT FUNCTION(PARAM)
 /*
  因为Swift共用一个命名空间,只要不是private，其他地方就可以直接调起
  1. 带参数的使用func 实现
@@ -70,7 +74,7 @@ let colorMainLightWhite = RGBACOLOR(200, g: 200, b: 200)
 
 
 
-// MARK: DEVICE MODE
+// MARK: - DEVICE MODE
 let screenModeSize:CGSize? = UIScreen.main.currentMode?.size
 
 func iPhone4s() ->Bool {
@@ -98,6 +102,9 @@ func iPhone6Plus() ->Bool {
     return false
 }
 
+func iPhoneX() -> Bool {
+    return UIDevice.isIPhoneX()
+}
 
 
 

@@ -58,7 +58,7 @@ public func api_jokeList() ->String {
 
 // MARK: USER_DEFAULT_KEY
 let default_key_newsItems   = "default_key_newsItems"
-
+let default_key_locations   = "default_key_locations"
 
 
 

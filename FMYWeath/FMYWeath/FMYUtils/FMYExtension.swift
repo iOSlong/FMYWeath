@@ -25,6 +25,16 @@ public extension DispatchQueue {
 }
 
 
+public extension UIDevice {
+    static func isIPhoneX() ->Bool {
+        if (myScreenBorderLong == 812 && myScreenBorderShort == 375) || (myScreenBorderLong == 896 && myScreenBorderShort == 414) {
+            return true
+        }
+        return false
+    }
+}
+
+
 
 public extension UIView {
     func readyForLayout() {
@@ -88,7 +98,16 @@ public extension UIView {
                         _ toAttribute:NSLayoutConstraint.Attribute) {
         
     }
-    
+
+    func showBorderLine()  {
+        self.layer.borderColor = UIColor.cyan.cgColor
+        self.layer.borderWidth = 1
+    }
+
+    func showBorderLineColor(color:UIColor)  {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = 1
+    }
 }
 
 

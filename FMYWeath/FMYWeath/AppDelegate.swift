@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate 
         let jokeVC          = FMYWJokeViewController()
         let todayHistoryVC  = FMYWTodayHistoryViewController()
         let favorVC         = FMYWFavorViewController()
-        let cityListVC      = FMYWCityListViewController()
+        let cityListVC      = FMYWeatherViewController()
 
         let navTodayHome    = FMYWNavigationController(rootViewController:todayHomeVC)
         let navJokes        = FMYWNavigationController(rootViewController:jokeVC)

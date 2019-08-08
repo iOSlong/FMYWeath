@@ -12,7 +12,6 @@ class FMYLabel: UILabel {
     
     // MARK: 定义单列实现部分
     static func shareExamTitle() -> FMYLabel {
-        
         struct Singleton {
             
             static var single = FMYLabel.fmylabel(frame: .zero, font: UIFont.systemFont(ofSize: myFont.font_normal.rawValue), textColor: colorMainLightWhite, numberOfLines: 0, textAlignment: .left)!
@@ -25,7 +24,14 @@ class FMYLabel: UILabel {
         return Singleton.single
     }
 
-    
+    override init(frame:CGRect) {
+        super.init(frame: frame)
+        self.textColor = .white
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     // MARK: other needed single parts   ……
     
     

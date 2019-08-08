@@ -33,4 +33,10 @@ struct FMYRegion: XMLIndexerDeserializable {
             regionName: node["RegionName"].value()
         )
     }
+
+    static func regionFrom(dict:NSDictionary) -> FMYRegion {
+        let ID:String      = dict.object(forKey: "regionID") as! String
+        let Name:String    = dict.object(forKey: "regionName") as! String
+        return FMYRegion.init(regionID: ID, regionName: Name)
+    }
 }

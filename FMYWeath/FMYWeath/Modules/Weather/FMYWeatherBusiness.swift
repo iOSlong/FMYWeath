@@ -26,9 +26,9 @@ class FMYWeatherBusiness: NSObject {
     var body: String?
     var elapsedTime: TimeInterval?
     var segueIdentifier: String?
+    var weatherDetail:FMYWeatherDetail?
 
-    func getWeather(cityCode:String, complete:@escaping (Any)->Void) -> Void {
-//        let param:Parameters = Parameters.init(dictionaryLiteral: ("theUserID", ""),("theCityCode","1679"))
+    func fetchWeather(cityCode:String, complete:@escaping (Result<FMYWeatherDetail>)->Void) -> Void {
         let url:URL = URL(string: "http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getWeather?theUserID=&theCityCode=\(cityCode)")!
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData { (response) in
             switch (response.result) {
@@ -40,14 +40,19 @@ class FMYWeatherBusiness: NSObject {
                         let item = try rootOne.byKey("string")
 
                         let rowItems: [FMYWeatherDetailRowItem] = try item.value()
-                        let weatherDetil = FMYWeatherDetail.init(items: rowItems)
+                        self.weatherDetail = FMYWeatherDetail.init(items: rowItems)
                         print(rowItems[0])
-                        complete(weatherDetil)
+                        complete(Result.success(self.weatherDetail!))
+//                        complete(Result.init(value: { () -> FMYWeatherDetail in
+//                            return weatherDetil
+//                        }))
                     } catch (let error) {
                         print(error)
+                        complete(Result.failure(error))
                     }
                 }
             case .failure(let error):
+                complete(Result.failure(error))
                 print("请求网络失败:\(error)")
                 break
             }
